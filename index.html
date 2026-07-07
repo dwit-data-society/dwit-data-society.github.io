@@ -59,6 +59,38 @@
           <span>Abroad</span>
         </div>
       </div>
+
+      <!-- Mobile-only tap narrative: condensed step text that cross-fades
+           below the grid instead of scrolling cards over it. Hidden on
+           desktop via CSS; wired up in ui/mobile-scrolly.js. -->
+      <div class="scrolly-mobile" id="scrolly-mobile">
+        <div class="scrolly-mobile__texts" aria-live="polite">
+          <div class="scrolly-mobile__text is-active" data-mstep="0">
+            <p class="scrolly-mobile__eyebrow">Introduction</p>
+            <p class="scrolly-mobile__copy">We surveyed 15 companies at the job fair — most in IT and software. Each
+              square below represents ten employees.</p>
+          </div>
+          <div class="scrolly-mobile__text" data-mstep="1">
+            <p class="scrolly-mobile__eyebrow">Nepal vs. Abroad</p>
+            <p class="scrolly-mobile__copy">Of roughly 6,113 employees reported, about 91.5% are based in Nepal and
+              8.5% abroad.</p>
+          </div>
+          <div class="scrolly-mobile__text" data-mstep="2">
+            <p class="scrolly-mobile__eyebrow">Entry-level Positions</p>
+            <p class="scrolly-mobile__copy">249 annual entry-level openings — the highlighted squares. The median
+              company reported about 8 per year.</p>
+          </div>
+        </div>
+        <div class="scrolly-mobile__nav">
+          <button class="scrolly-mobile__arrow" id="mscrolly-prev" aria-label="Previous step">&#8592;</button>
+          <div class="scrolly-mobile__dots" id="mscrolly-dots">
+            <span class="scrolly-mobile__dot is-active"></span>
+            <span class="scrolly-mobile__dot"></span>
+            <span class="scrolly-mobile__dot"></span>
+          </div>
+          <button class="scrolly-mobile__arrow" id="mscrolly-next" aria-label="Next step">&#8594;</button>
+        </div>
+      </div>
     </figure>
 
     <!-- Narrative steps -->

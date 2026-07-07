@@ -17,12 +17,13 @@
 // see note in utils/dom.js for why d3-family libraries are referenced as
 // globals rather than imported in this project.
 
-import { watchChart, debounce } from './utils/responsive.js';
+import { watchChart, debounce, mobileMedia } from './utils/responsive.js';
 
 // ── UI components ──
 import { initLanding } from './ui/landing.js';
 import { initPaperTexture } from './ui/paper-texture.js';
 import { initTornPapers } from './ui/torn-papers.js';
+import { initMobileScrolly } from './ui/mobile-scrolly.js';
 
 // ── Charts ──
 import { createWorkmodeBar } from './charts/workmode-bar.js';
@@ -44,6 +45,17 @@ function showError(container, label = 'this chart') {
 }
 
 async function boot() {
+	// Charts whose render() draws a different layout on phones. When the
+	// breakpoint is crossed (rotation, window resize) they are re-rendered
+	// with their stored data; every render() involved is idempotent.
+	const mq = mobileMedia();
+	const breakpointCharts = [];
+	mq.addEventListener('change', () => {
+		breakpointCharts.forEach((chart) => {
+			try { chart.render(); } catch (e) { console.error('Breakpoint re-render failed:', e); }
+		});
+	});
+
 	// ── Paper texture (canvas noise on body::before) ─────
 	try { initPaperTexture(); } catch (e) { console.error('Paper texture failed:', e); }
 
@@ -64,7 +76,11 @@ async function boot() {
 		}
 	} catch (e) { console.error('Workmode bar failed:', e); }
 
-	// ── Company grid (scrollytelling) ───────────────────
+	// ── Company grid (scrollytelling / mobile tap narrative) ──
+	// Desktop: scrollama drives the beats as narrative cards scroll by.
+	// Mobile: the cards are hidden (they'd cover the grid) and the beats are
+	// tapped through instead — see ui/mobile-scrolly.js. Each mode is set up
+	// lazily the first time its side of the breakpoint becomes active.
 	const gridEl = document.getElementById('viz');
 	if (gridEl) {
 		const companyGrid = createCompanyGrid(gridEl).init();
@@ -72,18 +88,39 @@ async function boot() {
 			const companies = await loadCompanyGridData();
 			companyGrid.resize().render(companies);
 
-			const scroller = scrollama();
-			scroller
-				.setup({ step: '.step', offset: 0.5, progress: true })
-				.onStepEnter(({ index, element, direction }) => {
-					document.querySelectorAll('.step').forEach((el) => el.classList.remove('is-active'));
-					element.classList.add('is-active');
-					companyGrid.stepEnter(index, direction);
-				})
-				.onStepExit(({ index, direction }) => companyGrid.stepExit(index, direction))
-				.onStepProgress(({ index, progress }) => companyGrid.stepProgress(index, progress));
+			let scroller = null;
+			let mobileScrolly = null;
 
-			window.addEventListener('resize', debounce(() => scroller.resize(), 150));
+			const setupScroller = () => {
+				scroller = scrollama();
+				scroller
+					.setup({ step: '.step', offset: 0.5, progress: true })
+					.onStepEnter(({ index, element, direction }) => {
+						document.querySelectorAll('.step').forEach((el) => el.classList.remove('is-active'));
+						element.classList.add('is-active');
+						companyGrid.stepEnter(index, direction);
+					})
+					.onStepExit(({ index, direction }) => companyGrid.stepExit(index, direction))
+					.onStepProgress(({ index, progress }) => companyGrid.stepProgress(index, progress));
+
+				window.addEventListener('resize', debounce(() => scroller.resize(), 150));
+			};
+
+			if (mq.matches) mobileScrolly = initMobileScrolly(companyGrid);
+			else setupScroller();
+
+			mq.addEventListener('change', (e) => {
+				// Rebuild the grid in the new column layout, then restore state.
+				companyGrid.render(companies);
+				if (e.matches) {
+					if (!mobileScrolly) mobileScrolly = initMobileScrolly(companyGrid);
+					if (mobileScrolly) mobileScrolly.show(mobileScrolly.current(), 'down', { snap: true });
+				} else {
+					if (!scroller) setupScroller();
+					else scroller.resize();
+					companyGrid.applyStep(Math.max(0, companyGrid.currentStep()));
+				}
+			});
 		} catch (err) {
 			console.error('Company grid failed to load:', err);
 			showError(gridEl, 'company grid');
@@ -105,6 +142,7 @@ async function boot() {
 			const salaryChart = createSalaryExperienceLine(salaryEl).init();
 			const salaryData = await loadSalaryData();
 			salaryChart.resize().render(salaryData);
+			breakpointCharts.push(salaryChart);
 		}
 	} catch (err) {
 		console.error('Salary chart failed:', err);
@@ -116,7 +154,7 @@ async function boot() {
 	try {
 		const challengesEl = document.getElementById('challenges-bubbles');
 		if (challengesEl) {
-			createChallengesBubble(challengesEl).init().resize().render();
+			breakpointCharts.push(createChallengesBubble(challengesEl).init().resize().render());
 		}
 	} catch (e) { console.error('Challenges bubble failed:', e); }
 
@@ -124,7 +162,7 @@ async function boot() {
 	try {
 		const genderEl = document.getElementById('gender-chart');
 		if (genderEl) {
-			createGenderDisparityBar(genderEl).init().resize().render();
+			breakpointCharts.push(createGenderDisparityBar(genderEl).init().resize().render());
 		}
 	} catch (e) { console.error('Gender disparity failed:', e); }
 
@@ -135,6 +173,7 @@ async function boot() {
 			const maturityChart = createCompanyMaturityScatter(maturityEl).init();
 			const maturityData = await loadMaturityData();
 			maturityChart.resize().render(maturityData);
+			breakpointCharts.push(maturityChart);
 		}
 	} catch (err) {
 		console.error('Maturity scatter failed:', err);

@@ -38,6 +38,7 @@ import * as d3 from 'd3';
 import { createChart } from './chart-base.js';
 import { createCrayonFilter, addFillGrain } from '../utils/svg-filters.js';
 import { loadAll } from '../utils/load-data.js';
+import { isMobileViewport } from '../utils/responsive.js';
 import { THEME } from '../config.js';
 
 const SCALE_FACTOR = 10;   // 1 rect = 10 employees
@@ -48,6 +49,10 @@ const COMPANY_GAP_X = 24;
 const COMPANY_GAP_Y = 28;
 const GAP_BETWEEN_SPLIT = 6;
 const PAD = 10;
+
+// Phones get a 3-column, portrait-shaped layout so the grid fills the
+// viewport instead of scaling a wide 5-column layout down to ant size.
+const MOBILE_LAYOUT = { cols: 3, gapX: 14, gapY: 20 };
 
 // ── Pure layout helpers — no chart state, easy to unit test in isolation ──
 
@@ -80,23 +85,23 @@ function companyFootprint(c) {
 	return { w, h, grid };
 }
 
-function computeLayout(companies) {
+function computeLayout(companies, { cols = GRID_COLS, gapX = COMPANY_GAP_X, gapY = COMPANY_GAP_Y } = {}) {
 	const items = companies.map((c) => {
 		const { w, h, grid } = companyFootprint(c);
 		return { ...c, w, h, grid };
 	});
 
-	const columns = Array.from({ length: GRID_COLS }, () => []);
-	items.forEach((item, i) => columns[i % GRID_COLS].push(item));
+	const columns = Array.from({ length: cols }, () => []);
+	items.forEach((item, i) => columns[i % cols].push(item));
 
 	let totalWidth = 0;
 	const colMeta = columns.map((col) => {
 		const maxW = d3.max(col, (d) => d.w) || 0;
 		const x = totalWidth;
-		totalWidth += maxW + COMPANY_GAP_X;
+		totalWidth += maxW + gapX;
 		return { x, maxW, col };
 	});
-	totalWidth -= COMPANY_GAP_X;
+	totalWidth -= gapX;
 
 	const layout = [];
 	let maxHeight = 0;
@@ -104,9 +109,9 @@ function computeLayout(companies) {
 		let y = 0;
 		col.forEach((item) => {
 			layout.push({ ...item, x: x + (maxW - item.w) / 2, y });
-			y += item.h + COMPANY_GAP_Y;
+			y += item.h + gapY;
 		});
-		maxHeight = Math.max(maxHeight, y - COMPANY_GAP_Y);
+		maxHeight = Math.max(maxHeight, y - gapY);
 	});
 
 	return { layout, totalWidth, totalHeight: maxHeight };
@@ -203,7 +208,13 @@ export function createCompanyGrid(container, options = {}) {
 
 		render(companies) {
 			if (!companies) return;
-			const { layout, totalWidth, totalHeight } = computeLayout(companies);
+			const { layout, totalWidth, totalHeight } = computeLayout(
+				companies,
+				isMobileViewport() ? MOBILE_LAYOUT : {}
+			);
+
+			// Idempotent — render() may run again when the breakpoint flips.
+			svg.selectAll('*').remove();
 
 			svg.attr('viewBox', `0 0 ${totalWidth + PAD * 2} ${totalHeight + PAD * 2}`)
 				.attr('preserveAspectRatio', 'xMidYMid meet');
@@ -311,6 +322,19 @@ export function createCompanyGrid(container, options = {}) {
 	chart.stepProgress = (index, progress) => chart.update(progress, { index });
 
 	chart.currentStep = () => currentStep;
+
+	/** Jump straight to a step's final visual state (no scroll direction
+	 *  semantics) — used after a re-render, e.g. when the mobile/desktop
+	 *  breakpoint flips and the grid is rebuilt from scratch. */
+	chart.applyStep = (index) => {
+		currentStep = index;
+		if (index <= 0) {
+			transitionStep1();
+		} else {
+			snapToStep2();
+			if (index >= 2) applyBeat3(1);
+		}
+	};
 
 	return chart;
 }

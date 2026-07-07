@@ -12,6 +12,7 @@ import * as d3 from 'd3';
 import { createChart } from './chart-base.js';
 import { createCrayonFilter } from '../utils/svg-filters.js';
 import { ensureSvg } from '../utils/dom.js';
+import { isMobileViewport } from '../utils/responsive.js';
 import { THEME } from '../config.js';
 
 const DATA = [
@@ -41,14 +42,25 @@ export function createChallengesBubble(container) {
 		resize() { },
 
 		render() {
-			const root = d3.pack().size([600, 600]).padding(6)(
+			// On a phone the 600×600 square viewBox shrinks to ~350px and the
+			// bubbles turn to confetti. Packing into a smaller PORTRAIT canvas
+			// instead means the same ~350px of screen shows a 430-unit-wide
+			// drawing — every bubble and label renders ~40% larger — and the
+			// extra height uses the vertical space a phone actually has.
+			const mobile = isMobileViewport();
+			const W = mobile ? 430 : 600;
+			const H = mobile ? 620 : 600;
+
+			const root = d3.pack().size([W, H]).padding(mobile ? 5 : 6)(
 				d3.hierarchy({ children: DATA }).sum((d) => d.company_count || 0)
 			);
 			const leaves = root.leaves();
 
 			const svg = ensureSvg(this.node())
-				.attr('viewBox', '0 0 600 600')
+				.attr('viewBox', `0 0 ${W} ${H}`)
 				.attr('preserveAspectRatio', 'xMidYMid meet');
+
+			svg.selectAll('*').remove(); // idempotent — re-runs on breakpoint change
 
 			const defs = svg.append('defs');
 			createCrayonFilter(defs, { id: 'crayon-edge-challenges', baseFrequency: 0.04, seed: 2, scale: 4 });
@@ -71,10 +83,12 @@ export function createChallengesBubble(container) {
 			nodes.each(function(d, idx) {
 				const node = d3.select(this);
 				const r = d.r;
-				if (r < 20) return;
+				// Mobile renders larger per viewBox unit, so smaller bubbles can
+				// still carry a readable label — lower the cutoff there.
+				if (r < (mobile ? 16 : 20)) return;
 
 				const words = d.data.challenge.split(/\s+/);
-				const fontSize = Math.max(8, Math.min(13, r * 0.30));
+				const fontSize = Math.max(mobile ? 9 : 8, Math.min(13, r * 0.30));
 				const lineHeight = fontSize * 1.25;
 				const maxWidth = r * 1.5;
 				const lines = [];

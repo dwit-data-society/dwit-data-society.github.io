@@ -53,6 +53,24 @@ export function unwatchChart(chart) {
 	registry.delete(node);
 }
 
+/* ── Mobile breakpoint ─────────────────────────────────────
+ * Single source of truth shared with the CSS @media (max-width: 680px)
+ * blocks in styles.css. Charts that draw a different layout on phones
+ * check isMobileViewport() inside render(); main.js re-renders them when
+ * the breakpoint is crossed (mobileMedia().addEventListener('change')). */
+
+const MOBILE_QUERY = '(max-width: 680px)';
+
+/** The MediaQueryList for the mobile breakpoint — listen to 'change' on it. */
+export function mobileMedia() {
+	return window.matchMedia(MOBILE_QUERY);
+}
+
+/** True when the viewport is phone-sized (must match styles.css). */
+export function isMobileViewport() {
+	return mobileMedia().matches;
+}
+
 /** Small debounce helper for cases that genuinely need window-level events
  *  (e.g. scrollama's own .resize()), rather than per-container observation. */
 export function debounce(fn, wait = 150) {

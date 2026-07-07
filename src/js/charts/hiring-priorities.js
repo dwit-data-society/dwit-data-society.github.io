@@ -16,6 +16,7 @@ import * as d3 from 'd3';
 import { createChart } from './chart-base.js';
 import { ensureSvg } from '../utils/dom.js';
 import { loadJSON } from '../utils/load-data.js';
+import { isMobileViewport, mobileMedia } from '../utils/responsive.js';
 import { THEME } from '../config.js';
 
 // Ranking scale: raw_rank runs 1–5 where 5 = highest priority and 1 = lowest.
@@ -82,6 +83,7 @@ export function createHiringPriorities(container, options = {}) {
 
 	let rankList, submitBtn;
 	let submitted = false;
+	let lastDots = null; // kept so the bar can re-render when the breakpoint flips
 	let dragSrc = null;
 	let placeholder = null;
 	let touchClone = null;
@@ -332,6 +334,9 @@ export function createHiringPriorities(container, options = {}) {
 	}
 
 	function renderStackedBar(dots) {
+		lastDots = dots;
+		const mobile = isMobileViewport();
+
 		// Criteria are listed top → bottom from most to least valued, matching
 		// the survey averages (Passion highest, Experience lowest).
 		const criteria = ['Passion', 'Technical', 'Soft skills', 'Experience'];
@@ -354,15 +359,29 @@ export function createHiringPriorities(container, options = {}) {
 		const rankColors = THEME.colors.rankColors;
 		const rankLabels = { 5: '#1 priority', 4: '#2', 3: '#3', 2: '#4', 1: '#5 (lowest)' };
 
-		const margin = { top: 12, right: 30, bottom: 50, left: 100 };
-		const svgWidth = 640;
-		const barHeight = 38;
-		const barGap = 16;
-		const chartHeight = criteria.length * (barHeight + barGap) - barGap;
-		const svgHeight = chartHeight + margin.top + margin.bottom;
+		// Desktop: criterion labels in a left gutter, single-row legend — a wide
+		// ribbon. Mobile: no gutter (labels sit above their bar), taller bars,
+		// two-column legend — a portrait block that actually fills a phone screen.
+		const margin = mobile
+			? { top: 6, right: 10, bottom: 8, left: 10 }
+			: { top: 12, right: 30, bottom: 50, left: 100 };
+		const svgWidth = mobile ? 430 : 640;
+		const barHeight = mobile ? 36 : 38;
+		const labelH = mobile ? 24 : 0;      // room above each bar for its label
+		const barGap = mobile ? 26 : 16;
+		const rowH = labelH + barHeight + barGap;
+		const chartHeight = criteria.length * rowH - barGap;
 		const chartWidth = svgWidth - margin.left - margin.right;
 
+		const legendGapY = mobile ? 20 : 24;
+		const legendRows = mobile ? Math.ceil(stackOrder.length / 2) : 1;
+		const legendRowH = mobile ? 26 : 12;
+		const svgHeight = mobile
+			? margin.top + chartHeight + legendGapY + legendRows * legendRowH + margin.bottom
+			: chartHeight + margin.top + margin.bottom;
+
 		const svgEl = ensureSvg(document.getElementById(stackbarChartId));
+		svgEl.selectAll('*').remove(); // idempotent — re-runs on breakpoint change
 		svgEl.attr('viewBox', `0 0 ${svgWidth} ${svgHeight}`).attr('preserveAspectRatio', 'xMidYMid meet');
 
 		const defs = svgEl.append('defs');
@@ -380,13 +399,20 @@ export function createHiringPriorities(container, options = {}) {
 		const xScale = d3.scaleLinear().domain([0, maxTotal]).range([0, chartWidth]);
 
 		criteria.forEach((criterion, ci) => {
-			const y = ci * (barHeight + barGap);
+			const rowTop = ci * rowH;
+			const y = rowTop + labelH;
 			let xOffset = 0;
 
-			g.append('text')
-				.attr('class', 'stackbar-criterion').attr('x', -12).attr('y', y + barHeight / 2)
-				.attr('dy', '0.35em').attr('text-anchor', 'end').text(criterion)
-				.attr('opacity', 0).transition().delay(ci * 80).duration(400).attr('opacity', 1);
+			const label = g.append('text')
+				.attr('class', 'stackbar-criterion').text(criterion);
+			if (mobile) {
+				label.attr('x', 0).attr('y', rowTop + 14).attr('text-anchor', 'start')
+					.style('font-size', '15px');
+			} else {
+				label.attr('x', -12).attr('y', y + barHeight / 2)
+					.attr('dy', '0.35em').attr('text-anchor', 'end');
+			}
+			label.attr('opacity', 0).transition().delay(ci * 80).duration(400).attr('opacity', 1);
 
 			stackOrder.forEach((rank, ri) => {
 				const count = distribution[criterion][rank];
@@ -406,25 +432,30 @@ export function createHiringPriorities(container, options = {}) {
 					g.append('text')
 						.attr('class', 'stackbar-count-label').attr('x', segX + segW / 2).attr('y', y + barHeight / 2)
 						.attr('dy', '0.35em').text(count)
+						.style('font-size', mobile ? '11px' : null)
 						.attr('opacity', 0).transition().delay(ci * 100 + ri * 60 + 350).duration(300).attr('opacity', 1);
 				}
 				xOffset += count;
 			});
 		});
 
-		const legendY = chartHeight + 24;
-		const legendSpacing = chartWidth / stackOrder.length;
+		const legendY = chartHeight + legendGapY;
 		stackOrder.forEach((rank, i) => {
-			const lx = i * legendSpacing;
+			// Mobile wraps the legend into two columns; desktop keeps one row.
+			const lx = mobile ? (i % 2) * (chartWidth / 2) : i * (chartWidth / stackOrder.length);
+			const ly = mobile ? legendY + Math.floor(i / 2) * legendRowH : legendY;
+			const swatch = mobile ? 14 : 12;
+
 			g.append('rect')
-				.attr('x', lx).attr('y', legendY).attr('width', 12).attr('height', 12).attr('rx', 1)
+				.attr('x', lx).attr('y', ly).attr('width', swatch).attr('height', swatch).attr('rx', 1)
 				.attr('fill', rankColors[rank].fill).attr('stroke', rankColors[rank].stroke)
 				.attr('stroke-width', 1).attr('stroke-opacity', 0.6).attr('filter', 'url(#crayon-edge-stackbar)')
 				.attr('opacity', 0).transition().delay(600 + i * 60).duration(300).attr('opacity', 1);
 
 			g.append('text')
-				.attr('class', 'stackbar-legend-text').attr('x', lx + 16).attr('y', legendY + 6)
+				.attr('class', 'stackbar-legend-text').attr('x', lx + swatch + 6).attr('y', ly + swatch / 2)
 				.attr('dy', '0.35em').text(rankLabels[rank])
+				.style('font-size', mobile ? '13px' : null)
 				.attr('opacity', 0).transition().delay(600 + i * 60).duration(300).attr('opacity', 1);
 		});
 	}
@@ -437,6 +468,11 @@ export function createHiringPriorities(container, options = {}) {
 			if (!rankList || !submitBtn) return;
 			buildRankItems();
 			submitBtn.addEventListener('click', handleSubmit);
+			// The bar only exists after submit; if the viewport class changes
+			// afterwards (rotation, resize), redraw it in the right layout.
+			mobileMedia().addEventListener('change', () => {
+				if (lastDots) renderStackedBar(lastDots);
+			});
 		},
 		resize() { },
 		render() { },

@@ -18,6 +18,7 @@ import { createChart } from './chart-base.js';
 import { createCrayonFilter } from '../utils/svg-filters.js';
 import { loadJSON } from '../utils/load-data.js';
 import { ensureSvg } from '../utils/dom.js';
+import { isMobileViewport } from '../utils/responsive.js';
 import { THEME } from '../config.js';
 
 /** Load and return the three scatter datasets + regressions. */
@@ -28,10 +29,22 @@ export async function loadMaturityData() {
 
 // ── Layout constants ────────────────────────────────────
 
-const PANEL_W = 240;
-const PANEL_H = 200;
-const MARGIN = { top: 28, right: 16, bottom: 44, left: 48 };
-const GAP = 32;
+// Desktop: three small panels side by side. Mobile: three full-width panels
+// stacked vertically — a 720-unit-wide row squeezed into a phone makes each
+// panel a postage stamp, whereas stacking gives every panel the whole
+// viewport width and larger effective type.
+const DESKTOP = {
+	panelW: 240, panelH: 200, gap: 32,
+	margin: { top: 28, right: 16, bottom: 44, left: 48 },
+	horizontal: true,
+	tickFont: 9, titleFont: 11, labelFont: 9, dotR: 5,
+};
+const MOBILE = {
+	panelW: 430, panelH: 250, gap: 20,
+	margin: { top: 30, right: 20, bottom: 48, left: 56 },
+	horizontal: false,
+	tickFont: 12, titleFont: 14, labelFont: 12, dotR: 6,
+};
 
 const PANELS = [
 	{
@@ -66,7 +79,7 @@ const PANELS = [
 const PALETTE = [THEME.colors.nepal, THEME.colors.abroad, THEME.colors.accent];
 const STROKE = [THEME.colors.maleStroke, THEME.colors.femaleStroke, '#9a6a3e'];
 
-function renderPanel(g, points, regression, panel, color, stroke, filterUrl, chartW, chartH) {
+function renderPanel(g, points, regression, panel, color, stroke, filterUrl, chartW, chartH, L) {
 	const xExtent = d3.extent(points, (d) => d.tenure_proxy);
 	const yExtent = d3.extent(points, (d) => d[panel.yField]);
 	const xScale = d3.scaleLinear().domain([0, xExtent[1] * 1.1]).range([0, chartW]).nice();
@@ -91,13 +104,13 @@ function renderPanel(g, points, regression, panel, color, stroke, filterUrl, cha
 	g.selectAll('.x-tick').data(xScale.ticks(4)).join('text')
 		.attr('class', 'x-tick')
 		.attr('x', (d) => xScale(d)).attr('y', chartH + 14)
-		.attr('text-anchor', 'middle').style('font-size', '9px').style('fill', '#8a8580')
+		.attr('text-anchor', 'middle').style('font-size', `${L.tickFont}px`).style('fill', '#8a8580')
 		.text((d) => `${d}y`);
 
 	g.selectAll('.y-tick').data(yScale.ticks(4)).join('text')
 		.attr('class', 'y-tick')
 		.attr('x', -6).attr('y', (d) => yScale(d)).attr('dy', '0.35em')
-		.attr('text-anchor', 'end').style('font-size', '9px').style('fill', '#8a8580')
+		.attr('text-anchor', 'end').style('font-size', `${L.tickFont}px`).style('fill', '#8a8580')
 		.text((d) => panel.yFormat(d));
 
 	// Regression line + band
@@ -136,20 +149,20 @@ function renderPanel(g, points, regression, panel, color, stroke, filterUrl, cha
 		.attr('fill', color).attr('stroke', stroke).attr('stroke-width', 1.5)
 		.attr('filter', filterUrl)
 		.transition().delay((d, i) => i * 30).duration(500).ease(d3.easeCubicOut)
-		.attr('r', 5);
+		.attr('r', L.dotR);
 
 	// Panel title
 	g.append('text')
 		.attr('x', chartW / 2).attr('y', -10)
 		.attr('text-anchor', 'middle')
-		.style('font-size', '11px').style('font-weight', '700').style('fill', '#4a4540')
+		.style('font-size', `${L.titleFont}px`).style('font-weight', '700').style('fill', '#4a4540')
 		.text(panel.title);
 
 	// X axis label
 	g.append('text')
-		.attr('x', chartW / 2).attr('y', chartH + 32)
+		.attr('x', chartW / 2).attr('y', chartH + 34)
 		.attr('text-anchor', 'middle')
-		.style('font-size', '9px').style('fill', '#8a8580')
+		.style('font-size', `${L.labelFont}px`).style('fill', '#8a8580')
 		.text('Company age (years)');
 }
 
@@ -163,10 +176,15 @@ export function createCompanyMaturityScatter(container) {
 		render(rawData) {
 			if (!rawData) return;
 
-			const chartW = PANEL_W - MARGIN.left - MARGIN.right;
-			const chartH = PANEL_H - MARGIN.top - MARGIN.bottom;
-			const totalW = PANELS.length * PANEL_W + (PANELS.length - 1) * GAP;
-			const totalH = PANEL_H;
+			const L = isMobileViewport() ? MOBILE : DESKTOP;
+			const chartW = L.panelW - L.margin.left - L.margin.right;
+			const chartH = L.panelH - L.margin.top - L.margin.bottom;
+			const totalW = L.horizontal
+				? PANELS.length * L.panelW + (PANELS.length - 1) * L.gap
+				: L.panelW;
+			const totalH = L.horizontal
+				? L.panelH
+				: PANELS.length * L.panelH + (PANELS.length - 1) * L.gap;
 
 			const svg = ensureSvg(this.node())
 				.attr('viewBox', `0 0 ${totalW} ${totalH}`)
@@ -180,9 +198,10 @@ export function createCompanyMaturityScatter(container) {
 			});
 
 			PANELS.forEach((panel, i) => {
-				const offsetX = i * (PANEL_W + GAP) + MARGIN.left;
+				const offsetX = L.horizontal ? i * (L.panelW + L.gap) + L.margin.left : L.margin.left;
+				const offsetY = L.horizontal ? L.margin.top : i * (L.panelH + L.gap) + L.margin.top;
 				const g = svg.append('g')
-					.attr('transform', `translate(${offsetX}, ${MARGIN.top})`);
+					.attr('transform', `translate(${offsetX}, ${offsetY})`);
 
 				let points = rawData[panel.scatterKey] || [];
 				if (panel.filterEntry) points = points.filter(panel.filterEntry);
@@ -196,7 +215,7 @@ export function createCompanyMaturityScatter(container) {
 					regression = regData;
 				}
 
-				renderPanel(g, points, regression, panel, PALETTE[i], STROKE[i], filterUrl, chartW, chartH);
+				renderPanel(g, points, regression, panel, PALETTE[i], STROKE[i], filterUrl, chartW, chartH, L);
 			});
 		},
 	});
