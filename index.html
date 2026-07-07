@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DWIT Job Fair Analysis</title>
+  <meta name="description"
+    content="A small, self-reported survey of fifteen companies at the Deerwalk job fair — and an honest look at what it can, and cannot, tell us about entering Nepal's tech workforce." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600..700&family=Source+Sans+3:wght@400..700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="src/css/styles.css" />
+
+</head>
+
+<body>
+
+  <!-- ============================
+       LANDING
+       ============================ -->
+  <section class="landing" id="landing">
+    <div class="landing__papers" id="landing-papers"></div>
+    <div class="landing__content">
+      <h1 class="landing__title" id="landing-title">Job Fair Data Analaysis</h1>
+      <p class="landing__subtitle" id="landing-subtitle">DWIT Data Society surveyed 15 companies at the 2026 job fair.
+        Here is what we found.
+      </p>
+      <div class="landing__scroll" id="landing-scroll">
+        <span class="landing__scroll-text">Scroll to begin</span>
+        <div class="landing__scroll-line">
+          <div class="landing__scroll-dot"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       SCROLLYTELLING — COMPANY GRID
+       ============================ -->
+  <section class="scrolly" id="scrolly">
+
+    <!-- Sticky visualization — already visible the moment you leave the landing -->
+    <figure class="scrolly__figure" id="viz-container">
+      <svg id="viz"></svg>
+      <div class="legend" id="legend">
+        <div class="legend__item">
+          <div class="legend__swatch legend__swatch--nepal"></div>
+          <span>Nepal</span>
+        </div>
+        <div class="legend__item">
+          <div class="legend__swatch legend__swatch--abroad"></div>
+          <span>Abroad</span>
+        </div>
+      </div>
+    </figure>
+
+    <!-- Narrative steps -->
+    <article class="scrolly__article">
+
+      <div class="step" data-step="1" id="step-1">
+        <div class="step__content">
+          <div class="step__text-wrap">
+            <p class="step__eyebrow">Introduction</p>
+            <p class="step__text">
+              As part of the college job fair, a survey was conducted among participating companies to better understand
+              current hiring practices, workplace structures, and opportunities available to students entering the
+              workforce. Responses were collected from 15 companies, most of which operate in the IT and software sector
+              and primarily function at the national level within Nepal.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step" data-step="2" id="step-2">
+        <div class="step__content">
+          <div class="step__text-wrap">
+            <h3 class="step__heading">Employees in Nepal vs. Abroad</h3>
+            <p class="step__text">
+              The surveyed companies collectively reported approximately 6,113 employees, of whom around 91.5% were
+              based in Nepal and 8.5 abroad. Some companies reported entirely Nepal-based workforces while others
+              maintained some international operations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step" data-step="3" id="step-3">
+        <div class="step__content">
+          <div class="step__text-wrap">
+            <p class="step__eyebrow">Entry-level Positions Offered</p>
+            <p class="step__text">
+              Across the 15 companies, a total of 249 annual entry-level positions were reported. The median company
+              reported around 8 entry-level openings per year. A few larger companies accounted for a disproportionately
+              high number of openings. Since all figures were self-reported and no standardization definition of
+              “entry-level” was enforced during data collection, comparisons between companies should be interpreted
+              cautiously.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </article>
+  </section>
+
+  <!-- ============================
+       HIRING PRIORITIES — INTERACTIVE QUIZ
+       ============================ -->
+  <section class="hiring-section" id="hiring-section">
+    <div class="hiring-inner">
+
+      <!-- Quiz state -->
+      <div class="hiring-quiz" id="hiring-quiz">
+        <h2 class="hiring-title">Qualities Valued in Hiring Interns</h2>
+        <p class="hiring-subtitle">Drag to rank what companies value in internships.</p>
+
+        <div class="hiring-quiz__columns">
+          <!-- Left: arrow + instruction -->
+          <div class="hiring-quiz__prompt">
+            <img class="hiring-quiz__arrow" src="./assets/click-and-drag-outline.png"
+              alt="Arrow pointing to draggable cards">
+          </div>
+
+          <!-- Right: draggable cards -->
+          <div class="hiring-quiz__cards">
+            <div class="rank-list" id="rank-list">
+              <!-- Populated by JS in a shuffled order -->
+            </div>
+            <button class="submit-btn" id="submit-ranking">Reveal the answer</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stacked bar chart (hidden until submit) -->
+      <div class="stackbar-wrap" id="dotplot-wrap" style="display:none;">
+        <h2 class="hiring-title">Qualities Valued in Hiring Interns and Employees</h2>
+        <p class="stackbar-subtitle">The ranking analysis suggests that companies tend to prioritize passion more highly
+          than experience, or soft skills when evaluating candidates for internships.</p>
+        <svg id="stackbar-chart"></svg>
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       SALARY LADDER — SLOPE CHART
+       ============================ -->
+  <section class="salary-section" id="salary-section">
+    <div class="salary-inner">
+      <h2 class="salary-title">Salary Growth with Years of Experience</h2>
+      <p class="salary-subtitle">The salary analysis indicates a substantial increase in estimated compensation as
+        employees progress from entry-level to mid-level and senior-level positions. Median reported salaries rose from
+        approximately NPR 25,000 at entry level to NPR 80,000 at mid-level and NPR 2,50,000 at senior level.
+
+        However, interpreting these figures requires considerable caution. Promotion timelines varied significantly
+        between firms, with some companies reporting advancement within less than a year and other taking several years
+        for similar transitions. The analysis assumes a simplified progression from junior to senior roles, whereas real
+        career paths are often nonlinear and influence by specialization, company growth, and market demand. As a
+        result, the observed salary growth should be interpreted not as a predictive career trajectory but as an
+        approximate illustration of how compensation may evolve.</p>
+      <div class="salary-wrap">
+        <svg id="salary-line"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CHALLENGES — BUBBLE CHART
+       ============================ -->
+  <section class="challenges-section" id="challenges-section">
+    <div class="challenges-inner">
+      <h2 class="challenges-title">Major Challenges Faced by Companies</h2>
+      <p class="challenges-subtitle">The reported industry challenges were highly diverse, with relatively little
+        overlap between companies. Concerns included competition, shortage of skilled manpower, political instability,
+        changing technologies, workforce migration abroad, and increasing focus on artificial intelligence.
+
+        The repeated concern regarding excessive focus on Ai is interesting. It suggests there is tension between
+        rapidly changing technological trends and practical workforce needs. At the same time, the small and open-ended
+        nature of the responses make it difficult to determine whether these concerns are widespread.</p>
+      <div class="challenges-wrap" id="challenges-wrap">
+        <svg id="challenges-bubbles"></svg>
+      </div>
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================
+       GENDER DISTRIBUTION — DIVERGENT BAR CHART
+       ============================ -->
+  <section class="gender-section" id="gender-section">
+    <div class="gender-inner">
+      <h2 class="gender-title">Gender Distribution within Companies</h2>
+      <p class="gender-subtitle">The surveyed companies collectively reported a workforce composition of approximately
+        60% male and 40% female.
+
+        Although these findings may appear relatively balanced compared to stereotypical perceptions of the technology
+        sector, they should be interpreted carefully. The figures were estimated and self-reported by company
+        representatives rather than derived from audited employment records. Aggregate percentages do not capture
+        important structural questions such as differences in seniority, leadership representation, salary equity, or
+        technical versus non-technical roles.
+
+        The analysis provides only a limited view of gender representation. Still, it suggests that at least some
+        companies are approaching more balanced workforce distributions.</p>
+      <div class="gender-wrap" id="gender-wrap">
+        <svg id="gender-chart"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       WORK MODE — ONSITE VS HYBRID GUESS
+       ============================ -->
+  <section class="workmode-section" id="workmode-section">
+    <div class="workmode-inner">
+
+      <!-- Guess state -->
+      <div class="workmode-quiz" id="workmode-quiz">
+        <h2 class="workmode-title">Work Arrangement Preferences</h2>
+        <p class="workmode-subtitle" id="workmode-subtitle" style="display:none;">Hybrid work arrangements were
+          substantially more common than fully on-site work among the surveyed companies, with roughly 73% reporting
+          hybrid models.
+
+          However, the meaning of "hybrid" may differ considerably between companies, ranging from occasional remote
+          work to highly flexible arrangements. The results should not be interpreted as evidence that remote work is
+          universally available across the industry.</p>
+
+        <div class="workmode-bar-wrap" id="workmode-bar-wrap">
+          <svg id="workmode-bar"></svg>
+        </div>
+
+        <div class="workmode-labels" id="workmode-labels">
+          <span class="workmode-label workmode-label--onsite" id="wm-label-onsite">50% Onsite</span>
+          <span class="workmode-label workmode-label--hybrid" id="wm-label-hybrid">50% Hybrid</span>
+        </div>
+
+        <button class="submit-btn" id="workmode-reveal">Reveal the data</button>
+      </div>
+
+      <!-- Result (hidden until reveal) -->
+      <div class="workmode-result" id="workmode-result" style="display:none;">
+        <p class="workmode-result-text" id="workmode-result-text"></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================
+       COMPANY MATURITY — THREE-PANEL SCATTER PLOTS
+       ============================ -->
+  <section class="maturity-section" id="maturity-section">
+    <div class="maturity-inner">
+      <h2 class="maturity-title">Longest-Serving Employees, Benefits, and Satisfaction</h2>
+      <p class="maturity-subtitle">The analysis explored possible relationships between employee tenure, entry-level
+        salary, benefits, and reported satisfaction. The findings showed almost no correlation between tenure and
+        entry-level salary, a moderate positive relationship between tenure and benefits offered, and a moderate
+        negative relationship between tenure and reported satisfaction. However, these statistical relationships must be
+        interpreted extremely carefully. The sample size is very small, and the satisfaction scores were estimated by HR
+        or management representatives rather than directly measured from employees themselves. In addition, correlation
+        does not imply causation. The negative relationship between tenure and satisfaction, for example, does not
+        necessarily mean that long-serving employees are less satisfied. It may instead reflect organizational culture,
+        company maturity, management expectations, or reporting bias. The results are therefore best understood as
+        exploratory signals that raise further questions rather than providing definitive explanations about employee
+        retention.</p>
+      <div class="maturity-wrap" id="maturity-wrap">
+        <svg id="maturity-scatter"></svg>
+  </section>
+
+  <!-- ============================
+       TRAINING PRACTICES — DONUT + DOT PLOT
+       ============================ -->
+  <section class="training-section" id="training-section">
+    <div class="training-inner">
+      <h2 class="training-title">Training and Skill Development</h2>
+      <p class="training-subtitle">Most surveyed companies reported offering skill development or training
+        opportunities, with 11 out of 15 companies indicating the presence of training programs. Reported training
+        frequencies varied considerably, although the median interval was approximately three years.
+
+        Interpreting this result is somewhat difficult because the meaning of "training frequency" was not standardized
+        during data collection. Some companies may have interpreted the question as format certificate cycles, while
+        others may have considered routine workshops or mentorship sessions.
+
+        The findings suggest that many companies recognize the importance of continuous learning, particularly in
+        rapidly evolving technical fields where employee skills can become outdated quickly.</p>
+      <div class="training-viz" id="training-viz">
+        <svg id="training-donut"></svg>
+        <svg id="training-dotplot"></svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CONCLUSION
+       ============================ -->
+  <section class="conclusion-section" id="conclusion-section">
+    <div class="conclusion-inner">
+      <h2 class="conclusion-title">Conclusion</h2>
+      <p class="conclusion-text">
+        The survey provides a useful but limited overview of hiring practices and workplace conditions among a small
+        group of IT-oriented companies participating in the DWIT Job Fair. Several broad patterns emerged, including
+        demand for entry-level workers, substantial salary growth with experience, increasing adoption of hybrid work
+        arrangements, and emphasis on training and skill development.
+      </p>
+      <p class="conclusion-text">
+        The interpretation of data depends heavily on the assumptions used to collect, categorize, and analyze it.
+        Because the sample was small, self-selected, and self-reported, the findings should not be generalized
+        uncritically to the broader Nepali technology sector. The report should be viewed as a starting point for
+        discussion.
+      </p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script type="importmap">
+{
+  "imports": {
+    "d3": "https://cdn.jsdelivr.net/npm/d3@7/+esm"
+  }
+}
+</script>
+  <script src="https://unpkg.com/intersection-observer@0.12.2/intersection-observer.js"></script>
+  <script src="https://unpkg.com/scrollama"></script>
+  <script type="module" src="src/js/main.js"></script>
+
+</body>
+
+</html>

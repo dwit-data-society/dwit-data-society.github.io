@@ -1,0 +1,168 @@
+{
+  "per_company": [
+    {
+      "company_id": "X2",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X2",
+      "transition": "Mid to Senior",
+      "years": 1.25
+    },
+    {
+      "company_id": "X3",
+      "transition": "Junior to Mid",
+      "years": 2
+    },
+    {
+      "company_id": "X3",
+      "transition": "Mid to Senior",
+      "years": 2
+    },
+    {
+      "company_id": "X4",
+      "transition": "Junior to Mid",
+      "years": 0.75
+    },
+    {
+      "company_id": "X4",
+      "transition": "Mid to Senior",
+      "years": 2.5
+    },
+    {
+      "company_id": "X5",
+      "transition": "Junior to Mid",
+      "years": 0.5
+    },
+    {
+      "company_id": "X5",
+      "transition": "Mid to Senior",
+      "years": 2.5
+    },
+    {
+      "company_id": "X6",
+      "transition": "Junior to Mid",
+      "years": 2
+    },
+    {
+      "company_id": "X6",
+      "transition": "Mid to Senior",
+      "years": 2
+    },
+    {
+      "company_id": "X7",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X7",
+      "transition": "Mid to Senior",
+      "years": 2
+    },
+    {
+      "company_id": "X8",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X8",
+      "transition": "Mid to Senior",
+      "years": 2
+    },
+    {
+      "company_id": "X9",
+      "transition": "Junior to Mid",
+      "years": 2
+    },
+    {
+      "company_id": "X9",
+      "transition": "Mid to Senior",
+      "years": 2.5
+    },
+    {
+      "company_id": "X10",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X10",
+      "transition": "Mid to Senior",
+      "years": 2.5
+    },
+    {
+      "company_id": "X11",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X11",
+      "transition": "Mid to Senior",
+      "years": 2
+    },
+    {
+      "company_id": "X12",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X12",
+      "transition": "Mid to Senior",
+      "years": 1
+    },
+    {
+      "company_id": "X13",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X13",
+      "transition": "Mid to Senior",
+      "years": 1
+    },
+    {
+      "company_id": "X14",
+      "transition": "Junior to Mid",
+      "years": 2
+    },
+    {
+      "company_id": "X14",
+      "transition": "Mid to Senior",
+      "years": 4
+    },
+    {
+      "company_id": "X16",
+      "transition": "Junior to Mid",
+      "years": 1
+    },
+    {
+      "company_id": "X16",
+      "transition": "Mid to Senior",
+      "years": 2
+    },
+    {
+      "company_id": "X17",
+      "transition": "Junior to Mid",
+      "years": 3
+    },
+    {
+      "company_id": "X17",
+      "transition": "Mid to Senior",
+      "years": 3
+    }
+  ],
+  "summary": [
+    {
+      "transition": "Junior to Mid",
+      "median_years": 1,
+      "min_years": 0.5,
+      "max_years": 3
+    },
+    {
+      "transition": "Mid to Senior",
+      "median_years": 2,
+      "min_years": 1,
+      "max_years": 4
+    }
+  ]
+}

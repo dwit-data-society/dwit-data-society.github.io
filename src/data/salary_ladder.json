@@ -1,0 +1,187 @@
+{
+  "per_company": [
+    {
+      "company_id": "X2",
+      "level": "entry",
+      "salary": 25000
+    },
+    {
+      "company_id": "X2",
+      "level": "mid",
+      "salary": 80000
+    },
+    {
+      "company_id": "X2",
+      "level": "senior",
+      "salary": 300000
+    },
+    {
+      "company_id": "X4",
+      "level": "entry",
+      "salary": 38000
+    },
+    {
+      "company_id": "X4",
+      "level": "mid",
+      "salary": 90000
+    },
+    {
+      "company_id": "X4",
+      "level": "senior",
+      "salary": 90000
+    },
+    {
+      "company_id": "X5",
+      "level": "entry",
+      "salary": 19000
+    },
+    {
+      "company_id": "X5",
+      "level": "mid",
+      "salary": 30000
+    },
+    {
+      "company_id": "X6",
+      "level": "entry",
+      "salary": 35000
+    },
+    {
+      "company_id": "X6",
+      "level": "mid",
+      "salary": 100000
+    },
+    {
+      "company_id": "X6",
+      "level": "senior",
+      "salary": 400000
+    },
+    {
+      "company_id": "X9",
+      "level": "entry",
+      "salary": 50000
+    },
+    {
+      "company_id": "X9",
+      "level": "mid",
+      "salary": 125000
+    },
+    {
+      "company_id": "X9",
+      "level": "senior",
+      "salary": 250000
+    },
+    {
+      "company_id": "X10",
+      "level": "entry",
+      "salary": 50000
+    },
+    {
+      "company_id": "X10",
+      "level": "mid",
+      "salary": 125000
+    },
+    {
+      "company_id": "X10",
+      "level": "senior",
+      "salary": 250000
+    },
+    {
+      "company_id": "X12",
+      "level": "entry",
+      "salary": 25000
+    },
+    {
+      "company_id": "X12",
+      "level": "mid",
+      "salary": 80000
+    },
+    {
+      "company_id": "X12",
+      "level": "senior",
+      "salary": 100000
+    },
+    {
+      "company_id": "X13",
+      "level": "entry",
+      "salary": 30000
+    },
+    {
+      "company_id": "X13",
+      "level": "mid",
+      "salary": 110000
+    },
+    {
+      "company_id": "X13",
+      "level": "senior",
+      "salary": 250000
+    },
+    {
+      "company_id": "X14",
+      "level": "entry",
+      "salary": 25000
+    },
+    {
+      "company_id": "X14",
+      "level": "mid",
+      "salary": 65000
+    },
+    {
+      "company_id": "X14",
+      "level": "senior",
+      "salary": 90000
+    },
+    {
+      "company_id": "X16",
+      "level": "entry",
+      "salary": 25000
+    },
+    {
+      "company_id": "X16",
+      "level": "mid",
+      "salary": 40000
+    },
+    {
+      "company_id": "X16",
+      "level": "senior",
+      "salary": 250000
+    },
+    {
+      "company_id": "X17",
+      "level": "entry",
+      "salary": 25000
+    },
+    {
+      "company_id": "X17",
+      "level": "mid",
+      "salary": 50000
+    },
+    {
+      "company_id": "X17",
+      "level": "senior",
+      "salary": 250000
+    }
+  ],
+  "summary": [
+    {
+      "level": "entry",
+      "median_salary": 25000,
+      "min_salary": 19000,
+      "max_salary": 50000,
+      "n": 11
+    },
+    {
+      "level": "mid",
+      "median_salary": 80000,
+      "min_salary": 30000,
+      "max_salary": 125000,
+      "n": 11
+    },
+    {
+      "level": "senior",
+      "median_salary": 250000,
+      "min_salary": 90000,
+      "max_salary": 400000,
+      "n": 10
+    }
+  ]
+}

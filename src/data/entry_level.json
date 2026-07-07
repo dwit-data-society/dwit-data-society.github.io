@@ -1,0 +1,152 @@
+[
+  {
+    "company_id": "X17",
+    "total_employees": 3000,
+    "total_squares": 300,
+    "entry_positions": 100,
+    "entry_squares": 10,
+    "entry_share_pct": 3.3,
+    "entry_share_label": "3.3%",
+    "rank_absolute": 1
+  },
+  {
+    "company_id": "X13",
+    "total_employees": 1200,
+    "total_squares": 120,
+    "entry_positions": 30,
+    "entry_squares": 3,
+    "entry_share_pct": 2.5,
+    "entry_share_label": "2.5%",
+    "rank_absolute": 2
+  },
+  {
+    "company_id": "X6",
+    "total_employees": 900,
+    "total_squares": 90,
+    "entry_positions": 25,
+    "entry_squares": 2,
+    "entry_share_pct": 2.8,
+    "entry_share_label": "2.8%",
+    "rank_absolute": 3
+  },
+  {
+    "company_id": "X16",
+    "total_employees": 20,
+    "total_squares": 2,
+    "entry_positions": 20,
+    "entry_squares": 2,
+    "entry_share_pct": 100,
+    "entry_share_label": "100%",
+    "rank_absolute": 4
+  },
+  {
+    "company_id": "X2",
+    "total_employees": 60,
+    "total_squares": 6,
+    "entry_positions": 10,
+    "entry_squares": 1,
+    "entry_share_pct": 16.7,
+    "entry_share_label": "16.7%",
+    "rank_absolute": 5
+  },
+  {
+    "company_id": "X4",
+    "total_employees": 300,
+    "total_squares": 30,
+    "entry_positions": 10,
+    "entry_squares": 1,
+    "entry_share_pct": 3.3,
+    "entry_share_label": "3.3%",
+    "rank_absolute": 6
+  },
+  {
+    "company_id": "X5",
+    "total_employees": 60,
+    "total_squares": 6,
+    "entry_positions": 10,
+    "entry_squares": 1,
+    "entry_share_pct": 16.7,
+    "entry_share_label": "16.7%",
+    "rank_absolute": 7
+  },
+  {
+    "company_id": "X12",
+    "total_employees": 67,
+    "total_squares": 7,
+    "entry_positions": 8,
+    "entry_squares": 1,
+    "entry_share_pct": 11.9,
+    "entry_share_label": "11.9%",
+    "rank_absolute": 8
+  },
+  {
+    "company_id": "X8",
+    "total_employees": 70,
+    "total_squares": 7,
+    "entry_positions": 7,
+    "entry_squares": 1,
+    "entry_share_pct": 10,
+    "entry_share_label": "10%",
+    "rank_absolute": 9
+  },
+  {
+    "company_id": "X3",
+    "total_employees": 90,
+    "total_squares": 9,
+    "entry_positions": 5,
+    "entry_squares": 1,
+    "entry_share_pct": 5.6,
+    "entry_share_label": "5.6%",
+    "rank_absolute": 10
+  },
+  {
+    "company_id": "X7",
+    "total_employees": 106,
+    "total_squares": 11,
+    "entry_positions": 5,
+    "entry_squares": 1,
+    "entry_share_pct": 4.7,
+    "entry_share_label": "4.7%",
+    "rank_absolute": 11
+  },
+  {
+    "company_id": "X9",
+    "total_employees": 40,
+    "total_squares": 4,
+    "entry_positions": 5,
+    "entry_squares": 1,
+    "entry_share_pct": 12.5,
+    "entry_share_label": "12.5%",
+    "rank_absolute": 12
+  },
+  {
+    "company_id": "X10",
+    "total_employees": 40,
+    "total_squares": 4,
+    "entry_positions": 5,
+    "entry_squares": 1,
+    "entry_share_pct": 12.5,
+    "entry_share_label": "12.5%",
+    "rank_absolute": 13
+  },
+  {
+    "company_id": "X11",
+    "total_employees": 30,
+    "total_squares": 3,
+    "entry_positions": 5,
+    "entry_squares": 1,
+    "entry_share_pct": 16.7,
+    "entry_share_label": "16.7%",
+    "rank_absolute": 14
+  },
+  {
+    "company_id": "X14",
+    "total_employees": 130,
+    "total_squares": 13,
+    "entry_positions": 4,
+    "entry_squares": 1,
+    "entry_share_pct": 3.1,
+    "entry_share_label": "3.1%",
+    "rank_absolute": 15
+  }
+]

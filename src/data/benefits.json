@@ -1,0 +1,486 @@
+{
+  "matrix": [
+    {
+      "company_id": "X2",
+      "benefit": "SSF",
+      "offered": true,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X2",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X2",
+      "benefit": "Medical insurance",
+      "offered": true,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X2",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X2",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X3",
+      "benefit": "SSF",
+      "offered": true,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X3",
+      "benefit": "Provident fund",
+      "offered": true,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X3",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X3",
+      "benefit": "Skill development",
+      "offered": false,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X3",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X4",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X4",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X4",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X4",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X4",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X5",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X5",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X5",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X5",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X5",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X6",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X6",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X6",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X6",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X6",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X7",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X7",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X7",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X7",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X7",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X8",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X8",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X8",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X8",
+      "benefit": "Skill development",
+      "offered": false,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X8",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X9",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X9",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X9",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X9",
+      "benefit": "Skill development",
+      "offered": false,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X9",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X10",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X10",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X10",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X10",
+      "benefit": "Skill development",
+      "offered": false,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X10",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X11",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X11",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X11",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X11",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X11",
+      "benefit": "Internship",
+      "offered": false,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X12",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X12",
+      "benefit": "Provident fund",
+      "offered": true,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X12",
+      "benefit": "Medical insurance",
+      "offered": true,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X12",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X12",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X13",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X13",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X13",
+      "benefit": "Medical insurance",
+      "offered": true,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X13",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X13",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X14",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X14",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X14",
+      "benefit": "Medical insurance",
+      "offered": true,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X14",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X14",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X16",
+      "benefit": "SSF",
+      "offered": false,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X16",
+      "benefit": "Provident fund",
+      "offered": false,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X16",
+      "benefit": "Medical insurance",
+      "offered": false,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X16",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X16",
+      "benefit": "Internship",
+      "offered": true,
+      "reveal_order": 5
+    },
+    {
+      "company_id": "X17",
+      "benefit": "SSF",
+      "offered": true,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X17",
+      "benefit": "Provident fund",
+      "offered": true,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X17",
+      "benefit": "Medical insurance",
+      "offered": true,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X17",
+      "benefit": "Skill development",
+      "offered": true,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X17",
+      "benefit": "Internship",
+      "offered": false,
+      "reveal_order": 5
+    }
+  ],
+  "summary": [
+    {
+      "benefit": "SSF",
+      "reveal_order": 1,
+      "count": 3,
+      "pct_offering": 20
+    },
+    {
+      "benefit": "Provident fund",
+      "reveal_order": 2,
+      "count": 3,
+      "pct_offering": 20
+    },
+    {
+      "benefit": "Medical insurance",
+      "reveal_order": 3,
+      "count": 5,
+      "pct_offering": 33
+    },
+    {
+      "benefit": "Skill development",
+      "reveal_order": 4,
+      "count": 11,
+      "pct_offering": 73
+    },
+    {
+      "benefit": "Internship",
+      "reveal_order": 5,
+      "count": 13,
+      "pct_offering": 87
+    }
+  ]
+}

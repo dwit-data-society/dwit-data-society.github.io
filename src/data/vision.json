@@ -1,0 +1,74 @@
+[
+  {
+    "company_id": "X17",
+    "vision": "No. 1 bank in Nepal",
+    "total_employees": 3000,
+    "satisfaction": 6
+  },
+  {
+    "company_id": "X13",
+    "vision": "Value-based care",
+    "total_employees": 1200,
+    "satisfaction": 9
+  },
+  {
+    "company_id": "X4",
+    "vision": "One of the best IT companies",
+    "total_employees": 300,
+    "satisfaction": 9.5
+  },
+  {
+    "company_id": "X14",
+    "vision": "AI in the staffing industry",
+    "total_employees": 130,
+    "satisfaction": 9
+  },
+  {
+    "company_id": "X3",
+    "vision": "Best in the financial sector in Nepal",
+    "total_employees": 90,
+    "satisfaction": 8.5
+  },
+  {
+    "company_id": "X8",
+    "vision": "100-share target",
+    "total_employees": 70,
+    "satisfaction": 10
+  },
+  {
+    "company_id": "X12",
+    "vision": "A super app",
+    "total_employees": 67,
+    "satisfaction": 8
+  },
+  {
+    "company_id": "X2",
+    "vision": "Nepal's first billion-dollar company using AI",
+    "total_employees": 60,
+    "satisfaction": 10
+  },
+  {
+    "company_id": "X5",
+    "vision": "Every school in Nepal, then go international",
+    "total_employees": 60,
+    "satisfaction": 9
+  },
+  {
+    "company_id": "X9",
+    "vision": "Insurance company for the US market",
+    "total_employees": 40,
+    "satisfaction": 5
+  },
+  {
+    "company_id": "X10",
+    "vision": "Insurance company for the US market",
+    "total_employees": 40,
+    "satisfaction": 5
+  },
+  {
+    "company_id": "X11",
+    "vision": "Professional Registry Pool, International General Assembly",
+    "total_employees": 30,
+    "satisfaction": 10
+  }
+]

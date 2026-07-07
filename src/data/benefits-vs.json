@@ -1,0 +1,796 @@
+{
+  "meta": {
+    "generated_at": "2026-03-27T21:05:46",
+    "n_companies": 15,
+    "salary_unit": "NPR per month",
+    "satisfaction_scale": "0–10",
+    "tenure_unit": "years"
+  },
+  "analysis1_benefits_vs_satisfaction": {
+    "title": "Satisfaction vs. Number of Benefits Offered",
+    "description": "Each point is one company. A linear regression line shows the trend.",
+    "scatter": [
+      {
+        "company_id": "X11",
+        "benefits_count": 1,
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X9",
+        "benefits_count": 3,
+        "satisfaction": 5
+      },
+      {
+        "company_id": "X10",
+        "benefits_count": 3,
+        "satisfaction": 5
+      },
+      {
+        "company_id": "X4",
+        "benefits_count": 4,
+        "satisfaction": 9.5
+      },
+      {
+        "company_id": "X5",
+        "benefits_count": 4,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X7",
+        "benefits_count": 4,
+        "satisfaction": 7
+      },
+      {
+        "company_id": "X8",
+        "benefits_count": 4,
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X6",
+        "benefits_count": 5,
+        "satisfaction": 7
+      },
+      {
+        "company_id": "X14",
+        "benefits_count": 5,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X3",
+        "benefits_count": 6,
+        "satisfaction": 8.5
+      },
+      {
+        "company_id": "X16",
+        "benefits_count": 6,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X12",
+        "benefits_count": 7,
+        "satisfaction": 8
+      },
+      {
+        "company_id": "X13",
+        "benefits_count": 7,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X17",
+        "benefits_count": 8,
+        "satisfaction": 6
+      },
+      {
+        "company_id": "X2",
+        "benefits_count": 9,
+        "satisfaction": 10
+      }
+    ],
+    "avg_by_benefit_count": [
+      {
+        "benefits_count": 1,
+        "avg_satisfaction": 10,
+        "n_companies": 1
+      },
+      {
+        "benefits_count": 3,
+        "avg_satisfaction": 5,
+        "n_companies": 2
+      },
+      {
+        "benefits_count": 4,
+        "avg_satisfaction": 8.875,
+        "n_companies": 4
+      },
+      {
+        "benefits_count": 5,
+        "avg_satisfaction": 8,
+        "n_companies": 2
+      },
+      {
+        "benefits_count": 6,
+        "avg_satisfaction": 8.75,
+        "n_companies": 2
+      },
+      {
+        "benefits_count": 7,
+        "avg_satisfaction": 8.5,
+        "n_companies": 2
+      },
+      {
+        "benefits_count": 8,
+        "avg_satisfaction": 6,
+        "n_companies": 1
+      },
+      {
+        "benefits_count": 9,
+        "avg_satisfaction": 10,
+        "n_companies": 1
+      }
+    ],
+    "regression": {
+      "intercept": 7.661,
+      "slope": 0.0932,
+      "r_squared": 0.0129,
+      "line": [
+        {
+          "x": 1,
+          "y": 7.7542
+        },
+        {
+          "x": 9,
+          "y": 8.5
+        }
+      ]
+    }
+  },
+  "analysis2_work_arrangement_vs_satisfaction": {
+    "title": "Work Arrangement vs. Employee Satisfaction",
+    "description": "Summary statistics per work arrangement type, plus per-company points.",
+    "summary": [
+      {
+        "work_arrangement": "Hybrid",
+        "avg_satisfaction": 8.27,
+        "median_satisfaction": 9,
+        "min_satisfaction": 5,
+        "max_satisfaction": 10,
+        "n_companies": 11
+      },
+      {
+        "work_arrangement": "On-Site",
+        "avg_satisfaction": 7.75,
+        "median_satisfaction": 7.5,
+        "min_satisfaction": 7,
+        "max_satisfaction": 9,
+        "n_companies": 4
+      }
+    ],
+    "detail": [
+      {
+        "company_id": "X2",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X3",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 8.5
+      },
+      {
+        "company_id": "X4",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 9.5
+      },
+      {
+        "company_id": "X5",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X6",
+        "work_arrangement": "On-Site",
+        "satisfaction": 7
+      },
+      {
+        "company_id": "X7",
+        "work_arrangement": "On-Site",
+        "satisfaction": 7
+      },
+      {
+        "company_id": "X8",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X9",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 5
+      },
+      {
+        "company_id": "X10",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 5
+      },
+      {
+        "company_id": "X11",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X12",
+        "work_arrangement": "On-Site",
+        "satisfaction": 8
+      },
+      {
+        "company_id": "X13",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X14",
+        "work_arrangement": "On-Site",
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X16",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X17",
+        "work_arrangement": "Hybrid",
+        "satisfaction": 6
+      }
+    ]
+  },
+  "analysis3_tenure_proxy_vs_outcomes": {
+    "title": "Company Age Proxy (Longest-Serving Employee) vs. Salary, Benefits & Satisfaction",
+    "description": "longest_serving_employee_years is used as a proxy for company age/maturity. Includes scatter data for salary by level, benefits count, and satisfaction, each with a regression line.",
+    "scatter_salary": [
+      {
+        "company_id": "X2",
+        "tenure_proxy": 8,
+        "benefits_count": 9,
+        "satisfaction": 10,
+        "salary_level": "Entry Level",
+        "salary_npr": 25000
+      },
+      {
+        "company_id": "X2",
+        "tenure_proxy": 8,
+        "benefits_count": 9,
+        "satisfaction": 10,
+        "salary_level": "Mid Level",
+        "salary_npr": 80000
+      },
+      {
+        "company_id": "X2",
+        "tenure_proxy": 8,
+        "benefits_count": 9,
+        "satisfaction": 10,
+        "salary_level": "Senior Level",
+        "salary_npr": 300000
+      },
+      {
+        "company_id": "X2",
+        "tenure_proxy": 8,
+        "benefits_count": 9,
+        "satisfaction": 10,
+        "salary_level": "Senior Max",
+        "salary_npr": 400000
+      },
+      {
+        "company_id": "X4",
+        "tenure_proxy": 5,
+        "benefits_count": 4,
+        "satisfaction": 9.5,
+        "salary_level": "Entry Level",
+        "salary_npr": 38000
+      },
+      {
+        "company_id": "X4",
+        "tenure_proxy": 5,
+        "benefits_count": 4,
+        "satisfaction": 9.5,
+        "salary_level": "Mid Level",
+        "salary_npr": 90000
+      },
+      {
+        "company_id": "X4",
+        "tenure_proxy": 5,
+        "benefits_count": 4,
+        "satisfaction": 9.5,
+        "salary_level": "Senior Level",
+        "salary_npr": 90000
+      },
+      {
+        "company_id": "X4",
+        "tenure_proxy": 5,
+        "benefits_count": 4,
+        "satisfaction": 9.5,
+        "salary_level": "Senior Max",
+        "salary_npr": 500000
+      },
+      {
+        "company_id": "X5",
+        "tenure_proxy": 9,
+        "benefits_count": 4,
+        "satisfaction": 9,
+        "salary_level": "Entry Level",
+        "salary_npr": 19000
+      },
+      {
+        "company_id": "X5",
+        "tenure_proxy": 9,
+        "benefits_count": 4,
+        "satisfaction": 9,
+        "salary_level": "Mid Level",
+        "salary_npr": 30000
+      },
+      {
+        "company_id": "X5",
+        "tenure_proxy": 9,
+        "benefits_count": 4,
+        "satisfaction": 9,
+        "salary_level": "Senior Max",
+        "salary_npr": 100000
+      },
+      {
+        "company_id": "X6",
+        "tenure_proxy": 18,
+        "benefits_count": 5,
+        "satisfaction": 7,
+        "salary_level": "Entry Level",
+        "salary_npr": 35000
+      },
+      {
+        "company_id": "X6",
+        "tenure_proxy": 18,
+        "benefits_count": 5,
+        "satisfaction": 7,
+        "salary_level": "Mid Level",
+        "salary_npr": 100000
+      },
+      {
+        "company_id": "X6",
+        "tenure_proxy": 18,
+        "benefits_count": 5,
+        "satisfaction": 7,
+        "salary_level": "Senior Level",
+        "salary_npr": 400000
+      },
+      {
+        "company_id": "X9",
+        "tenure_proxy": 11,
+        "benefits_count": 3,
+        "satisfaction": 5,
+        "salary_level": "Entry Level",
+        "salary_npr": 50000
+      },
+      {
+        "company_id": "X9",
+        "tenure_proxy": 11,
+        "benefits_count": 3,
+        "satisfaction": 5,
+        "salary_level": "Mid Level",
+        "salary_npr": 125000
+      },
+      {
+        "company_id": "X9",
+        "tenure_proxy": 11,
+        "benefits_count": 3,
+        "satisfaction": 5,
+        "salary_level": "Senior Level",
+        "salary_npr": 250000
+      },
+      {
+        "company_id": "X10",
+        "tenure_proxy": 11,
+        "benefits_count": 3,
+        "satisfaction": 5,
+        "salary_level": "Entry Level",
+        "salary_npr": 50000
+      },
+      {
+        "company_id": "X10",
+        "tenure_proxy": 11,
+        "benefits_count": 3,
+        "satisfaction": 5,
+        "salary_level": "Mid Level",
+        "salary_npr": 125000
+      },
+      {
+        "company_id": "X10",
+        "tenure_proxy": 11,
+        "benefits_count": 3,
+        "satisfaction": 5,
+        "salary_level": "Senior Level",
+        "salary_npr": 250000
+      },
+      {
+        "company_id": "X12",
+        "tenure_proxy": 12,
+        "benefits_count": 7,
+        "satisfaction": 8,
+        "salary_level": "Entry Level",
+        "salary_npr": 25000
+      },
+      {
+        "company_id": "X12",
+        "tenure_proxy": 12,
+        "benefits_count": 7,
+        "satisfaction": 8,
+        "salary_level": "Mid Level",
+        "salary_npr": 80000
+      },
+      {
+        "company_id": "X12",
+        "tenure_proxy": 12,
+        "benefits_count": 7,
+        "satisfaction": 8,
+        "salary_level": "Senior Level",
+        "salary_npr": 100000
+      },
+      {
+        "company_id": "X12",
+        "tenure_proxy": 12,
+        "benefits_count": 7,
+        "satisfaction": 8,
+        "salary_level": "Senior Max",
+        "salary_npr": 150000
+      },
+      {
+        "company_id": "X13",
+        "tenure_proxy": 17,
+        "benefits_count": 7,
+        "satisfaction": 9,
+        "salary_level": "Entry Level",
+        "salary_npr": 30000
+      },
+      {
+        "company_id": "X13",
+        "tenure_proxy": 17,
+        "benefits_count": 7,
+        "satisfaction": 9,
+        "salary_level": "Mid Level",
+        "salary_npr": 110000
+      },
+      {
+        "company_id": "X13",
+        "tenure_proxy": 17,
+        "benefits_count": 7,
+        "satisfaction": 9,
+        "salary_level": "Senior Level",
+        "salary_npr": 250000
+      },
+      {
+        "company_id": "X13",
+        "tenure_proxy": 17,
+        "benefits_count": 7,
+        "satisfaction": 9,
+        "salary_level": "Senior Max",
+        "salary_npr": 200000
+      },
+      {
+        "company_id": "X14",
+        "tenure_proxy": 10,
+        "benefits_count": 5,
+        "satisfaction": 9,
+        "salary_level": "Entry Level",
+        "salary_npr": 25000
+      },
+      {
+        "company_id": "X14",
+        "tenure_proxy": 10,
+        "benefits_count": 5,
+        "satisfaction": 9,
+        "salary_level": "Mid Level",
+        "salary_npr": 65000
+      },
+      {
+        "company_id": "X14",
+        "tenure_proxy": 10,
+        "benefits_count": 5,
+        "satisfaction": 9,
+        "salary_level": "Senior Level",
+        "salary_npr": 90000
+      },
+      {
+        "company_id": "X14",
+        "tenure_proxy": 10,
+        "benefits_count": 5,
+        "satisfaction": 9,
+        "salary_level": "Senior Max",
+        "salary_npr": 150000
+      },
+      {
+        "company_id": "X16",
+        "tenure_proxy": 5,
+        "benefits_count": 6,
+        "satisfaction": 9,
+        "salary_level": "Entry Level",
+        "salary_npr": 25000
+      },
+      {
+        "company_id": "X16",
+        "tenure_proxy": 5,
+        "benefits_count": 6,
+        "satisfaction": 9,
+        "salary_level": "Mid Level",
+        "salary_npr": 40000
+      },
+      {
+        "company_id": "X16",
+        "tenure_proxy": 5,
+        "benefits_count": 6,
+        "satisfaction": 9,
+        "salary_level": "Senior Level",
+        "salary_npr": 250000
+      },
+      {
+        "company_id": "X16",
+        "tenure_proxy": 5,
+        "benefits_count": 6,
+        "satisfaction": 9,
+        "salary_level": "Senior Max",
+        "salary_npr": 200000
+      },
+      {
+        "company_id": "X17",
+        "tenure_proxy": 25,
+        "benefits_count": 8,
+        "satisfaction": 6,
+        "salary_level": "Entry Level",
+        "salary_npr": 25000
+      },
+      {
+        "company_id": "X17",
+        "tenure_proxy": 25,
+        "benefits_count": 8,
+        "satisfaction": 6,
+        "salary_level": "Mid Level",
+        "salary_npr": 50000
+      },
+      {
+        "company_id": "X17",
+        "tenure_proxy": 25,
+        "benefits_count": 8,
+        "satisfaction": 6,
+        "salary_level": "Senior Level",
+        "salary_npr": 250000
+      },
+      {
+        "company_id": "X17",
+        "tenure_proxy": 25,
+        "benefits_count": 8,
+        "satisfaction": 6,
+        "salary_level": "Senior Max",
+        "salary_npr": 200000
+      }
+    ],
+    "scatter_benefits": [
+      {
+        "company_id": "X2",
+        "tenure_proxy": 8,
+        "benefits_count": 9
+      },
+      {
+        "company_id": "X3",
+        "tenure_proxy": 8,
+        "benefits_count": 6
+      },
+      {
+        "company_id": "X4",
+        "tenure_proxy": 5,
+        "benefits_count": 4
+      },
+      {
+        "company_id": "X5",
+        "tenure_proxy": 9,
+        "benefits_count": 4
+      },
+      {
+        "company_id": "X6",
+        "tenure_proxy": 18,
+        "benefits_count": 5
+      },
+      {
+        "company_id": "X7",
+        "tenure_proxy": 10,
+        "benefits_count": 4
+      },
+      {
+        "company_id": "X8",
+        "tenure_proxy": 5,
+        "benefits_count": 4
+      },
+      {
+        "company_id": "X9",
+        "tenure_proxy": 11,
+        "benefits_count": 3
+      },
+      {
+        "company_id": "X10",
+        "tenure_proxy": 11,
+        "benefits_count": 3
+      },
+      {
+        "company_id": "X11",
+        "tenure_proxy": 7,
+        "benefits_count": 1
+      },
+      {
+        "company_id": "X12",
+        "tenure_proxy": 12,
+        "benefits_count": 7
+      },
+      {
+        "company_id": "X13",
+        "tenure_proxy": 17,
+        "benefits_count": 7
+      },
+      {
+        "company_id": "X14",
+        "tenure_proxy": 10,
+        "benefits_count": 5
+      },
+      {
+        "company_id": "X16",
+        "tenure_proxy": 5,
+        "benefits_count": 6
+      },
+      {
+        "company_id": "X17",
+        "tenure_proxy": 25,
+        "benefits_count": 8
+      }
+    ],
+    "scatter_satisfaction": [
+      {
+        "company_id": "X2",
+        "tenure_proxy": 8,
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X3",
+        "tenure_proxy": 8,
+        "satisfaction": 8.5
+      },
+      {
+        "company_id": "X4",
+        "tenure_proxy": 5,
+        "satisfaction": 9.5
+      },
+      {
+        "company_id": "X5",
+        "tenure_proxy": 9,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X6",
+        "tenure_proxy": 18,
+        "satisfaction": 7
+      },
+      {
+        "company_id": "X7",
+        "tenure_proxy": 10,
+        "satisfaction": 7
+      },
+      {
+        "company_id": "X8",
+        "tenure_proxy": 5,
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X9",
+        "tenure_proxy": 11,
+        "satisfaction": 5
+      },
+      {
+        "company_id": "X10",
+        "tenure_proxy": 11,
+        "satisfaction": 5
+      },
+      {
+        "company_id": "X11",
+        "tenure_proxy": 7,
+        "satisfaction": 10
+      },
+      {
+        "company_id": "X12",
+        "tenure_proxy": 12,
+        "satisfaction": 8
+      },
+      {
+        "company_id": "X13",
+        "tenure_proxy": 17,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X14",
+        "tenure_proxy": 10,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X16",
+        "tenure_proxy": 5,
+        "satisfaction": 9
+      },
+      {
+        "company_id": "X17",
+        "tenure_proxy": 25,
+        "satisfaction": 6
+      }
+    ],
+    "correlations": [
+      {
+        "variable": "salary_entry",
+        "correlation": -0.05
+      },
+      {
+        "variable": "salary_mid",
+        "correlation": 0.093
+      },
+      {
+        "variable": "salary_senior",
+        "correlation": 0.388
+      },
+      {
+        "variable": "salary_max",
+        "correlation": -0.355
+      },
+      {
+        "variable": "benefits_count",
+        "correlation": 0.403
+      },
+      {
+        "variable": "satisfaction",
+        "correlation": -0.542
+      }
+    ],
+    "regression_by_salary_level": [
+      {
+        "salary_level": "Entry Level",
+        "intercept": 32589.1591,
+        "slope": -87.6393,
+        "r_squared": 0.0025,
+        "x_min": 5,
+        "x_max": 25
+      },
+      {
+        "salary_level": "Mid Level",
+        "intercept": 75345.7447,
+        "slope": 505.3191,
+        "r_squared": 0.0086,
+        "x_min": 5,
+        "x_max": 25
+      },
+      {
+        "salary_level": "Senior Level",
+        "intercept": 146435.9268,
+        "slope": 6275.7437,
+        "r_squared": 0.1506,
+        "x_min": 5,
+        "x_max": 25
+      },
+      {
+        "salary_level": "Senior Max",
+        "intercept": 320251.6713,
+        "slope": -7274.8722,
+        "r_squared": 0.1258,
+        "x_min": 5,
+        "x_max": 25
+      }
+    ],
+    "regression_benefits": {
+      "intercept": 3.4085,
+      "slope": 0.1545,
+      "r_squared": 0.1627
+    },
+    "regression_satisfaction": {
+      "intercept": 9.9592,
+      "slope": -0.1701,
+      "r_squared": 0.2939
+    }
+  }
+}

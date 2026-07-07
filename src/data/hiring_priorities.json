@@ -1,0 +1,436 @@
+{
+  "dots": [
+    {
+      "company_id": "X10",
+      "criterion": "Passion",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X11",
+      "criterion": "Passion",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X12",
+      "criterion": "Passion",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X13",
+      "criterion": "Passion",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X14",
+      "criterion": "Passion",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X16",
+      "criterion": "Passion",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X17",
+      "criterion": "Passion",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X2",
+      "criterion": "Passion",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X3",
+      "criterion": "Passion",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X4",
+      "criterion": "Passion",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X5",
+      "criterion": "Passion",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X6",
+      "criterion": "Passion",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X7",
+      "criterion": "Passion",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X8",
+      "criterion": "Passion",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X9",
+      "criterion": "Passion",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 1
+    },
+    {
+      "company_id": "X11",
+      "criterion": "Technical",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X12",
+      "criterion": "Technical",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X13",
+      "criterion": "Technical",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X14",
+      "criterion": "Technical",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X16",
+      "criterion": "Technical",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X17",
+      "criterion": "Technical",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X2",
+      "criterion": "Technical",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X3",
+      "criterion": "Technical",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X4",
+      "criterion": "Technical",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X5",
+      "criterion": "Technical",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X6",
+      "criterion": "Technical",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X7",
+      "criterion": "Technical",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X8",
+      "criterion": "Technical",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X9",
+      "criterion": "Technical",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 2
+    },
+    {
+      "company_id": "X11",
+      "criterion": "Soft skills",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X12",
+      "criterion": "Soft skills",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X13",
+      "criterion": "Soft skills",
+      "raw_rank": 5,
+      "display_score": 1,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X14",
+      "criterion": "Soft skills",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X16",
+      "criterion": "Soft skills",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X17",
+      "criterion": "Soft skills",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X2",
+      "criterion": "Soft skills",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X3",
+      "criterion": "Soft skills",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X4",
+      "criterion": "Soft skills",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X5",
+      "criterion": "Soft skills",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X6",
+      "criterion": "Soft skills",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X7",
+      "criterion": "Soft skills",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X8",
+      "criterion": "Soft skills",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X9",
+      "criterion": "Soft skills",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 3
+    },
+    {
+      "company_id": "X10",
+      "criterion": "Experience",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X11",
+      "criterion": "Experience",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X12",
+      "criterion": "Experience",
+      "raw_rank": 1,
+      "display_score": 5,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X13",
+      "criterion": "Experience",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X14",
+      "criterion": "Experience",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X16",
+      "criterion": "Experience",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X17",
+      "criterion": "Experience",
+      "raw_rank": 3,
+      "display_score": 3,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X2",
+      "criterion": "Experience",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X3",
+      "criterion": "Experience",
+      "raw_rank": 1,
+      "display_score": 5,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X4",
+      "criterion": "Experience",
+      "raw_rank": 1,
+      "display_score": 5,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X5",
+      "criterion": "Experience",
+      "raw_rank": 1,
+      "display_score": 5,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X6",
+      "criterion": "Experience",
+      "raw_rank": 1,
+      "display_score": 5,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X7",
+      "criterion": "Experience",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X8",
+      "criterion": "Experience",
+      "raw_rank": 4,
+      "display_score": 2,
+      "reveal_order": 4
+    },
+    {
+      "company_id": "X9",
+      "criterion": "Experience",
+      "raw_rank": 2,
+      "display_score": 4,
+      "reveal_order": 4
+    }
+  ],
+  "summary": [
+    {
+      "criterion": "Passion",
+      "avg_display_score": 2.27,
+      "avg_raw_rank": 3.73,
+      "reveal_order": 1
+    },
+    {
+      "criterion": "Technical",
+      "avg_display_score": 2.71,
+      "avg_raw_rank": 3.29,
+      "reveal_order": 2
+    },
+    {
+      "criterion": "Soft skills",
+      "avg_display_score": 2.86,
+      "avg_raw_rank": 3.14,
+      "reveal_order": 3
+    },
+    {
+      "criterion": "Experience",
+      "avg_display_score": 3.87,
+      "avg_raw_rank": 2.13,
+      "reveal_order": 4
+    }
+  ]
+}

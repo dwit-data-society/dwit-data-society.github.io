@@ -1,0 +1,1822 @@
+/* =============================================
+   JOB FAIR SCROLLYTELLING — PRINT-INSPIRED DESIGN
+   Warm paper aesthetic · Reuters-style restraint
+   ============================================= */
+
+/* ─── DESIGN TOKENS ─────────────────────────────────── */
+
+:root {
+  /* Page */
+  --color-bg: #f2ede3;
+  --color-bg-texture: #e8e0d0;
+  --color-ink: #1a1814;
+  --color-ink-muted: #6a6560;
+  --color-ink-faint: #bab5a8;
+
+  /* Accents */
+  --color-accent: #b85c2a;
+  --color-accent-warm: #d4924a;
+  --color-accent-light: #f0d4b8;
+
+  /* Chart fills */
+  --color-below: #c8956a;
+  --color-above: #7a9e87;
+  --color-nepal: #7a9e87;
+  --color-abroad: #c8956a;
+  --color-neutral: #bab5a8;
+  --color-male: #7a9e87;
+  --color-male-stroke: #4a7458;
+  --color-female: #c8956a;
+  --color-female-stroke: #8a5a30;
+
+  /* Tooltip */
+  --color-tooltip-bg: #faf6ee;
+
+  /* Transitions */
+  --transition-standard: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Typography scale */
+  --text-xs: 0.72rem;
+  --text-sm: 0.84rem;
+  --text-base: 1.075rem;
+  --text-lg: 1.25rem;
+  --text-xl: clamp(1.7rem, 2.8vw, 2.35rem);
+  --text-2xl: clamp(2.1rem, 4.4vw, 3.4rem);
+
+  /* Reading widths — comfortable measure for long-form prose */
+  --measure: 65ch;
+  --measure-wide: 72ch;
+
+  /* Body weight — heavier than the default system thin so strokes stay
+     clearly present on all displays, without reading as bold. */
+  --weight-body: 450;
+  --weight-medium: 560;
+  --weight-emphasis: 600;
+
+  --leading-tight: 1.18;
+  --leading-snug: 1.35;
+  --leading-normal: 1.55;
+  --leading-loose: 1.62;
+
+  --tracking-tight: -0.015em;
+  --tracking-normal: 0.00em;
+  --tracking-wide: 0.06em;
+  --tracking-wider: 0.16em;
+
+  /* Spacing (8px base) */
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+  --space-7: 96px;
+  --space-8: 128px;
+}
+
+/* ─── RESET ─────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 17px;
+}
+
+/* ─── BASE ──────────────────────────────────────────── */
+
+body {
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
+  font-weight: var(--weight-body);
+  background-color: var(--color-bg);
+  color: var(--color-ink);
+  line-height: var(--leading-normal);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Paper texture overlay — canvas-generated noise applied via JS */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  opacity: 0.28;
+  /* background-image is set by JS (paperTexture generator) */
+  background-repeat: repeat;
+  mix-blend-mode: multiply;
+}
+
+/* Vignette — radial gradient, lighter center, darker edges */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%,
+      transparent 50%,
+      rgba(0, 0, 0, 0.07) 100%);
+}
+
+/* ─── TYPOGRAPHY RULES ──────────────────────────────── */
+
+/* Playfair Display: page title and section titles ONLY */
+.landing__title,
+.hiring-title,
+.timeline-title,
+.salary-title,
+.challenges-title,
+.gender-title,
+.workmode-title,
+.maturity-title,
+.training-title,
+.conclusion-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+}
+
+/* Emphasis in prose comes from colour and hierarchy, not heavy weight.
+   We never let <strong>/<em> introduce bold or italic into body copy. */
+p strong,
+p b {
+  font-weight: var(--weight-emphasis);
+  color: var(--color-ink);
+}
+
+p em,
+p i {
+  font-style: normal;
+  color: var(--color-ink);
+}
+
+/* ── Shared editorial elements ── */
+
+/* Eyebrow / kicker — small uppercase section label, sets hierarchy
+   above each title without competing with it. */
+.step__eyebrow,
+.landing__kicker {
+  font-size: var(--text-xs);
+  font-weight: var(--weight-emphasis);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+}
+
+/* Section ledes — the framing paragraph under each title. One rule keeps
+   measure, weight, and rhythm consistent across every analytical section. */
+.hiring-subtitle,
+.stackbar-subtitle,
+.salary-subtitle,
+.challenges-subtitle,
+.gender-subtitle,
+.workmode-subtitle,
+.maturity-subtitle,
+.training-subtitle,
+.timeline-subtitle {
+  font-weight: var(--weight-body);
+  max-width: var(--measure);
+}
+
+/* Source / caption notes — quiet, set apart by size and colour, not italics. */
+.stackbar-source,
+.salary-source,
+.challenges-source,
+.gender-source,
+.maturity-source,
+.training-footnote,
+.timeline-source {
+  font-weight: var(--weight-body);
+  letter-spacing: var(--tracking-wide);
+}
+
+/* All other text inherits the sans-serif — never override */
+
+/* ─── SVG CHART ELEMENT DEFAULTS ────────────────────── */
+
+/* Bars and rects: subtle rounded joins, stroke = fill darkened 20% */
+.emp-rect {
+  stroke-linejoin: round;
+  stroke-width: 1;
+}
+
+/* ─── LANDING SECTION ───────────────────────────────── */
+
+.landing {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing__papers {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.landing__paper {
+  position: absolute;
+  opacity: 0;
+  will-change: transform, opacity;
+  filter: drop-shadow(1px 2px 4px rgba(26, 24, 20, 0.06));
+}
+
+.landing__paper svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.landing__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 var(--space-3);
+  max-width: 720px;
+}
+
+.landing__kicker {
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-3);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.landing__kicker.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing__title {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-3);
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.landing__title.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing__subtitle {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-normal);
+  color: var(--color-ink-muted);
+  max-width: 46ch;
+  margin: 0 auto var(--space-5);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.landing__subtitle.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing__scroll {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.landing__scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.landing__scroll-text {
+  font-size: var(--text-xs);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-faint);
+}
+
+.landing__scroll-line {
+  width: 1px;
+  height: 36px;
+  background: var(--color-ink-faint);
+  position: relative;
+  margin-top: var(--space-1);
+  overflow: hidden;
+  opacity: 0.6;
+}
+
+.landing__scroll-dot {
+  width: 3px;
+  height: 6px;
+  background: var(--color-ink-muted);
+  border-radius: 1px;
+  position: absolute;
+  left: -1px;
+  animation: scrollTravel 2.8s cubic-bezier(0.45, 0, 0.55, 1) infinite;
+}
+
+@keyframes scrollTravel {
+
+  0% {
+    top: -6px;
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  80% {
+    opacity: 1;
+  }
+
+  100% {
+    top: 36px;
+    opacity: 0;
+  }
+}
+
+/* ─── SCROLLYTELLING SECTION ────────────────────────── */
+
+.scrolly {
+  position: relative;
+  display: block;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Sticky chart — constrained to left ~68%, right 33% reserved for text */
+.scrolly__figure {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  z-index: 1;
+  padding: var(--space-5) 0;
+  padding-left: max(var(--space-4), 4vw);
+  padding-right: 33%;
+}
+
+.scrolly__figure svg,
+.scrolly__figure .viz-chart,
+.scrolly__figure .viz-chart svg {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+}
+
+.viz-chart {
+  flex: 1 1 auto;
+  min-height: 0;
+  width: 100%;
+}
+
+.viz-error {
+  font-size: var(--text-sm);
+  color: var(--color-abroad);
+  padding: var(--space-2);
+}
+
+/* Legend */
+.legend {
+  display: flex;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+  opacity: 0;
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.legend.visible {
+  opacity: 1;
+}
+
+.legend__item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-ink-muted);
+}
+
+.legend__swatch {
+  width: 10px;
+  height: 10px;
+  border-radius: 1px;
+}
+
+.legend__swatch--nepal {
+  background-color: var(--color-nepal);
+}
+
+.legend__swatch--abroad {
+  background-color: var(--color-abroad);
+}
+
+/* ─── STEP PANELS ───────────────────────────────────── */
+
+/* Narrative column — right 30% of viewport */
+.scrolly__article {
+  position: relative;
+  z-index: 2;
+  padding-top: 18vh;
+  padding-bottom: 50vh;
+  pointer-events: none;
+}
+
+/* Each step: full-width flex container, content pushed right */
+.step {
+  min-height: 70vh;
+  margin-bottom: 30vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.step:last-child {
+  margin-bottom: 0;
+}
+
+/* Step content — fixed width in the right column */
+.step__content {
+  width: 28%;
+  max-width: 360px;
+  min-width: 220px;
+  pointer-events: auto;
+  position: relative;
+}
+
+/* SVG torn-paper background behind text */
+.step__paper-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(1px 2px 6px rgba(26, 24, 20, 0.10)) drop-shadow(0 1px 2px rgba(26, 24, 20, 0.06));
+}
+
+.step__text-wrap {
+  position: relative;
+  z-index: 1;
+  padding: var(--space-4) max(var(--space-3), 3vw) var(--space-4) var(--space-3);
+}
+
+/* Step eyebrow — dim until the step is active, then accent */
+.step__eyebrow {
+  color: var(--color-ink-faint);
+  margin-bottom: var(--space-2);
+  transition: color var(--transition-standard);
+}
+
+.step.is-active .step__eyebrow {
+  color: var(--color-accent);
+}
+
+/* Inactive step text — faded; the active step is the one in focus */
+.step__text {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-normal);
+  color: var(--color-ink-faint);
+  transition: color var(--transition-standard);
+  max-width: 34ch;
+}
+
+/* Active step — emphasis through colour, not weight */
+.step.is-active .step__text {
+  color: var(--color-ink);
+}
+
+/* Location highlights — colour only, never bold */
+.step__text .highlight--nepal {
+  color: var(--color-nepal);
+  font-weight: var(--weight-body);
+}
+
+.step__text .highlight--abroad {
+  color: var(--color-abroad);
+  font-weight: var(--weight-body);
+}
+
+/* ─── HIRING PRIORITIES — INTERACTIVE SECTION ───────── */
+
+.hiring-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.hiring-inner {
+  width: 100%;
+  max-width: 1000px;
+  text-align: left;
+}
+
+.hiring-title {
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-2);
+}
+
+.hiring-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-loose);
+  max-width: var(--measure);
+}
+
+/* Two-column quiz layout */
+.hiring-quiz__columns {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  gap: var(--space-5);
+}
+
+/* Right: arrow + instruction */
+.hiring-quiz__prompt {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  padding-top: var(--space-3);
+  flex-shrink: 0;
+  width: 140px;
+  position: sticky;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.hiring-quiz__arrow {
+  width: 120px;
+  height: auto;
+  animation: arrowBob 2.4s ease-in-out infinite;
+  transition: opacity 0.2s ease;
+  object-fit: contain;
+}
+
+/* Hide arrow when any card is being dragged */
+.rank-list.has-dragging .hiring-quiz__arrow,
+.hiring-quiz__columns:has(.rank-item.dragging) .hiring-quiz__arrow {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes arrowBob {
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(8px);
+  }
+}
+
+.hiring-quiz__instruction {
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-ink-muted);
+  text-align: center;
+  line-height: var(--leading-normal);
+  letter-spacing: var(--tracking-wide);
+  font-style: normal;
+}
+
+/* Right: cards column */
+.hiring-quiz__cards {
+  flex: 1;
+  max-width: min(420px, 90vw);
+}
+
+/* Rank list (draggable cards) */
+.rank-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin-bottom: var(--space-3);
+  user-select: none;
+}
+
+.rank-item {
+  padding: var(--space-2) var(--space-2);
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-ink);
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  position: relative;
+  /* Torn-paper card styling */
+  background: #faf6ee;
+  border: none;
+  border-radius: 0;
+  /* SVG background is injected by JS; this is the fallback */
+  overflow: visible;
+}
+
+.rank-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(26, 24, 20, 0.08);
+}
+
+.rank-item:active {
+  cursor: grabbing;
+  transform: scale(1.02);
+}
+
+.rank-item.dragging {
+  opacity: 0.4;
+}
+
+/* Insertion placeholder — shows exactly where the dragged card will land.
+   It animates its height open so the gap clearly tracks the cursor. */
+.rank-placeholder {
+  border: 1.5px dashed var(--color-accent);
+  border-radius: 3px;
+  background: var(--color-accent-light);
+  opacity: 0.55;
+  box-sizing: border-box;
+  animation: placeholderIn 0.18s ease;
+}
+
+@keyframes placeholderIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0.7);
+  }
+
+  to {
+    opacity: 0.55;
+    transform: scaleY(1);
+  }
+}
+
+.rank-item__number {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  min-width: var(--space-3);
+  text-align: center;
+}
+
+.rank-item__label {
+  flex: 1;
+  text-align: left;
+}
+
+.rank-item__handle {
+  color: var(--color-ink-faint);
+  font-size: var(--text-sm);
+  letter-spacing: 2px;
+}
+
+/* Torn-paper SVG behind each rank-item */
+.rank-item__paper-svg {
+  position: absolute;
+  inset: -3px;
+  width: calc(100% + 6px);
+  height: calc(100% + 6px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Result colors on rank items after submission */
+.rank-item.correct {
+  color: var(--color-nepal);
+}
+
+.rank-item.correct .rank-item__number {
+  color: var(--color-nepal);
+}
+
+.rank-item.incorrect {
+  color: var(--color-abroad);
+}
+
+.rank-item.incorrect .rank-item__number {
+  color: var(--color-abroad);
+}
+
+/* Submit button */
+.submit-btn {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--color-ink);
+  background: var(--color-bg);
+  border: 1px solid var(--color-ink);
+  padding: var(--space-1) var(--space-4);
+  cursor: pointer;
+  transition: background var(--transition-standard), color var(--transition-standard);
+  border-radius: 2px;
+}
+
+.submit-btn:hover {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+/* ─── STACKED BAR CHART (HIRING PRIORITIES) ─────────── */
+
+.stackbar-wrap {
+  text-align: left;
+}
+
+.stackbar-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-loose);
+  max-width: var(--measure);
+}
+
+.stackbar-source {
+  font-size: var(--text-xs);
+  font-style: normal;
+  color: var(--color-ink);
+  margin-top: var(--space-2);
+  text-align: left;
+}
+
+#stackbar-chart {
+  width: 100%;
+  overflow: visible;
+}
+
+/* SVG text inside stacked bar chart */
+.stackbar-criterion {
+  font-size: 13px;
+  font-weight: 600;
+  fill: var(--color-ink);
+}
+
+.stackbar-rank-label {
+  font-size: 10px;
+  font-weight: 600;
+  fill: #fff;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.stackbar-count-label {
+  font-size: 9px;
+  font-weight: 400;
+  fill: rgba(255, 255, 255, 0.85);
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.stackbar-legend-text {
+  font-size: var(--text-xs);
+  fill: var(--color-ink-muted);
+  font-weight: 400;
+}
+
+.stackbar-legend-label {
+  font-size: var(--text-xs);
+  fill: var(--color-ink);
+  font-weight: 600;
+}
+
+/* Crayon-styled bar segments */
+.stackbar-segment {
+  stroke-width: 2;
+  stroke-opacity: 0.7;
+  paint-order: stroke fill;
+}
+
+/* Responsive override */
+@media (max-width: 680px) {
+  .hiring-quiz__columns {
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .hiring-quiz__prompt {
+    flex-direction: row;
+    width: auto;
+    padding-top: 0;
+    position: static;
+    transform: none;
+  }
+
+  .hiring-quiz__arrow {
+    width: 60px;
+    transform: rotate(90deg);
+  }
+
+  .hiring-quiz__cards {
+    max-width: 100%;
+  }
+}
+
+/* ─── TIME-TO-SALARY MILESTONE ──────────────────────── */
+
+.timeline-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.timeline-inner {
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+}
+
+.timeline-title {
+  font-size: var(--text-xl);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-2);
+}
+
+.timeline-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-loose);
+  max-width: var(--measure);
+}
+
+.timeline-controls {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.timeline-slider-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-1);
+  width: 100%;
+  max-width: 400px;
+}
+
+.timeline-slider-group label {
+  font-size: var(--text-base);
+  font-weight: 400;
+  color: var(--color-ink);
+}
+
+#salary-output {
+  color: var(--color-accent);
+  font-weight: 700;
+}
+
+/* Range slider */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: var(--color-ink-faint);
+  border-radius: 2px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -7px;
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 1px 3px rgba(26, 24, 20, 0.15);
+  transition: transform 0.1s ease;
+}
+
+input[type=range]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Firefox range */
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: var(--color-ink-faint);
+  border-radius: 2px;
+  border: none;
+}
+
+input[type=range]::-moz-range-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  cursor: pointer;
+  border: 2px solid var(--color-bg);
+  box-shadow: 0 1px 3px rgba(26, 24, 20, 0.15);
+}
+
+.timeline-toggle-group {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--color-ink-faint);
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.toggle-btn {
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-ink-muted);
+  background: transparent;
+  border: none;
+  padding: var(--space-1) var(--space-2);
+  cursor: pointer;
+  transition: background var(--transition-standard), color var(--transition-standard);
+  letter-spacing: var(--tracking-wide);
+}
+
+.toggle-btn:hover {
+  background: var(--color-bg-texture);
+}
+
+.toggle-btn.active {
+  background: var(--color-ink);
+  color: var(--color-bg);
+}
+
+.timeline-wrap {
+  text-align: left;
+  position: relative;
+}
+
+#salary-timeline {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.timeline-source {
+  font-size: var(--text-xs);
+  font-style: normal;
+  color: var(--color-ink-faint);
+  margin-top: var(--space-3);
+  text-align: left;
+}
+
+/* D3 timeline elements */
+.timeline-axis-label {
+  font-size: 11px;
+  fill: var(--color-ink-muted);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.timeline-axis-tick {
+  font-size: 10px;
+  fill: var(--color-ink-muted);
+}
+
+.timeline-line-active {
+  fill: none;
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.timeline-line-inactive {
+  fill: none;
+  stroke: var(--color-ink-faint);
+  stroke-width: 1.5;
+  stroke-opacity: 0.5;
+  stroke-dasharray: 4 4;
+}
+
+.timeline-target-line {
+  fill: none;
+  stroke: var(--color-ink-faint);
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.timeline-marker-line {
+  fill: none;
+  stroke: var(--color-ink);
+  stroke-width: 1;
+  stroke-dasharray: 2 2;
+}
+
+.timeline-marker-circle {
+  r: 5;
+  stroke: var(--color-bg);
+  stroke-width: 2;
+}
+
+.timeline-marker-text {
+  font-size: 12px;
+  font-weight: 700;
+  fill: var(--color-ink);
+  paint-order: stroke;
+  stroke: var(--color-bg);
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* ─── SVG TEXT DEFAULTS ─────────────────────────────── */
+
+.company-count {
+  font-size: 9px;
+  font-weight: 400;
+  fill: var(--color-ink-muted);
+  text-anchor: middle;
+}
+
+/* D3 axis defaults — override generated styles */
+.domain {
+  stroke: var(--color-ink-faint);
+  stroke-width: 1;
+}
+
+.tick line {
+  stroke: var(--color-ink-faint);
+  stroke-width: 0.5;
+}
+
+.tick text {
+  font-size: var(--text-xs);
+  fill: var(--color-ink-muted);
+}
+
+/* ─── TOOLTIPS ──────────────────────────────────────── */
+
+.tooltip {
+  position: absolute;
+  background: var(--color-tooltip-bg);
+  border: 1px solid var(--color-ink-faint);
+  box-shadow:
+    0 2px 8px rgba(26, 24, 20, 0.08),
+    0 8px 24px rgba(26, 24, 20, 0.06);
+  border-radius: 3px;
+  padding: var(--space-2) var(--space-3);
+  max-width: 220px;
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  pointer-events: none;
+  z-index: 100;
+}
+
+/* ─── FOOTER ────────────────────────────────────────── */
+
+.footer {
+  padding: var(--space-7) max(var(--space-5), 8vw);
+  color: var(--color-ink-faint);
+  font-size: var(--text-xs);
+  font-style: normal;
+  max-width: 1100px;
+  margin: 0 auto;
+  line-height: var(--leading-normal);
+}
+
+.footer p {
+  margin-bottom: var(--space-1);
+}
+
+/* ─── SALARY LADDER — SLOPE CHART ───────────────────── */
+
+.salary-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.salary-inner {
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+}
+
+.salary-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.salary-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-loose);
+  max-width: var(--measure);
+}
+
+.salary-wrap {
+  text-align: left;
+  position: relative;
+  width: 100%;
+}
+
+#salary-line {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 900 / 500;
+  overflow: visible;
+}
+
+.salary-source {
+  font-size: var(--text-xs);
+  font-style: normal;
+  color: var(--color-ink-faint);
+  margin-top: var(--space-3);
+  text-align: left;
+}
+
+/* ─── CHALLENGES — BUBBLE CHART ─────────────────────── */
+
+.challenges-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.challenges-inner {
+  width: 100%;
+  max-width: 900px;
+  text-align: left;
+}
+
+.challenges-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.challenges-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-loose);
+  max-width: var(--measure);
+}
+
+.challenges-wrap {
+  text-align: center;
+  position: relative;
+}
+
+#challenges-bubbles {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.challenges-source {
+  font-size: var(--text-xs);
+  font-style: normal;
+  color: var(--color-ink);
+  margin-top: var(--space-3);
+  text-align: left;
+}
+
+/* Crayon-drawn bubble circles */
+.bubble-circle {
+  stroke-width: 2.5;
+  stroke-opacity: 0.7;
+  paint-order: stroke fill;
+}
+
+.bubble-label {
+  fill: var(--color-ink);
+  font-size: 11px;
+  font-weight: 600;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+/* ─── GENDER DISPARITY — DIVERGENT BAR CHART ────────── */
+
+.gender-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.gender-inner {
+  width: 100%;
+  max-width: 900px;
+  text-align: left;
+}
+
+.gender-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.gender-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-3);
+  line-height: var(--leading-loose);
+  max-width: var(--measure);
+}
+
+.gender-legend {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-3);
+  align-items: flex-end;
+}
+
+.gender-legend__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--text-xs);
+  font-weight: 400;
+  color: var(--color-ink-muted);
+}
+
+.gender-legend__icon {
+  width: 40px;
+  height: auto;
+}
+
+.gender-wrap {
+  text-align: center;
+  position: relative;
+}
+
+#gender-chart {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.gender-source {
+  font-size: var(--text-xs);
+  font-style: normal;
+  color: var(--color-ink);
+  margin-top: var(--space-3);
+  text-align: left;
+}
+
+/* Crayon-drawn divergent bars */
+.gender-bar {
+  stroke-width: 2;
+  stroke-opacity: 0.7;
+  paint-order: stroke fill;
+}
+
+.gender-bar-label {
+  fill: var(--color-ink);
+  font-size: 10px;
+  font-weight: 600;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.gender-pct-label {
+  fill: var(--color-ink-muted);
+  font-size: 9px;
+  font-weight: 400;
+  text-anchor: middle;
+  pointer-events: none;
+}
+
+.gender-axis-label {
+  fill: var(--color-ink-muted);
+  font-size: 10px;
+  font-weight: 400;
+  text-anchor: middle;
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+}
+
+.gender-company-label {
+  fill: var(--color-ink);
+  font-size: 9px;
+  font-weight: 400;
+  text-anchor: middle;
+}
+
+/* ─── WORK MODE — ONSITE VS HYBRID ──────────────────── */
+
+.workmode-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.workmode-inner {
+  width: 100%;
+  max-width: 700px;
+  text-align: left;
+}
+
+.workmode-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.workmode-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-loose);
+  max-width: var(--measure);
+}
+
+.workmode-bar-wrap {
+  position: relative;
+  margin-bottom: var(--space-2);
+}
+
+#workmode-bar,
+.workmode-bar-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  cursor: grab;
+}
+
+#workmode-bar:active,
+.workmode-bar-svg:active {
+  cursor: grabbing;
+}
+
+.workmode-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.workmode-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: var(--tracking-wide);
+}
+
+.workmode-label--onsite {
+  color: #7a9e87;
+}
+
+.workmode-label--hybrid {
+  color: #c8956a;
+}
+
+.workmode-result {
+  margin-top: var(--space-3);
+}
+
+.workmode-result-text {
+  font-size: var(--text-base);
+  color: var(--color-ink-muted);
+  line-height: var(--leading-loose);
+}
+
+/* ─── COMPANY MATURITY — THREE-PANEL SCATTER ────────── */
+
+.maturity-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.maturity-inner {
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+}
+
+.maturity-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.maturity-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-5);
+  line-height: var(--leading-loose);
+  max-width: 72ch;
+}
+
+.maturity-wrap {
+  text-align: left;
+  position: relative;
+}
+
+#maturity-scatter {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.maturity-source {
+  font-size: var(--text-xs);
+  font-style: normal;
+  color: var(--color-ink);
+  margin-top: var(--space-3);
+  text-align: left;
+}
+
+/* Panel titles inside SVG */
+.maturity-panel-title {
+  fill: var(--color-ink);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+/* Dots */
+.maturity-dot {
+  stroke-width: 1.5;
+  stroke-opacity: 0.7;
+  paint-order: stroke fill;
+  cursor: default;
+  transition: r 0.2s ease, opacity 0.2s ease;
+}
+
+/* Company labels next to dots */
+.maturity-label {
+  fill: var(--color-ink-muted);
+  font-size: 9px;
+  font-weight: 400;
+  pointer-events: none;
+}
+
+/* Regression line */
+.maturity-trend {
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-opacity: 0.65;
+}
+
+/* Confidence band */
+.maturity-band {
+  opacity: 0.12;
+}
+
+/* Shared x-axis label */
+.maturity-shared-xlabel {
+  fill: var(--color-ink-muted);
+  font-size: 11px;
+  font-weight: 400;
+  text-anchor: middle;
+  letter-spacing: var(--tracking-wide);
+}
+
+/* ─── TRAINING PRACTICES — DONUT + DOT PLOT ─────────── */
+
+.training-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-7) max(var(--space-5), 8vw);
+}
+
+.training-inner {
+  width: 100%;
+  max-width: 1100px;
+  text-align: left;
+}
+
+.training-title {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: var(--text-xl);
+  font-weight: 700;
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  color: var(--color-ink);
+  margin-bottom: var(--space-2);
+}
+
+.training-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-ink);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-loose);
+  max-width: 70ch;
+}
+
+.training-viz {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: stretch;
+  gap: var(--space-4);
+}
+
+#training-donut,
+#training-dotplot {
+  flex: 1 1 0;
+  width: 50%;
+  height: auto;
+  display: block;
+  overflow: visible;
+}
+
+.training-footnote {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  font-style: normal;
+  color: var(--color-ink-faint);
+  line-height: var(--leading-normal);
+}
+
+.training-center-count {
+  font-size: 44px;
+  font-weight: 700;
+  fill: var(--color-ink);
+  text-anchor: middle;
+}
+
+.training-center-pct {
+  font-size: 16px;
+  font-weight: 600;
+  fill: var(--color-ink-muted);
+  text-anchor: middle;
+}
+
+.training-center-caption {
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  fill: var(--color-ink-faint);
+  text-anchor: middle;
+}
+
+.training-arc-label {
+  font-size: 11px;
+  font-weight: 600;
+  fill: var(--color-ink-muted);
+  text-anchor: middle;
+}
+
+.training-dot {
+  stroke-width: 1.4;
+  stroke-opacity: 0.8;
+  paint-order: stroke fill;
+}
+
+.training-axis text {
+  fill: var(--color-ink-muted);
+  font-size: 11px;
+}
+
+.training-axis path,
+.training-axis line {
+  stroke: var(--color-ink-faint);
+}
+
+.training-axis-label {
+  fill: var(--color-ink-muted);
+  font-size: 12px;
+  font-weight: 600;
+  text-anchor: middle;
+}
+
+/* ─── RESPONSIVE ────────────────────────────────────── */
+
+@media (max-width: 680px) {
+
+  .scrolly__figure {
+    padding-right: var(--space-3);
+    padding-left: var(--space-3);
+  }
+
+  .step {
+    min-height: auto;
+    margin-bottom: 80vh;
+    justify-content: flex-start;
+    padding: 0 var(--space-3);
+  }
+
+  .step__content {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  .hiring-section,
+  .timeline-section,
+  .salary-section,
+  .challenges-section,
+  .gender-section,
+  .workmode-section,
+  .maturity-section,
+  .training-section,
+  .interlude-section,
+  .conclusion-section {
+    padding: var(--space-5) var(--space-3);
+  }
+
+  .salary-inner {
+    max-width: 100%;
+  }
+
+  .salary-title {
+    font-size: var(--text-lg);
+  }
+
+  .salary-subtitle {
+    font-size: var(--text-sm);
+  }
+
+  .rank-list {
+    max-width: 100%;
+  }
+
+  .timeline-inner {
+    max-width: 100%;
+  }
+
+  .training-viz {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  #training-donut,
+  #training-dotplot {
+    width: 100%;
+  }
+}
+
+/* ─── INTERLUDE — NARRATIVE BRIDGE ──────────────────── */
+
+.interlude-section {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-6) max(var(--space-5), 8vw);
+}
+
+.interlude-inner {
+  width: 100%;
+  max-width: var(--measure);
+}
+
+.interlude-text {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-loose);
+  color: var(--color-ink-muted);
+  border-left: 2px solid var(--color-accent-light);
+  padding-left: var(--space-3);
+}
+
+/* ─── CONCLUSION ────────────────────────────────────── */
+
+.conclusion-section {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-8) max(var(--space-5), 8vw) var(--space-7);
+}
+
+.conclusion-inner {
+  width: 100%;
+  max-width: var(--measure);
+  text-align: left;
+}
+
+.conclusion-title {
+  font-size: var(--text-2xl);
+  line-height: var(--leading-tight);
+  margin-bottom: var(--space-4);
+}
+
+.conclusion-text {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-body);
+  line-height: var(--leading-loose);
+  color: var(--color-ink);
+  margin-bottom: var(--space-4);
+}
+
+.conclusion-byline {
+  margin-top: var(--space-5);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-ink-faint);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-emphasis);
+  letter-spacing: var(--tracking-wider);
+  text-transform: uppercase;
+  color: var(--color-ink-muted);
+}
+
+/* ─── PENDING CHART SECTIONS ─────────────────────────── */
+
+.section--pending .chart-placeholder {
+  display: block;
+  width: 100%;
+  min-height: 200px;
+  background:
+    repeating-linear-gradient(-45deg,
+      transparent,
+      transparent 8px,
+      rgba(186, 181, 168, 0.08) 8px,
+      rgba(186, 181, 168, 0.08) 16px);
+  border: 1px dashed var(--color-ink-faint);
+  border-radius: 2px;
+}
+
+.section--pending .submit-btn[disabled] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.section--pending .submit-btn[disabled]:hover {
+  background: var(--color-bg);
+  color: var(--color-ink);
+}
