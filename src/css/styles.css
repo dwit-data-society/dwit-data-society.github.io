@@ -925,7 +925,7 @@ p i {
 /* Responsive override */
 @media (max-width: 680px) {
   .hiring-quiz__columns {
-    flex-direction: column;
+    flex-direction: row-reverse;
     gap: var(--space-2);
   }
 
