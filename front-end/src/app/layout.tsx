@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono,Outfit } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -11,6 +11,12 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+const outfit = Outfit({
+    variable:"--font-outfit",
+    subsets: ["latin"],
+
+})
 
 export const metadata: Metadata = {
   title: "World Cup 2026 Prediction ",
@@ -25,8 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+      className={`${outfit.variable}  h-full antialiased`}>
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
   );
