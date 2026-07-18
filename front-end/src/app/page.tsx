@@ -1,9 +1,9 @@
+import HeroCanvas from "@/components/HeroCanvas";
 
-
-const page = () => {
+export default function Page() {
   return (
-    <div>page</div>
-  )
+    <>
+      <HeroCanvas />;
+    </>
+  );
 }
-
-export default page
