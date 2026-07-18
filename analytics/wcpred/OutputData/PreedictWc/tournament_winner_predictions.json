@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Spain",
+    "picks": 10,
+    "pickPercent": 22.73
+  },
+  {
+    "name": "Portugal",
+    "picks": 9,
+    "pickPercent": 20.45
+  },
+  {
+    "name": "Argentina",
+    "picks": 7,
+    "pickPercent": 15.91
+  },
+  {
+    "name": "Brazil",
+    "picks": 6,
+    "pickPercent": 13.64
+  },
+  {
+    "name": "France",
+    "picks": 4,
+    "pickPercent": 9.09
+  },
+  {
+    "name": "England",
+    "picks": 4,
+    "pickPercent": 9.09
+  },
+  {
+    "name": "Germany",
+    "picks": 3,
+    "pickPercent": 6.82
+  },
+  {
+    "name": "Iran",
+    "picks": 1,
+    "pickPercent": 2.27
+  }
+]
