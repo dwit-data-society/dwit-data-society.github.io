@@ -36,20 +36,53 @@ const ScrollTriggerSection = () => {
     ];
 
     useGSAP(()=>{
-        let currentCycle = -1;
-        let imageRevealed = false;
-
         const updateHeaderText = () => {
             if(h1ElementRef.current){
-                h1ElementRef.current.innerHTML = introHeaders[Math.min(currentCycle,introHeaders.length - 1 )];
+                gsap.to(h1ElementRef.current,{
+                    opacity:0,
+                    x:5,
+                    duration:0.3,
+                    onComplete:() => {
+                         h1ElementRef.current!.innerHTML =introHeaders[Math.min(currentCycle, introHeaders.length - 1)];
+                         gsap.to(h1ElementRef.current,{
+                             opacity:1,
+                             x:0,
+                             duration:0.3,
+     
+                         })
+                    }}
+                )
             }
         }
+               
+          
+           
+      
 
         const updateParagraphText = () => {
-            if(pElementRef.current){
-                pElementRef.current.innerHTML = introp[Math.min(currentCycle,introp.length - 1 )];
+           if(pElementRef.current){
+                gsap.to(pElementRef.current,{
+                    opacity:0,
+                    x:5,
+                    duration:0.4,
+                    onComplete:() => {
+                         pElementRef.current!.innerHTML =introp[Math.min(currentCycle, introp.length - 1)];
+                         gsap.to(pElementRef.current,{
+                             opacity:1,
+                             x:0,
+                             duration:0.4,
+     
+                         })
+                    }}
+                )
             }
         }
+        let currentCycle = 0;
+        updateHeaderText();
+        updateParagraphText();
+        let imageRevealed = false;
+
+        
         
         const pinnedHeight = window.innerHeight *5;
 
@@ -62,7 +95,7 @@ const ScrollTriggerSection = () => {
                 onUpdate:(self)=>{
                     const progress = self.progress;
                     const rotationProgress = Math.min((progress *4)/4,1);
-                    const totalRotation = rotationProgress*1440-90;
+                    const totalRotation = rotationProgress*1440-180;
                     const rotationInCycle= ((totalRotation +90) %360)-90;
                     gsap.set(handContainerRef.current,{rotateZ:rotationInCycle});
 
@@ -72,6 +105,17 @@ const ScrollTriggerSection = () => {
                         updateHeaderText();
                         updateParagraphText();
 
+                    }
+
+                    if(progress <=6/8 ){
+                        const animationProgress = Math.max(0,(progress - 5/8)/(1/8));
+                        const newHeight = gsap.utils.interpolate(52.75,100,animationProgress);
+                        
+                        const newOpacity = gsap.utils.interpolate(1,0,animationProgress);
+                        gsap.set(handRef.current,{height:`${newHeight}%`});
+                        gsap.set(introRef.current,{opacity:1});
+                        gsap.set(h1ElementRef.current,{opacity:newOpacity});
+                        gsap
                     }
                 }
                 
