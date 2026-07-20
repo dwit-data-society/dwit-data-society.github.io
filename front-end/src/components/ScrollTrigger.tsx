@@ -21,17 +21,17 @@ const ScrollTriggerSection = () => {
     const websiteContentRef = useRef(null);
 
     const introHeaders = [
-        "<span>time to </span> be brave",
+        "Our",
         "<span>time to </span> be brdwdwave",
         "<span>time to </span> be bdwdwdrave",
-        "<span>time to </span> be brdwdwave",
+        "Our Mission",
        
     ];
     const introp = [
         "<span>time to </span> be brave",
         "<span>time to </span> be brdwdwave",
         "<span>time to </span> be bdwdwdrave",
-        "<span>time to </span> be brdwdwave",
+        "The Data Society started with a simple idea, that numbers are more interesting when someone takes the time to actually look at them. What began as curiosity about how well our own predictions held up against real-world results has grown into a home for every kind of question we're excited to dig into, from analytics and surveys to campus life and beyond. We believe good data work isn't just about the analysis itself, but about telling that story clearly enough that anyone can follow along, not just the people who wrote the code. Every project here starts the same way, a question worth asking, a dataset worth exploring, and the patience to see what it actually says.",
        
     ];
 
@@ -118,15 +118,15 @@ const ScrollTriggerSection = () => {
     <>
     <div ref={container} className="w-full overflow-hidden">
         <section className="sticky w-screen h-screen" ref={stickyRef}>
-            <div ref = {handContainerRef} className=" absolute -rotate-180 lg:top-[50%] top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-190 h-190 lg:w-220 lg:h-220 flex justify-center items-start origin-center [transform-style:preserve-3d] [will-change:transform] z-2 ">
+            <div ref = {handContainerRef} className=" absolute -rotate-180 lg:top-[50%] top-[10%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-30 h-30  lg:w-220 lg:h-220  flex justify-center items-start origin-center [transform-style:preserve-3d] [will-change:transform] z-2 ">
                 <div ref={handRef} className="  bg-white absolute w-[5.5%] h-[52.75%] rounded-full [will-change:transform] overflow-hidden">
                     <img ref = {handImageRef} className='w-full h-full objext-cover opacity-0' src="next.svg" alt="" />
                 </div>
             </div>
-            <div  ref = {introRef} className="absolute left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:top-[calc(50%-20px)] lg:-left-6 lg:w-[50.5%] w-[90%]  top-[20%] ">
-                <h1 ref = {h1ElementRef} className=" lg:top-[120%] top-[50%] font-bold text-center text-3xl lg:text-4xl "><span className="">time to </span> be brave</h1>
+            <div  ref = {introRef} className="absolute left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:top-[calc(50%-150px)] lg:left-20 lg:w-[40.5%] w-[80%] h-[90%]  top-[20%] ">
+                <h1 ref = {h1ElementRef} className=" lg:top-[120%] top-[50%] font-bold text-center text-4xl sm:text-6xl lg:text-6xl "><span className="">time to </span> be brave</h1>
                 <div ref= {introCopyRef}>
-                    <p ref={pElementRef} className="text-base text-center lg:text-3xl relative  mt-[0.75em]  ">
+                    <p ref={pElementRef} className="text-base text-center text-[14px] sm:text-2xl lg:text-lg relative  mt-[0.75em] ">
                         
                     </p>
                 </div>
