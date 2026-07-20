@@ -1,9 +1,11 @@
-import ScrollTrigger from "@/components/ScrollTrigger/ScrollTrigger";
+import ScrollTrigger from "@/components/ScrollTrigger";
 
 
 const page = () => {
   return (
    <>
+
+   
     <ScrollTrigger/>
    </>
   )

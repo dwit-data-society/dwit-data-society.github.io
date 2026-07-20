@@ -107,16 +107,6 @@ const ScrollTriggerSection = () => {
 
                     }
 
-                    if(progress <=6/8 ){
-                        const animationProgress = Math.max(0,(progress - 5/8)/(1/8));
-                        const newHeight = gsap.utils.interpolate(52.75,100,animationProgress);
-                        
-                        const newOpacity = gsap.utils.interpolate(1,0,animationProgress);
-                        gsap.set(handRef.current,{height:`${newHeight}%`});
-                        gsap.set(introRef.current,{opacity:1});
-                        gsap.set(h1ElementRef.current,{opacity:newOpacity});
-                        gsap
-                    }
                 }
                 
             })
@@ -128,7 +118,7 @@ const ScrollTriggerSection = () => {
     <>
     <div ref={container} className="w-full overflow-hidden">
         <section className="sticky w-screen h-screen" ref={stickyRef}>
-            <div ref = {handContainerRef} className=" absolute lg:top-[50%] top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-190 h-190 lg:w-220 lg:h-220 flex justify-center items-start origin-center [transform-style:preserve-3d] [will-change:transform] z-2 ">
+            <div ref = {handContainerRef} className=" absolute -rotate-180 lg:top-[50%] top-[60%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-190 h-190 lg:w-220 lg:h-220 flex justify-center items-start origin-center [transform-style:preserve-3d] [will-change:transform] z-2 ">
                 <div ref={handRef} className="  bg-white absolute w-[5.5%] h-[52.75%] rounded-full [will-change:transform] overflow-hidden">
                     <img ref = {handImageRef} className='w-full h-full objext-cover opacity-0' src="next.svg" alt="" />
                 </div>
@@ -136,18 +126,14 @@ const ScrollTriggerSection = () => {
             <div  ref = {introRef} className="absolute left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:top-[calc(50%-20px)] lg:-left-6 lg:w-[50.5%] w-[90%]  top-[20%] ">
                 <h1 ref = {h1ElementRef} className=" lg:top-[120%] top-[50%] font-bold text-center text-3xl lg:text-4xl "><span className="">time to </span> be brave</h1>
                 <div ref= {introCopyRef}>
-                    <p ref={pElementRef} className="text-base text-center lg:text-3xl relative  mt-[0.75em]  ">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione dolores quasi corporis architecto? Aut unde, alias natus, sit nisi at velit odit ipsa earum incidunt nobis minima recusandae explicabo culpa.
+                    <p ref={pElementRef} className="text-base text-center lg:text-3xl relative  mt-[0.75em]  ">
                         
                     </p>
                 </div>
             </div>
-            <div ref={websiteContentRef} className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center opacity-0">
-                <h1 className="font-medium text-[10vw]">DeerWalk Data Society</h1>
-            </div>
+           
         </section>
-        <section className="flex justify-center items-center w-screen h-screen bg-white">
-            <p className="text-base text-justify text-black">efefe</p>
-        </section>
+       
     </div>
 
     </>
