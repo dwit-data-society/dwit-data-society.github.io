@@ -8,7 +8,7 @@ import {useGSAP} from "@gsap/react";
 
 gsap.registerPlugin(ScrollTrigger); 
 
-const ScrollTriggerSection = () => {
+const HandSpin = () => {
     const container = useRef(null);
     const stickyRef = useRef(null);
     const handContainerRef = useRef(null);
@@ -126,7 +126,7 @@ const ScrollTriggerSection = () => {
             <div  ref = {introRef} className="absolute left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:top-[calc(50%-150px)] lg:left-20 lg:w-[40.5%] w-[80%] h-[90%]  top-[20%] ">
                 <h1 ref = {h1ElementRef} className=" lg:top-[120%] top-[50%] font-bold text-center text-4xl sm:text-6xl lg:text-6xl "><span className="">time to </span> be brave</h1>
                 <div ref= {introCopyRef}>
-                    <p ref={pElementRef} className="text-base text-center text-[14px] sm:text-2xl lg:text-lg relative  mt-[0.75em] ">
+                    <p ref={pElementRef} className=" text-center text-[14px] sm:text-2xl lg:text-lg relative  mt-6 ">
                         
                     </p>
                 </div>
@@ -140,4 +140,4 @@ const ScrollTriggerSection = () => {
   )
 }
 
-export default ScrollTriggerSection
+export default HandSpin
