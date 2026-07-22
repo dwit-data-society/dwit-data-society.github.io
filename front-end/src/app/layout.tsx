@@ -21,6 +21,8 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   title: "Deerwalk Data Society 26/27",
   description: "A Place For Various Kinds of Data Analysis",
+  icons:"assets/transparent_Logo.svg",
+
 };
 
 export default function RootLayout({
