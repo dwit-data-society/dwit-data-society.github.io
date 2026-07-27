@@ -1,8 +1,27 @@
 
 
+
+
+
+
+
+
+
+
+import Footer from "@/components/Footer";
+
+
 const page = () => {
   return (
-    <div>page</div>
+    <>
+    
+    
+    
+    
+    
+    
+    <Footer/>
+    </>
   )
 }
 
