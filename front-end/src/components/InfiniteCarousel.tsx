@@ -24,7 +24,7 @@ const InfiniteCarousel = () => {
     <>
         <div className="flex w-full h-[20svh] items-center  overflow-hidden ">
             <div className="flex w-max gap-10 animate-infinite-carousel" >
-            {dupslides.map((slide,index)=>(
+            {[...slides,...slides,...slides].map((slide,index)=>(
                <div key={index} className="flex items-center justify-center gap-10 whitespace-nowrap">
                     <div className="font-bold sm:text-4xl text-2xl  ">{slide.str}</div>
                     <div className="opacity-70 text-xl lg:text-3xl ">★</div>

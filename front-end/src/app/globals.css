@@ -30,14 +30,14 @@ body {
 
 @keyframes infinite-carousel {
   from{
-    transform: translate(0);
+    transform: translateX(0);
   }
   to{
-    transform: translate(-25%);  
+    transform: translateX(-50%);  
   }
   
 }
 
 .animate-infinite-carousel{
-  animation: infinite-carousel 30s linear infinite;
+  animation: infinite-carousel 10s linear infinite;
 }
