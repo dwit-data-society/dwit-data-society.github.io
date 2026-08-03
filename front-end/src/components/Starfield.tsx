@@ -284,17 +284,17 @@ const pinnedHeight = window.innerHeight *5;
 
   return (
     <>
-        <section ref={intro} className="relative w-full h-screen flex justify-center items-center overflow-hidden">
+        {/* <section ref={intro} className="relative w-full h-screen flex justify-center items-center overflow-hidden">
             <h1>test</h1>
-        </section>
+        </section> */}
 
         <section ref={starfield} className="relative w-full h-screen flex justify-center items-center overflow-hidden">
             <canvas ref={canvas} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)]  h-[calc(100%-2rem)]  "></canvas>
 
             <div>
-                <h1 ref={header1} className="uppercase text-[clamp(2rem,5vw,10rem)] leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">dwwd e3 </h1>
-                <h1 ref={header2} className="uppercase text-[clamp(2rem,5vw,10rem)] leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">sddfewe 3e 3</h1>
-                <h1 ref={header3} className="uppercase text-[clamp(2rem,5vw,10rem)] leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">dwdwqq e3</h1>
+                <h1 ref={header1} className="uppercase text-[clamp(2rem,5vw,10rem)] font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">Numbers Tell Stories</h1>
+                <h1 ref={header2} className="uppercase text-[clamp(2rem,5vw,10rem)]  font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">Data Powers Progress</h1>
+                <h1 ref={header3} className="uppercase text-[clamp(2rem,5vw,10rem)]  font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">Data Fuels Change</h1>
             </div>
         </section>
 
