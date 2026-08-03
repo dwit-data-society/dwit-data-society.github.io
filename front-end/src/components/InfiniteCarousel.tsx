@@ -1,7 +1,5 @@
 "use client";
-import { motion } from "motion/react";
-import { s } from "motion/react-client";
-import { useEffect, useState,useRef } from "react";
+
 
 
 const InfiniteCarousel = () => {
@@ -14,17 +12,20 @@ const InfiniteCarousel = () => {
     ]
 
 
-        const group = Array(6).fill(slides).flat();
-        const dupslides = [...group, ...group, ...group, ...group];
+    const group = Array(6).fill(slides).flat();
+      
 
 
 
 
   return (
     <>
-        <div className="flex w-full h-[20svh] items-center  overflow-hidden ">
+        <div className="flex w-full h-[20svh] items-center  overflow-hidden " style={{
+                         maskImage:"linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+                        WebkitMaskImage:"linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
+      }}>
             <div className="flex w-max gap-10 animate-infinite-carousel" >
-            {[...slides,...slides,...slides].map((slide,index)=>(
+            {[...group,...group].map((slide,index)=>(
                <div key={index} className="flex items-center justify-center gap-10 whitespace-nowrap">
                     <div className="font-bold sm:text-4xl text-2xl  ">{slide.str}</div>
                     <div className="opacity-70 text-xl lg:text-3xl ">★</div>
@@ -39,4 +40,4 @@ const InfiniteCarousel = () => {
   )
 }
 
-export default InfiniteCarousel
+export default InfiniteCarousel;

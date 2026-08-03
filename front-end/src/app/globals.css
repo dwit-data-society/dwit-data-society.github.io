@@ -39,5 +39,5 @@ body {
 }
 
 .animate-infinite-carousel{
-  animation: infinite-carousel 10s linear infinite;
+  animation: infinite-carousel 45s linear infinite;
 }
