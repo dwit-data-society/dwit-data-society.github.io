@@ -1,15 +1,151 @@
+// import {FaFacebook,FaInstagram,FaLinkedin,FaGithub,FaPhoneAlt} from "react-icons/fa";
+// import { MdOutlineMailOutline ,MdOutlinePhone,MdPhone} from "react-icons/md";
+// import { FaPhone } from "react-icons/fa6";
 
+// const Footer = () => {
+//   return (
+//     <>
+//       <footer className="w-full h-124 absolute flex flex-row   items-start pt-10">
+//           <div className="flex flex-row gap-10 items-center pl-15 pt-8">
+//               <div className="w-50  "><img src="next.svg" alt="" /></div>
+//               <div className="leading-7 w-[40%]" ><p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis culpa quia eaque fugit similique hic mollitia unde dolorum repudiandae, enim ipsa dolores provident in debitis, illum quas temporibus dignissimos cupiditate!
+//                                                             </p>
+//               </div>
+//           </div>
+
+//           <div className="flex ml-auto gap-5">
+//               <div className="flex flex-row gap-10 items-start pt-8 pr-15 ml-auto">
+//                <div className="">
+//               <h2 className="whitespace-nowrap border-b border-gray-100 pb-2  text-2xl">VISIT OUR SOCIALS</h2>
+//             <div className="flex flex-row gap-4 mt-5 text-2xl justify-center">
+//                 <a href=""><FaLinkedin className="hover:text-blue-800 cursor-pointer" /></a>
+//                 <a href=""><FaInstagram className="hover:text-pink-500 cursor-pointer" /></a>
+//                 <a href=""><FaFacebook className="hover:text-blue-400 cursor-pointer" /></a>
+//                 <a href=""><FaGithub className="hover:text-purple-300 cursor-pointer" /></a>
+//             </div>
+
+//             </div>
+
+//             </div>  
+
+
+            
+
+
+//              <div className="flex flex-row gap-10 items-start pt-8 pr-25 ml-auto">
+//             <div className="">
+//               <h2 className="whitespace-nowrap border-b border-gray-100 pb-2  text-2xl text-center">CONTACT US AT</h2>
+//             <div className="flex flex-col gap-4 mt-5 text-2xl justify-center">
+//               <div className="flex flex-row gap-4 items-center">
+//                 <MdOutlineMailOutline  className="hover:text-orange-400 cursor-pointer" /> 
+//                   <a href="mailto:datasociety.deerwalk@gmail.com"className="whitespace-nowrap text-[20px] hover:text-red-100">
+//                         datasociety.deerwalk@gmail.com
+//                   </a>
+
+//               </div>
+//               <div className="flex flex-row gap-4 items-center" >
+//                 <MdPhone className="hover:text-green-500 cursor-pointer"/>
+//                 <a href="tel:"  className="whitespace-nowrap text-[20px] hover:text-green-500">12345678901</a>
+//                 <p>/</p>
+//                 <a href="tel:"  className="text-[20px] hover:text-green-500">12345678901</a>
+                
+//               </div>
+//             </div>
+
+//             </div>
+//             </div>  
+
+//             </div>
+
+
+
+            
+//        <div className="absolute bottom-4 left-1/2 -translate-x-1/2">
+//           <p className="text-sm text-gray-200">
+//                 © 2026 Data Society. All Rights Reserved.
+//         </p>
+//        </div>
+       
+      
+        
+
+//     </footer>
+//     </>
+//   )
+// }
+
+// export default Footer
+import {FaFacebook,FaInstagram,FaLinkedin,FaGithub,FaPhoneAlt} from "react-icons/fa";
+import { MdOutlineMailOutline ,MdOutlinePhone,MdPhone} from "react-icons/md";
+import { FaPhone } from "react-icons/fa6";
 
 const Footer = () => {
   return (
     <>
-    <footer className="w-full absolute bottom-0 bg-linear-to-r from-[#00c2a8] to-[#ffff] py-[100px]">
-        <div>
-            <div><img src="" alt="" /> <p>EJEJ</p></div>
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+      <footer className="w-full h-auto xl:h-124 xl:absolute flex flex-col xl:flex-row items-center xl:items-start pt-10 gap-8 xl:gap-0 px-4 sm:px-6 xl:px-0 overflow-x-hidden">
+          <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 items-center pl-0 xl:pl-15 pt-8 text-center sm:text-left w-full sm:w-auto">
+              <div className="w-32 sm:w-50 shrink-0"><img src="/next.svg" alt="" /></div>
+              <div className="leading-7 w-full max-w-full sm:w-[70%] xl:w-[40%]" ><p className="text-sm sm:text-base break-words">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Veritatis culpa quia eaque fugit similique hic mollitia unde dolorum repudiandae, enim ipsa dolores provident in debitis, illum quas temporibus dignissimos cupiditate!
+                                                            </p>
+              </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row xl:ml-auto gap-8 sm:gap-5">
+              <div className="flex flex-row gap-10 items-start pt-8 pr-0 xl:pr-15 xl:ml-auto justify-center sm:justify-start">
+               <div className="">
+              <h2 className="whitespace-nowrap border-b border-gray-100 pb-2  text-lg sm:text-2xl">VISIT OUR SOCIALS</h2>
+            <div className="flex flex-row gap-4 mt-5 text-xl sm:text-2xl justify-center">
+                <a href=""><FaLinkedin className="hover:text-blue-600 cursor-pointer" /></a>
+                <a href=""><FaInstagram className="hover:text-pink-500 cursor-pointer" /></a>
+                <a href=""><FaFacebook className="hover:text-blue-400 cursor-pointer" /></a>
+                <a href=""><FaGithub className="hover:text-purple-600 cursor-pointer" /></a>
+            </div>
+
+            </div>
+
+            </div>  
+
+
+            
+
+
+             <div className="flex flex-row gap-10 items-start pt-8 pr-0 xl:pr-25 xl:ml-auto justify-center sm:justify-start">
+            <div className="">
+              <h2 className="whitespace-nowrap border-b border-gray-100 pb-2  text-lg sm:text-2xl text-center">CONTACT US AT</h2>
+            <div className="flex flex-col gap-4 mt-5 text-xl sm:text-2xl justify-center">
+              <div className="flex flex-row gap-4 items-center">
+                <MdOutlineMailOutline  className="hover:text-red-400 cursor-pointer shrink-0" /> 
+                  <a href="mailto:datasociety.deerwalk@gmail.com"className="whitespace-nowrap text-[13px] sm:text-[20px] hover:text-red-400">
+                        datasociety.deerwalk@gmail.com
+                  </a>
+
+              </div>
+              <div className="flex flex-row gap-4 items-center" >
+                <MdPhone className="hover:text-green-500 cursor-pointer shrink-0"/>
+                <a href="tel:"  className="whitespace-nowrap text-[13px] sm:text-[20px] hover:text-green-500">12345678901</a>
+                <p>/</p>
+                <a href="tel:"  className="text-[13px] sm:text-[20px] hover:text-green-500">12345678901</a>
+                
+              </div>
+            </div>
+
+            </div>
+            </div>  
+
+            </div>
+
+
+
+            
+       <div className="static xl:absolute bottom-4 left-1/2 xl:-translate-x-1/2 pb-6 xl:pb-0">
+          <p className="text-sm text-gray-200">
+                © 2026 Data Society. All Rights Reserved.
+        </p>
+       </div>
+       
+      
+        
+
     </footer>
     </>
   )
