@@ -1,8 +1,28 @@
 
 
+
+
+
+
+
+
+import InfiniteCarousel from "@/components/InfiniteCarousel";
+
+  
+
 const page = () => {
   return (
-    <div>page</div>
+    <>
+
+
+
+
+
+
+
+    
+     <InfiniteCarousel/>
+    </>
   )
 }
 
