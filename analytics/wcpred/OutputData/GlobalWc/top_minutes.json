@@ -1,0 +1,82 @@
+[
+    {
+        "player":"Emiliano Martínez",
+        "team":"Argentina",
+        "position":"GK",
+        "minutes":690.0,
+        "games":7,
+        "minutes_per_game":99.0
+    },
+    {
+        "player":"Jordan Pickford",
+        "team":"England",
+        "position":"GK",
+        "minutes":660.0,
+        "games":7,
+        "minutes_per_game":94.0
+    },
+    {
+        "player":"Harry Kane",
+        "team":"England",
+        "position":"FW",
+        "minutes":652.0,
+        "games":7,
+        "minutes_per_game":93.0
+    },
+    {
+        "player":"Alexis Mac Allister",
+        "team":"Argentina",
+        "position":"MF",
+        "minutes":630.0,
+        "games":7,
+        "minutes_per_game":90.0
+    },
+    {
+        "player":"Mike Maignan",
+        "team":"France",
+        "position":"GK",
+        "minutes":630.0,
+        "games":7,
+        "minutes_per_game":90.0
+    },
+    {
+        "player":"Marc Cucurella",
+        "team":"Spain",
+        "position":"DF",
+        "minutes":630.0,
+        "games":7,
+        "minutes_per_game":90.0
+    },
+    {
+        "player":"Pau Cubarsí",
+        "team":"Spain",
+        "position":"DF",
+        "minutes":630.0,
+        "games":7,
+        "minutes_per_game":90.0
+    },
+    {
+        "player":"Unai Simón",
+        "team":"Spain",
+        "position":"GK",
+        "minutes":630.0,
+        "games":7,
+        "minutes_per_game":90.0
+    },
+    {
+        "player":"Aymeric Laporte",
+        "team":"Spain",
+        "position":"DF",
+        "minutes":629.0,
+        "games":7,
+        "minutes_per_game":90.0
+    },
+    {
+        "player":"Rodri",
+        "team":"Spain",
+        "position":"MF",
+        "minutes":626.0,
+        "games":7,
+        "minutes_per_game":89.0
+    }
+]
