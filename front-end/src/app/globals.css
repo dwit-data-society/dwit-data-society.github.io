@@ -27,3 +27,17 @@ body {
   color: var(--foreground);
   font-family: var(--font-outfit), sans-serif;
 }
+
+@keyframes infinite-carousel {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-50%);  
+  }
+  
+}
+
+.animate-infinite-carousel{
+  animation: infinite-carousel 45s linear infinite;
+}

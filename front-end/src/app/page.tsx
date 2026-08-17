@@ -10,6 +10,9 @@
 
 import Footer from "@/components/Footer";
 
+import InfiniteCarousel from "@/components/InfiniteCarousel";
+
+  
 
 const page = () => {
   return (
@@ -21,6 +24,15 @@ const page = () => {
     
     
     <Footer/>
+
+
+
+
+
+
+
+    
+     <InfiniteCarousel/>
     </>
   )
 }
