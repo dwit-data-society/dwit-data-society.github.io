@@ -1,28 +1,14 @@
+import Starfield from "@/components/Starfield";
 
-
-
-
-
-
-
-
-import InfiniteCarousel from "@/components/InfiniteCarousel";
-
-  
 
 const page = () => {
   return (
-    <>
+   <>
 
-
-
-
-
-
-
-    
-     <InfiniteCarousel/>
-    </>
+   <Starfield/>
+  
+   
+   </>
   )
 }
 
