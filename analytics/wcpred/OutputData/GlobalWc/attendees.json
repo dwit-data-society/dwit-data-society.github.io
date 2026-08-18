@@ -1,11 +1,11 @@
 [
     {
-        "venue":"AT&T Stadium, Arlington",
-        "attendance":631843
+        "venue":"MetLife Stadium, East Rutherford",
+        "attendance":645186
     },
     {
-        "venue":"MetLife Stadium, East Rutherford",
-        "attendance":564523
+        "venue":"AT&T Stadium, Arlington",
+        "attendance":631843
     },
     {
         "venue":"SoFi Stadium, Inglewood",
@@ -18,6 +18,10 @@
     {
         "venue":"Reliant Stadium, Houston",
         "attendance":480184
+    },
+    {
+        "venue":"Hard Rock Stadium, Miami Gardens",
+        "attendance":449157
     },
     {
         "venue":"Gillette Stadium, Foxborough",
@@ -42,10 +46,6 @@
     {
         "venue":"Lumen Field, Seattle",
         "attendance":401400
-    },
-    {
-        "venue":"Hard Rock Stadium, Miami Gardens",
-        "attendance":384679
     },
     {
         "venue":"BC Place Stadium, Vancouver",
