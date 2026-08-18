@@ -28,7 +28,7 @@ const InfiniteCarousel = () => {
             {[...group,...group].map((slide,index)=>(
                <div key={index} className="flex items-center justify-center gap-10 whitespace-nowrap">
                     <div className="font-bold sm:text-4xl text-2xl  ">{slide.str}</div>
-                    <div className="opacity-70 text-xl lg:text-3xl ">★</div>
+                    <div className="opacity-70 text-xl lg:text-3xl ">·</div>
 
                 </div>
             ))}
