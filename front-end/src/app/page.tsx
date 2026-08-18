@@ -1,14 +1,30 @@
-import Starfield from "@/components/Starfield";
+import Footer from "@/components/Footer";
 
+
+
+
+  
 
 const page = () => {
   return (
-   <>
+    <>
+    
+    
+    
+    
+    
+    <Footer/>
+    <Footer/>
+    <Footer/>
 
-   <Starfield/>
-  
+
    
-   </>
+    
+
+
+
+  
+    </>
   )
 }
 
