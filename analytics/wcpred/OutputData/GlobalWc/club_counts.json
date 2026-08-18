@@ -8,15 +8,19 @@
         "player_count":17
     },
     {
+        "club":"Arsenal",
+        "player_count":14
+    },
+    {
         "club":"PSG",
         "player_count":14
     },
     {
-        "club":"Arsenal",
+        "club":"Barcelona",
         "player_count":13
     },
     {
-        "club":"Barcelona",
+        "club":"Crystal Palace",
         "player_count":12
     },
     {
@@ -29,10 +33,6 @@
     },
     {
         "club":"Dortmund",
-        "player_count":11
-    },
-    {
-        "club":"Crystal Palace",
         "player_count":11
     },
     {
