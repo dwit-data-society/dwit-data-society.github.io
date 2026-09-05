@@ -1,0 +1,82 @@
+[
+    {
+        "player":"Emiliano Martínez",
+        "team":"Argentina",
+        "position":"GK",
+        "minutes":810.0,
+        "games":8,
+        "minutes_per_game":101.0
+    },
+    {
+        "player":"Alexis Mac Allister",
+        "team":"Argentina",
+        "position":"MF",
+        "minutes":750.0,
+        "games":8,
+        "minutes_per_game":94.0
+    },
+    {
+        "player":"Marc Cucurella",
+        "team":"Spain",
+        "position":"DF",
+        "minutes":750.0,
+        "games":8,
+        "minutes_per_game":94.0
+    },
+    {
+        "player":"Pau Cubarsí",
+        "team":"Spain",
+        "position":"DF",
+        "minutes":750.0,
+        "games":8,
+        "minutes_per_game":94.0
+    },
+    {
+        "player":"Unai Simón",
+        "team":"Spain",
+        "position":"GK",
+        "minutes":750.0,
+        "games":8,
+        "minutes_per_game":94.0
+    },
+    {
+        "player":"Lionel Messi",
+        "team":"Argentina",
+        "position":"FW",
+        "minutes":740.0,
+        "games":8,
+        "minutes_per_game":93.0
+    },
+    {
+        "player":"Aymeric Laporte",
+        "team":"Spain",
+        "position":"DF",
+        "minutes":727.0,
+        "games":8,
+        "minutes_per_game":91.0
+    },
+    {
+        "player":"Rodri",
+        "team":"Spain",
+        "position":"MF",
+        "minutes":724.0,
+        "games":8,
+        "minutes_per_game":91.0
+    },
+    {
+        "player":"Mike Maignan",
+        "team":"France",
+        "position":"GK",
+        "minutes":720.0,
+        "games":8,
+        "minutes_per_game":90.0
+    },
+    {
+        "player":"Kylian Mbappé",
+        "team":"France",
+        "position":"FW",
+        "minutes":695.0,
+        "games":8,
+        "minutes_per_game":87.0
+    }
+]

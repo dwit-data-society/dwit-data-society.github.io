@@ -1,0 +1,52 @@
+[
+  {
+    "score": "2-1",
+    "timesPredicted": 403,
+    "timesOccurred": 9
+  },
+  {
+    "score": "1-2",
+    "timesPredicted": 261,
+    "timesOccurred": 5
+  },
+  {
+    "score": "2-0",
+    "timesPredicted": 185,
+    "timesOccurred": 8
+  },
+  {
+    "score": "3-1",
+    "timesPredicted": 160,
+    "timesOccurred": 5
+  },
+  {
+    "score": "1-1",
+    "timesPredicted": 116,
+    "timesOccurred": 12
+  },
+  {
+    "score": "0-2",
+    "timesPredicted": 112,
+    "timesOccurred": 3
+  },
+  {
+    "score": "3-0",
+    "timesPredicted": 104,
+    "timesOccurred": 5
+  },
+  {
+    "score": "1-3",
+    "timesPredicted": 97,
+    "timesOccurred": 4
+  },
+  {
+    "score": "1-0",
+    "timesPredicted": 80,
+    "timesOccurred": 6
+  },
+  {
+    "score": "0-3",
+    "timesPredicted": 56,
+    "timesOccurred": 3
+  }
+]

@@ -1,0 +1,104 @@
+[
+    {
+        "venue":"Mercedes-Benz Stadium, Atlanta",
+        "total_goals":27.0,
+        "avg_goals_per_match":3.375,
+        "matches_played":8
+    },
+    {
+        "venue":"Hard Rock Stadium, Miami Gardens",
+        "total_goals":27.0,
+        "avg_goals_per_match":3.8571428571,
+        "matches_played":7
+    },
+    {
+        "venue":"Reliant Stadium, Houston",
+        "total_goals":27.0,
+        "avg_goals_per_match":3.8571428571,
+        "matches_played":7
+    },
+    {
+        "venue":"SoFi Stadium, Inglewood",
+        "total_goals":26.0,
+        "avg_goals_per_match":3.25,
+        "matches_played":8
+    },
+    {
+        "venue":"AT&T Stadium, Arlington",
+        "total_goals":24.0,
+        "avg_goals_per_match":3.0,
+        "matches_played":8
+    },
+    {
+        "venue":"BC Place Stadium, Vancouver",
+        "total_goals":23.0,
+        "avg_goals_per_match":3.8333333333,
+        "matches_played":6
+    },
+    {
+        "venue":"MetLife Stadium, East Rutherford",
+        "total_goals":23.0,
+        "avg_goals_per_match":2.875,
+        "matches_played":8
+    },
+    {
+        "venue":"Lumen Field, Seattle",
+        "total_goals":20.0,
+        "avg_goals_per_match":3.3333333333,
+        "matches_played":6
+    },
+    {
+        "venue":"GEHA Field at Arrowhead Stadium, Kansas City",
+        "total_goals":18.0,
+        "avg_goals_per_match":3.0,
+        "matches_played":6
+    },
+    {
+        "venue":"Estadio Banorte, Coyoacán",
+        "total_goals":16.0,
+        "avg_goals_per_match":3.2,
+        "matches_played":5
+    },
+    {
+        "venue":"BMO Field, Toronto",
+        "total_goals":15.0,
+        "avg_goals_per_match":2.5,
+        "matches_played":6
+    },
+    {
+        "venue":"Gillette Stadium, Foxborough",
+        "total_goals":14.0,
+        "avg_goals_per_match":2.3333333333,
+        "matches_played":6
+    },
+    {
+        "venue":"Lincoln Financial Field, Philadelphia",
+        "total_goals":13.0,
+        "avg_goals_per_match":2.1666666667,
+        "matches_played":6
+    },
+    {
+        "venue":"Levi's Stadium, Santa Clara",
+        "total_goals":12.0,
+        "avg_goals_per_match":2.0,
+        "matches_played":6
+    },
+    {
+        "venue":"Estadio Akron, Zapopan",
+        "total_goals":6.0,
+        "avg_goals_per_match":1.5,
+        "matches_played":4
+    },
+    {
+        "venue":"Estadio BBVA Bancomer, Guadalupe",
+        "total_goals":6.0,
+        "avg_goals_per_match":6.0,
+        "matches_played":1
+    },
+    {
+        "venue":"Estadio BBVA, Guadalupe",
+        "total_goals":5.0,
+        "avg_goals_per_match":2.5,
+        "matches_played":2
+    }
+]
