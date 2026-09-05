@@ -292,9 +292,9 @@ const pinnedHeight = window.innerHeight *5;
             <canvas ref={canvas} className="absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[calc(100%-2rem)]  h-[calc(100%-2rem)]  "></canvas>
 
             <div>
-                <h1 ref={header1} className="uppercase text-[clamp(2rem,5vw,10rem)] font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">Numbers Tell Stories</h1>
+                <h1 ref={header1} className="uppercase text-[clamp(2rem,5vw,10rem)] font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[50%] text-center">Numbers Tell Stories</h1>
                 <h1 ref={header2} className="uppercase text-[clamp(2rem,5vw,10rem)]  font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">Data Powers Progress</h1>
-                <h1 ref={header3} className="uppercase text-[clamp(2rem,5vw,10rem)]  font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[60%] text-center">Data Fuels Change</h1>
+                <h1 ref={header3} className="uppercase text-[clamp(2rem,5vw,10rem)]  font-bold leading-none absolute top-[50%] left-[50%] -translate-x-1/2 -translate-y-1/2 w-[50%] text-center">Data Fuels Change</h1>
             </div>
         </section>
 
