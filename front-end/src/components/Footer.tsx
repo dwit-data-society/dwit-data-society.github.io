@@ -48,7 +48,7 @@ const Footer = () => {
                 <h2 className="w-full whitespace-nowrap border-b border-gray-100 pb-2 text-lg sm:text-2xl md:text-xl lg:text-2xl text-center">VISIT OUR SOCIALS</h2>
                 <div className="flex flex-row gap-4 mt-5 text-xl sm:text-2xl md:text-lg lg:text-xl justify-center items-center">
                   <a href="https://www.linkedin.com/company/deerwalk-data-society/home/"><FaLinkedin className="hover:text-blue-600 cursor-pointer" /></a>
-                  <a href="https://www.instagram.com/dwit_deerwalkdatasociety/"><FaInstagram className="hover:text-pink-500 cursor-pointer" /></a>
+                  <a href="https://www.instagram.com/deerwalkdatasociety/"><FaInstagram className="hover:text-pink-500 cursor-pointer" /></a>
                   <a href="https://medium.com/@deerwalkdatasociety"><FaMedium className="hover:text-blue-400 cursor-pointer" /></a>
                   <a href="https://github.com/dwit-data-society"><FaGithub className="hover:text-purple-600 cursor-pointer" /></a>
                 </div>
