@@ -1,23 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --background: #000000;
-  --foreground: #ffffff;
-  --primary: #00c2a8;
+  --background: #0B1117;
+  --foreground: #FFFFFF;
+  --primary: #08AAA5;
+  --secondary: #1479A8;
+  --tertiary: #12577A;
+  --surface: #F3F7F8;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
-  --font-sans: var(--font-outfit);
-  /* --font-sans: var(--font-geist-sans);  */
-  /* --font-mono: var(--font-geist-mono); */
+  --color-secondary: var(--secondary);
+  --color-tertiary: var(--tertiary);
+  --color-surface: var(--surface);
+  --font-sans: var(--font-montserrat);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #000000;
+    --background: #0B1117;
     --foreground: #ffffff;
   }
 }
@@ -25,7 +29,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-outfit), sans-serif;
+  font-family: var(--font-montserrat), sans-serif;
 }
 
 @keyframes infinite-carousel {

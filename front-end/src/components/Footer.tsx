@@ -10,9 +10,8 @@ const Footer = () => {
     <>
       <footer className="w-full h-auto xl:h-124 xl:relative flex flex-col xl:flex-row items-center xl:items-start pt-10 gap-8 xl:gap-0 px-4 sm:px-6 xl:px-0 overflow-x-hidden">
           <div className="flex flex-col sm:flex-row gap-5 sm:gap-10 items-center pl-0 xl:pl-15 pt-8 text-center sm:text-left w-full sm:w-auto">
-              <div className="w-32 sm:w-30 shrink-0"><img src=" https://dwit-data-society.github.io/main-site/assets/transparent_Logo.svg" alt="" /></div>
-              <div className="leading-7 w-full max-w-full sm:w-[70%] xl:w-[40%] sm:ml-10" ><p className="text-sm sm:text-base break-words">Exploring data, challenging ideas, and building the skills to understand an increasingly data driven world.
-                          DWIT Data Society brings together data enthusiasts through exploration, research, collaboration, experimentation, and continuous growth.</p>
+              <div className="w-32 sm:w-30 shrink-0"><img src="/assets/transparent_Logo.svg" alt="" /></div>
+              <div className="leading-7 w-full max-w-full sm:w-[70%] xl:w-[40%] sm:ml-10" ><p className="text-sm sm:text-base break-words">Deerwalk Data Society is a community based in Deerwalk Institute of Technology and aims to literate people through data by collecting data through surveys, college infrastructure and provide a report to the students and faculties whilst revealing interesting stories and patterns lying underneath the raw data.</p>
               </div>
           </div>
 

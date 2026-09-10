@@ -4,8 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output:"export",
 
-  basePath: process.env.NODE_ENV === "production" ? "/main-site" : "",
-  
+    // basePath: "/main-site",
   images:{
     unoptimized:true,
   },
