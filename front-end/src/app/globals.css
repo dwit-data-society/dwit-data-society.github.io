@@ -44,3 +44,17 @@ img {
   display: block;
   max-width: 100%;
 }
+
+.site-background {
+  min-height: 100svh;
+  background-position: center center;
+  background-size: cover;
+}
+
+@media (max-width: 767px) {
+  .site-background {
+    background-attachment: scroll;
+    background-position: center center;
+    background-size: auto 100%;
+  }
+}
