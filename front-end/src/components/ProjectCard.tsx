@@ -47,8 +47,6 @@ const REDUCED_FLIP_DURATION = 0.12;
 const TILT_MAX_DEG = 10;
 const TILT_RESPONSE_DURATION = 0.6;
 const TILT_RESPONSE_EASE = "power3.out";
-const TILT_RESET_DURATION = 0.8;
-const TILT_RESET_EASE = "power3.out";
 
 const CONTENT_STAGGER = 0.07;
 const CONTENT_IN_DURATION = 0.5;
@@ -231,29 +229,19 @@ export default function Card3D({
     setGlareY.current?.(relY * 100);
   }, []);
 
+  // Reset back to center by redirecting the SAME quickTo-generated
+  // setters, rather than firing separate gsap.to() tweens on the same
+  // properties. quickTo keeps one persistent tween per property; a
+  // competing tween with overwrite:"auto" on that same property leaves
+  // quickTo's internal tween in a broken state, so its setter functions
+  // silently stop doing anything on the next hover. Routing the reset
+  // through the same setters means there's only ever one tween per
+  // property, so there's nothing for it to conflict with.
   const resetTilt = useCallback(() => {
-    const wrapper = wrapperRef.current;
-    const card = cardRef.current;
-    if (!wrapper || !card) return;
-
-    gsap.to(wrapper, {
-      rotationX: 0,
-      rotationY: 0,
-      duration: TILT_RESET_DURATION,
-      ease: TILT_RESET_EASE,
-      overwrite: "auto",
-    });
-    gsap.to(pointer.current, {
-      x: 50,
-      y: 50,
-      duration: TILT_RESET_DURATION,
-      ease: TILT_RESET_EASE,
-      onUpdate: () => {
-        card.style.setProperty("--mx", `${pointer.current.x}%`);
-        card.style.setProperty("--my", `${pointer.current.y}%`);
-      },
-      overwrite: "auto",
-    });
+    setTiltX.current?.(0);
+    setTiltY.current?.(0);
+    setGlareX.current?.(50);
+    setGlareY.current?.(50);
   }, []);
 
   // ---- Interaction handlers ----------------------------------------------
