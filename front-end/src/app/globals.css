@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 :root {
-<<<<<<< HEAD
   --background: #f5f7fb;
   --foreground: #0f172a;
   --brand-teal: #57d7d0;
@@ -27,41 +26,15 @@
 
 html {
   scroll-behavior: smooth;
-=======
-  --background: #0B1117;
-  --foreground: #FFFFFF;
-  --primary: #08AAA5;
-  --secondary: #1479A8;
-  --tertiary: #12577A;
-  --surface: #F3F7F8;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-tertiary: var(--tertiary);
-  --color-surface: var(--surface);
-  --font-sans: var(--font-montserrat);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0B1117;
-    --foreground: #ffffff;
-  }
->>>>>>> origin/dev
 }
 
 body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-montserrat), sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-<<<<<<< HEAD
 a {
   color: inherit;
   text-decoration: none;
@@ -85,18 +58,3 @@ img {
     background-size: auto 100%;
   }
 }
-=======
-@keyframes infinite-carousel {
-  from{
-    transform: translateX(0);
-  }
-  to{
-    transform: translateX(-50%);  
-  }
-  
-}
-
-.animate-infinite-carousel{
-  animation: infinite-carousel 45s linear infinite;
-}   
->>>>>>> origin/dev
