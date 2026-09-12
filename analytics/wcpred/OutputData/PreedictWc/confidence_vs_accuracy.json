@@ -1,0 +1,1012 @@
+[
+  {
+    "match_id": 8,
+    "match": "Qatar vs Switzerland",
+    "consensusOutcome": "team2",
+    "actual_outcome": "draw",
+    "consensus": 100.0,
+    "accuracy": 0.0,
+    "confidenceGap": 100.0,
+    "totalPredictions": 15
+  },
+  {
+    "match_id": 30,
+    "match": "Ecuador vs Germany",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 0.0,
+    "confidenceGap": 100.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 69,
+    "match": "England vs Ghana",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 100.0,
+    "accuracy": 0.0,
+    "confidenceGap": 100.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 43,
+    "match": "Spain vs Cape Verde",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 100.0,
+    "accuracy": 0.0,
+    "confidenceGap": 100.0,
+    "totalPredictions": 17
+  },
+  {
+    "match_id": 39,
+    "match": "Belgium vs Iran",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 100.0,
+    "accuracy": 0.0,
+    "confidenceGap": 100.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 75,
+    "match": "Germany vs Paraguay",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 100.0,
+    "accuracy": 0.0,
+    "confidenceGap": 100.0,
+    "totalPredictions": 18
+  },
+  {
+    "match_id": 61,
+    "match": "Portugal vs DR Congo",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 95.24,
+    "accuracy": 4.76,
+    "confidenceGap": 90.48,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 46,
+    "match": "Uruguay vs Cape Verde",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 90.0,
+    "accuracy": 0.0,
+    "confidenceGap": 90.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 41,
+    "match": "Egypt vs Iran",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 90.91,
+    "accuracy": 4.55,
+    "confidenceGap": 86.36,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 6,
+    "match": "South Africa vs South Korea",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team1",
+    "consensus": 85.0,
+    "accuracy": 0.0,
+    "confidenceGap": 85.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 44,
+    "match": "Saudi Arabia vs Uruguay",
+    "consensusOutcome": "team2",
+    "actual_outcome": "draw",
+    "consensus": 87.5,
+    "accuracy": 6.25,
+    "confidenceGap": 81.25,
+    "totalPredictions": 16
+  },
+  {
+    "match_id": 37,
+    "match": "Belgium vs Egypt",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 87.5,
+    "accuracy": 6.25,
+    "confidenceGap": 81.25,
+    "totalPredictions": 16
+  },
+  {
+    "match_id": 87,
+    "match": "Australia vs Egypt",
+    "consensusOutcome": "team2",
+    "actual_outcome": "draw",
+    "consensus": 83.33,
+    "accuracy": 5.56,
+    "confidenceGap": 77.78,
+    "totalPredictions": 18
+  },
+  {
+    "match_id": 65,
+    "match": "Colombia vs Portugal",
+    "consensusOutcome": "team2",
+    "actual_outcome": "draw",
+    "consensus": 85.0,
+    "accuracy": 10.0,
+    "confidenceGap": 75.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 3,
+    "match": "Czech Republic vs South Africa",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 82.61,
+    "accuracy": 8.7,
+    "confidenceGap": 73.91,
+    "totalPredictions": 23
+  },
+  {
+    "match_id": 92,
+    "match": "Brazil vs Norway",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team2",
+    "consensus": 86.67,
+    "accuracy": 13.33,
+    "confidenceGap": 73.33,
+    "totalPredictions": 15
+  },
+  {
+    "match_id": 20,
+    "match": "Australia vs Turkey",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team1",
+    "consensus": 72.73,
+    "accuracy": 0.0,
+    "confidenceGap": 72.73,
+    "totalPredictions": 11
+  },
+  {
+    "match_id": 23,
+    "match": "Turkey vs United States",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team1",
+    "consensus": 85.0,
+    "accuracy": 15.0,
+    "confidenceGap": 70.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 7,
+    "match": "Canada vs Bosnia and Herzegovina",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 76.92,
+    "accuracy": 7.69,
+    "confidenceGap": 69.23,
+    "totalPredictions": 13
+  },
+  {
+    "match_id": 22,
+    "match": "Turkey vs Paraguay",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team2",
+    "consensus": 73.68,
+    "accuracy": 5.26,
+    "confidenceGap": 68.42,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 28,
+    "match": "Ecuador vs Curacao",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 84.21,
+    "accuracy": 15.79,
+    "confidenceGap": 68.42,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 35,
+    "match": "Japan vs Sweden",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 80.0,
+    "accuracy": 15.0,
+    "confidenceGap": 65.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 13,
+    "match": "Brazil vs Morocco",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 78.57,
+    "accuracy": 14.29,
+    "confidenceGap": 64.29,
+    "totalPredictions": 14
+  },
+  {
+    "match_id": 76,
+    "match": "Netherlands vs Morocco",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 81.82,
+    "accuracy": 18.18,
+    "confidenceGap": 63.64,
+    "totalPredictions": 11
+  },
+  {
+    "match_id": 97,
+    "match": "Switzerland vs Colombia",
+    "consensusOutcome": "team2",
+    "actual_outcome": "draw",
+    "consensus": 71.43,
+    "accuracy": 21.43,
+    "confidenceGap": 50.0,
+    "totalPredictions": 14
+  },
+  {
+    "match_id": 38,
+    "match": "Iran vs New Zealand",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 71.43,
+    "accuracy": 21.43,
+    "confidenceGap": 50.0,
+    "totalPredictions": 14
+  },
+  {
+    "match_id": 102,
+    "match": "France vs Spain",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team2",
+    "consensus": 68.75,
+    "accuracy": 25.0,
+    "confidenceGap": 43.75,
+    "totalPredictions": 16
+  },
+  {
+    "match_id": 47,
+    "match": "Cape Verde vs Saudi Arabia",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 59.09,
+    "accuracy": 22.73,
+    "confidenceGap": 36.36,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 26,
+    "match": "Ivory Coast vs Ecuador",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team1",
+    "consensus": 46.15,
+    "accuracy": 15.38,
+    "confidenceGap": 30.77,
+    "totalPredictions": 13
+  },
+  {
+    "match_id": 31,
+    "match": "Netherlands vs Japan",
+    "consensusOutcome": "team1",
+    "actual_outcome": "draw",
+    "consensus": 61.54,
+    "accuracy": 30.77,
+    "confidenceGap": 30.77,
+    "totalPredictions": 13
+  },
+  {
+    "match_id": 24,
+    "match": "Paraguay vs Australia",
+    "consensusOutcome": "team2",
+    "actual_outcome": "draw",
+    "consensus": 50.0,
+    "accuracy": 30.0,
+    "confidenceGap": 20.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 59,
+    "match": "Algeria vs Austria",
+    "consensusOutcome": "team2",
+    "actual_outcome": "draw",
+    "consensus": 50.0,
+    "accuracy": 40.0,
+    "confidenceGap": 10.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 4,
+    "match": "Mexico vs South Korea",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team1",
+    "consensus": 42.86,
+    "accuracy": 38.1,
+    "confidenceGap": 4.76,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 11,
+    "match": "Switzerland vs Canada",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team1",
+    "consensus": 42.86,
+    "accuracy": 38.1,
+    "confidenceGap": 4.76,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 2,
+    "match": "South Korea vs Czech Republic",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 80.0,
+    "accuracy": 80.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 5
+  },
+  {
+    "match_id": 5,
+    "match": "Czech Republic vs Mexico",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 75.0,
+    "accuracy": 75.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 10,
+    "match": "Canada vs Qatar",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 86.36,
+    "accuracy": 86.36,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 36,
+    "match": "Tunisia vs Netherlands",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 32,
+    "match": "Sweden vs Tunisia",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 92.31,
+    "accuracy": 92.31,
+    "confidenceGap": 0.0,
+    "totalPredictions": 13
+  },
+  {
+    "match_id": 33,
+    "match": "Netherlands vs Sweden",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 80.0,
+    "accuracy": 80.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 34,
+    "match": "Tunisia vs Japan",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 94.74,
+    "accuracy": 94.74,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 27,
+    "match": "Germany vs Ivory Coast",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 25,
+    "match": "Germany vs Curacao",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 13
+  },
+  {
+    "match_id": 29,
+    "match": "Curacao vs Ivory Coast",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 80.0,
+    "accuracy": 80.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 9,
+    "match": "Switzerland vs Bosnia and Herzegovina",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 81.82,
+    "accuracy": 81.82,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 14,
+    "match": "Haiti vs Scotland",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 12
+  },
+  {
+    "match_id": 12,
+    "match": "Bosnia and Herzegovina vs Qatar",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 61.9,
+    "accuracy": 61.9,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 15,
+    "match": "Scotland vs Morocco",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 80.95,
+    "accuracy": 80.95,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 16,
+    "match": "Brazil vs Haiti",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 18,
+    "match": "Morocco vs Haiti",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 17,
+    "match": "Scotland vs Brazil",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 19,
+    "match": "United States vs Paraguay",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 84.62,
+    "accuracy": 84.62,
+    "confidenceGap": 0.0,
+    "totalPredictions": 13
+  },
+  {
+    "match_id": 21,
+    "match": "United States vs Australia",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 90.48,
+    "accuracy": 90.48,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 54,
+    "match": "Senegal vs Iraq",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 95.45,
+    "accuracy": 95.45,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 53,
+    "match": "Norway vs France",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 52,
+    "match": "Norway vs Senegal",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 76.19,
+    "accuracy": 76.19,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 51,
+    "match": "France vs Iraq",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 58,
+    "match": "Jordan vs Algeria",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 76.19,
+    "accuracy": 76.19,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 57,
+    "match": "Argentina vs Austria",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 55,
+    "match": "Argentina vs Algeria",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 56,
+    "match": "Austria vs Jordan",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 76.47,
+    "accuracy": 76.47,
+    "confidenceGap": 0.0,
+    "totalPredictions": 17
+  },
+  {
+    "match_id": 62,
+    "match": "Uzbekistan vs Colombia",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 60,
+    "match": "Jordan vs Argentina",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 95.0,
+    "accuracy": 95.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 49,
+    "match": "France vs Senegal",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 50,
+    "match": "Iraq vs Norway",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 89.47,
+    "accuracy": 89.47,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 45,
+    "match": "Spain vs Saudi Arabia",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 95.45,
+    "accuracy": 95.45,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 48,
+    "match": "Uruguay vs Spain",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 42,
+    "match": "New Zealand vs Belgium",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 90.91,
+    "accuracy": 90.91,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 40,
+    "match": "New Zealand vs Egypt",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 73.68,
+    "accuracy": 73.68,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 70,
+    "match": "Panama vs Croatia",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 68,
+    "match": "Ghana vs Panama",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 76.19,
+    "accuracy": 76.19,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 67,
+    "match": "England vs Croatia",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 77.27,
+    "accuracy": 77.27,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 66,
+    "match": "DR Congo vs Uzbekistan",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 70.0,
+    "accuracy": 70.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 63,
+    "match": "Portugal vs Uzbekistan",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 64,
+    "match": "Colombia vs DR Congo",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 90.91,
+    "accuracy": 90.91,
+    "confidenceGap": 0.0,
+    "totalPredictions": 22
+  },
+  {
+    "match_id": 74,
+    "match": "Brazil vs Japan",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 78.95,
+    "accuracy": 78.95,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 71,
+    "match": "Panama vs England",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 21
+  },
+  {
+    "match_id": 79,
+    "match": "France vs Sweden",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 80,
+    "match": "Mexico vs Ecuador",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 77.78,
+    "accuracy": 77.78,
+    "confidenceGap": 0.0,
+    "totalPredictions": 18
+  },
+  {
+    "match_id": 82,
+    "match": "Belgium vs Senegal",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 55.0,
+    "accuracy": 55.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 81,
+    "match": "England vs DR Congo",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 95.0,
+    "accuracy": 95.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 83,
+    "match": "United States vs Bosnia and Herzegovina",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 90.0,
+    "accuracy": 90.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 73,
+    "match": "South Africa vs Canada",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 76.92,
+    "accuracy": 76.92,
+    "confidenceGap": 0.0,
+    "totalPredictions": 13
+  },
+  {
+    "match_id": 78,
+    "match": "Ivory Coast vs Norway",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 90.0,
+    "accuracy": 90.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 72,
+    "match": "Croatia vs Ghana",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 80.0,
+    "accuracy": 80.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 86,
+    "match": "Switzerland vs Algeria",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 68.42,
+    "accuracy": 68.42,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 85,
+    "match": "Portugal vs Croatia",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 84.21,
+    "accuracy": 84.21,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 84,
+    "match": "Spain vs Austria",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 20
+  },
+  {
+    "match_id": 88,
+    "match": "Argentina vs Cape Verde",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 94.74,
+    "accuracy": 94.74,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 91,
+    "match": "Paraguay vs France",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 12
+  },
+  {
+    "match_id": 93,
+    "match": "Mexico vs England",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 60.0,
+    "accuracy": 60.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 15
+  },
+  {
+    "match_id": 90,
+    "match": "Canada vs Morocco",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 10
+  },
+  {
+    "match_id": 89,
+    "match": "Colombia vs Ghana",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 73.68,
+    "accuracy": 73.68,
+    "confidenceGap": 0.0,
+    "totalPredictions": 19
+  },
+  {
+    "match_id": 95,
+    "match": "United States vs Belgium",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 58.82,
+    "accuracy": 58.82,
+    "confidenceGap": 0.0,
+    "totalPredictions": 17
+  },
+  {
+    "match_id": 94,
+    "match": "Portugal vs Spain",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 70.59,
+    "accuracy": 70.59,
+    "confidenceGap": 0.0,
+    "totalPredictions": 17
+  },
+  {
+    "match_id": 98,
+    "match": "France vs Morocco",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 12
+  },
+  {
+    "match_id": 96,
+    "match": "Argentina vs Egypt",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 93.33,
+    "accuracy": 93.33,
+    "confidenceGap": 0.0,
+    "totalPredictions": 15
+  },
+  {
+    "match_id": 99,
+    "match": "Spain vs Belgium",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 85.71,
+    "accuracy": 85.71,
+    "confidenceGap": 0.0,
+    "totalPredictions": 14
+  },
+  {
+    "match_id": 100,
+    "match": "Norway vs England",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 53.33,
+    "accuracy": 53.33,
+    "confidenceGap": 0.0,
+    "totalPredictions": 15
+  },
+  {
+    "match_id": 101,
+    "match": "Argentina vs Switzerland",
+    "consensusOutcome": "team1",
+    "actual_outcome": "team1",
+    "consensus": 100.0,
+    "accuracy": 100.0,
+    "confidenceGap": 0.0,
+    "totalPredictions": 14
+  },
+  {
+    "match_id": 103,
+    "match": "England vs Argentina",
+    "consensusOutcome": "team2",
+    "actual_outcome": "team2",
+    "consensus": 46.67,
+    "accuracy": 46.67,
+    "confidenceGap": 0.0,
+    "totalPredictions": 15
+  }
+]

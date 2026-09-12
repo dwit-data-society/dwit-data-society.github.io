@@ -1,0 +1,290 @@
+[
+  {
+    "team_name": "Senegal",
+    "predicted": 122,
+    "actual": 211,
+    "difference": 89
+  },
+  {
+    "team_name": "Belgium",
+    "predicted": 202,
+    "actual": 268,
+    "difference": 66
+  },
+  {
+    "team_name": "Canada",
+    "predicted": 129,
+    "actual": 179,
+    "difference": 50
+  },
+  {
+    "team_name": "DR Congo",
+    "predicted": 61,
+    "actual": 101,
+    "difference": 40
+  },
+  {
+    "team_name": "Netherlands",
+    "predicted": 158,
+    "actual": 197,
+    "difference": 39
+  },
+  {
+    "team_name": "New Zealand",
+    "predicted": 34,
+    "actual": 69,
+    "difference": 35
+  },
+  {
+    "team_name": "Switzerland",
+    "predicted": 163,
+    "actual": 197,
+    "difference": 34
+  },
+  {
+    "team_name": "Mexico",
+    "predicted": 113,
+    "actual": 147,
+    "difference": 34
+  },
+  {
+    "team_name": "Norway",
+    "predicted": 213,
+    "actual": 246,
+    "difference": 33
+  },
+  {
+    "team_name": "Bosnia and Herzegovina",
+    "predicted": 66,
+    "actual": 98,
+    "difference": 32
+  },
+  {
+    "team_name": "Haiti",
+    "predicted": 10,
+    "actual": 42,
+    "difference": 32
+  },
+  {
+    "team_name": "Cape Verde",
+    "predicted": 47,
+    "actual": 78,
+    "difference": 31
+  },
+  {
+    "team_name": "Argentina",
+    "predicted": 303,
+    "actual": 331,
+    "difference": 28
+  },
+  {
+    "team_name": "Austria",
+    "predicted": 85,
+    "actual": 111,
+    "difference": 26
+  },
+  {
+    "team_name": "Jordan",
+    "predicted": 35,
+    "actual": 58,
+    "difference": 23
+  },
+  {
+    "team_name": "Japan",
+    "predicted": 123,
+    "actual": 141,
+    "difference": 18
+  },
+  {
+    "team_name": "Algeria",
+    "predicted": 86,
+    "actual": 102,
+    "difference": 16
+  },
+  {
+    "team_name": "Tunisia",
+    "predicted": 18,
+    "actual": 33,
+    "difference": 15
+  },
+  {
+    "team_name": "Ivory Coast",
+    "predicted": 79,
+    "actual": 94,
+    "difference": 15
+  },
+  {
+    "team_name": "Uzbekistan",
+    "predicted": 26,
+    "actual": 40,
+    "difference": 14
+  },
+  {
+    "team_name": "Sweden",
+    "predicted": 91,
+    "actual": 105,
+    "difference": 14
+  },
+  {
+    "team_name": "United States",
+    "predicted": 181,
+    "actual": 191,
+    "difference": 10
+  },
+  {
+    "team_name": "Egypt",
+    "predicted": 135,
+    "actual": 143,
+    "difference": 8
+  },
+  {
+    "team_name": "South Africa",
+    "predicted": 40,
+    "actual": 43,
+    "difference": 3
+  },
+  {
+    "team_name": "Qatar",
+    "predicted": 34,
+    "actual": 36,
+    "difference": 2
+  },
+  {
+    "team_name": "Morocco",
+    "predicted": 160,
+    "actual": 160,
+    "difference": 0
+  },
+  {
+    "team_name": "Iran",
+    "predicted": 53,
+    "actual": 50,
+    "difference": -3
+  },
+  {
+    "team_name": "Curacao",
+    "predicted": 18,
+    "actual": 13,
+    "difference": -5
+  },
+  {
+    "team_name": "Croatia",
+    "predicted": 131,
+    "actual": 125,
+    "difference": -6
+  },
+  {
+    "team_name": "Iraq",
+    "predicted": 29,
+    "actual": 19,
+    "difference": -10
+  },
+  {
+    "team_name": "Paraguay",
+    "predicted": 65,
+    "actual": 50,
+    "difference": -15
+  },
+  {
+    "team_name": "Turkey",
+    "predicted": 79,
+    "actual": 60,
+    "difference": -19
+  },
+  {
+    "team_name": "Uruguay",
+    "predicted": 83,
+    "actual": 56,
+    "difference": -27
+  },
+  {
+    "team_name": "England",
+    "predicted": 290,
+    "actual": 260,
+    "difference": -30
+  },
+  {
+    "team_name": "Saudi Arabia",
+    "predicted": 46,
+    "actual": 16,
+    "difference": -30
+  },
+  {
+    "team_name": "Czech Republic",
+    "predicted": 62,
+    "actual": 28,
+    "difference": -34
+  },
+  {
+    "team_name": "Australia",
+    "predicted": 76,
+    "actual": 40,
+    "difference": -36
+  },
+  {
+    "team_name": "Ecuador",
+    "predicted": 77,
+    "actual": 40,
+    "difference": -37
+  },
+  {
+    "team_name": "France",
+    "predicted": 342,
+    "actual": 304,
+    "difference": -38
+  },
+  {
+    "team_name": "Panama",
+    "predicted": 40,
+    "actual": 0,
+    "difference": -40
+  },
+  {
+    "team_name": "Brazil",
+    "predicted": 231,
+    "actual": 190,
+    "difference": -41
+  },
+  {
+    "team_name": "Germany",
+    "predicted": 216,
+    "actual": 171,
+    "difference": -45
+  },
+  {
+    "team_name": "Ghana",
+    "predicted": 88,
+    "actual": 41,
+    "difference": -47
+  },
+  {
+    "team_name": "Scotland",
+    "predicted": 65,
+    "actual": 12,
+    "difference": -53
+  },
+  {
+    "team_name": "Portugal",
+    "predicted": 229,
+    "actual": 169,
+    "difference": -60
+  },
+  {
+    "team_name": "South Korea",
+    "predicted": 79,
+    "actual": 10,
+    "difference": -69
+  },
+  {
+    "team_name": "Spain",
+    "predicted": 319,
+    "actual": 247,
+    "difference": -72
+  },
+  {
+    "team_name": "Colombia",
+    "predicted": 178,
+    "actual": 101,
+    "difference": -77
+  }
+]
