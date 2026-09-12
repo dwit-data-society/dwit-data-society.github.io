@@ -19,7 +19,7 @@ export function Navbar() {
       style={{ fontFamily: "Montserrat, sans-serif" }}
     >
       <div
-        className="mx-auto flex h-[84px] max-w-[1600px] items-center justify-between rounded-2xl border border-white/35 bg-transparent px-5 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.38)] backdrop-blur-[2px] sm:px-7 lg:px-10"
+        className="mx-auto flex h-[84px] max-w-[1400px] items-center justify-between rounded-2xl border border-white/35 bg-transparent px-5 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.38)] backdrop-blur-[2px] sm:px-7 lg:px-10"
         style={{ background: "rgba(11, 17, 23, 0.5)" }}
       >
         <Link href="/" className="flex items-center gap-1 text-white">
@@ -69,7 +69,7 @@ export function Navbar() {
               </svg>
             </button>
             {projectsOpen ? (
-              <div className="absolute left-0 top-full z-10 mt-7 w-80 rounded-2xl border border-white/35 bg-[#09283a]/[0.72] p-3 shadow-[0_18px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.24)] backdrop-blur-md" role="menu">
+              <div className="absolute left-0 top-full z-10 mt-7 w-80 rounded-2xl border border-white/35 bg-[#09283a] p-3 shadow-[0_18px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.24)] backdrop-blur-md" role="menu">
                 {projectLinks.map((project) => (
                   <a
                     key={project.label}
@@ -89,7 +89,7 @@ export function Navbar() {
 
           <a
             href="#contact"
-            className="hidden h-11 items-center rounded-xl border border-[#4de5d2]/80 bg-[#4de5d2]/[0.2] px-5 text-base font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_16px_rgba(0,0,0,0.12)] transition-all hover:border-[#4de5d2] hover:bg-[#4de5d2]/[0.3] hover:text-[#c8fff9] focus:outline-none focus:ring-2 focus:ring-[#4de5d2]/60 sm:flex"
+            className="hidden h-11 items-center rounded-xl border border-[#4de5d2]/80 bg-transparent px-5 text-base font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_16px_rgba(0,0,0,0.12)] transition-all hover:border-[#4de5d2] hover:bg-transparent hover:text-[#c8fff9] focus:outline-none focus:ring-2 focus:ring-[#4de5d2]/60 sm:flex"
           >
             Contact us
           </a>
@@ -110,7 +110,7 @@ export function Navbar() {
       </div>
 
       {open ? (
-        <nav className="mx-auto mt-2 max-w-[1600px] rounded-2xl border border-white/30 bg-transparent px-5 pb-4 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.3)] backdrop-blur-[2px] sm:px-6 md:hidden" style={{ background: "rgba(11, 17, 23, 0.5)" }}>
+        <nav className="mx-auto mt-2 max-w-[1400px] rounded-2xl border border-white/30 bg-transparent px-5 pb-4 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.3)] backdrop-blur-[2px] sm:px-6 md:hidden" style={{ background: "rgba(11, 17, 23, 0.5)" }}>
           <a href="#about" className="flex h-11 items-center border-b border-white/15 px-1 text-sm font-semibold text-white/90 transition-colors hover:text-[#75f1e3]">
             About Us
           </a>
@@ -126,7 +126,7 @@ export function Navbar() {
             </svg>
           </button>
           {projectsOpen ? (
-            <div className="my-2 rounded-xl border border-white/30 bg-[#09283a]/[0.68] p-3 shadow-[0_12px_26px_rgba(0,0,0,0.24)] backdrop-blur-md">
+            <div className="my-2 rounded-xl border border-white/30 bg-[#09283a] p-3 shadow-[0_12px_26px_rgba(0,0,0,0.24)] backdrop-blur-md">
               {projectLinks.map((project) => (
                 <a key={project.label} href={project.href} className="block rounded-lg border border-white/10 px-4 py-3 transition-colors hover:border-[#4de5d2]/30 hover:bg-white/[0.1]" onClick={() => setOpen(false)}>
                   <span className="block text-base font-semibold text-white">{project.label}</span>
@@ -135,7 +135,7 @@ export function Navbar() {
               ))}
             </div>
           ) : null}
-          <a href="#contact" className="mt-2 flex h-11 items-center rounded-xl border border-[#4de5d2]/75 bg-[#4de5d2]/[0.18] px-4 text-base font-semibold text-white transition-colors hover:border-[#4de5d2] hover:bg-[#4de5d2]/[0.28]">
+          <a href="#contact" className="mt-2 flex h-11 items-center rounded-xl border border-[#4de5d2]/75 bg-transparent px-4 text-base font-semibold text-white transition-colors hover:border-[#4de5d2] hover:bg-transparent">
             Contact us
           </a>
         </nav>
