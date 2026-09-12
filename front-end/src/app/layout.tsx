@@ -9,7 +9,8 @@ const montserrat = Montserrat({
 
 export const metadata: Metadata = {
   title: "Deerwalk Data Society",
-  description: "Making data transparent and accessible",
+  description:
+    "Deerwalk Data Society brings students together around data science, analytics, and applied research through programs, events, and community projects.",
   icons: "assets/transparent_Logo.svg",
 };
 

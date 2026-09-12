@@ -1,0 +1,44 @@
+:root {
+  --brand-teal: #57d7d0;
+  --brand-blue: #5ea6ff;
+  --brand-deep: #1d3d78;
+  --brand-ink: #071526;
+  --surface: #ffffff;
+  --surface-strong: #f4f7fb;
+  --text: #18212f;
+  --muted: #5b6472;
+  --border: rgba(19, 34, 56, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Montserrat", Arial, sans-serif;
+  background: #f7fafc;
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+

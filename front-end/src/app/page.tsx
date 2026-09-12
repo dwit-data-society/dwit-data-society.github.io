@@ -1,5 +1,5 @@
+import { Navbar } from "@/components/navbar";
 import Starfield from "@/components/Starfield";
-import HeroCanvas from "@/components/HeroCanvas";
 import Footer from "@/components/Footer";
 import AboutUs from "@/components/AboutUs";
 import OurProjects from "@/components/OurProjects";
@@ -7,13 +7,14 @@ import OurProjects from "@/components/OurProjects";
 
 export default function Page() {
   return (
-    <>
-    {/* <HeroCanvas /> */}
-     {/* <InfiniteCarousel/> */}
-    <Starfield/>
-    <AboutUs/>
-    <OurProjects/>
-    <Footer/>
-    </>
-  )
+    <div className="site-background min-h-screen bg-black text-white">
+      <Navbar />
+      {/* <HeroCanvas /> */}
+      {/* <InfiniteCarousel /> */}
+      <Starfield />
+      <AboutUs />
+      <OurProjects />
+      <Footer />
+    </div>
+  );
 }
