@@ -6,8 +6,8 @@ import ProjectsSection from "@/components/ProjectSection";
 
 export default function Page() {
   return (
-    <div className="site-background min-h-screen bg-black text-white">
-      <section className="relative min-h-screen">
+    <div className="min-h-screen background-[var(--background)]">
+      <section className="relative">
         <Starfield />
         <Navbar />
       </section>
