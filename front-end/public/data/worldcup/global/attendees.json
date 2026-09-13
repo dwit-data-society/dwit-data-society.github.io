@@ -1,0 +1,70 @@
+[
+    {
+        "venue":"MetLife Stadium, East Rutherford",
+        "attendance":645186
+    },
+    {
+        "venue":"AT&T Stadium, Arlington",
+        "attendance":631843
+    },
+    {
+        "venue":"SoFi Stadium, Inglewood",
+        "attendance":561656
+    },
+    {
+        "venue":"Mercedes-Benz Stadium, Atlanta",
+        "attendance":544516
+    },
+    {
+        "venue":"Reliant Stadium, Houston",
+        "attendance":480184
+    },
+    {
+        "venue":"Hard Rock Stadium, Miami Gardens",
+        "attendance":449157
+    },
+    {
+        "venue":"Gillette Stadium, Foxborough",
+        "attendance":447283
+    },
+    {
+        "venue":"GEHA Field at Arrowhead Stadium, Kansas City",
+        "attendance":413169
+    },
+    {
+        "venue":"Levi's Stadium, Santa Clara",
+        "attendance":411345
+    },
+    {
+        "venue":"Lincoln Financial Field, Philadelphia",
+        "attendance":409894
+    },
+    {
+        "venue":"Estadio Banorte, Coyoacán",
+        "attendance":404120
+    },
+    {
+        "venue":"Lumen Field, Seattle",
+        "attendance":401400
+    },
+    {
+        "venue":"BC Place Stadium, Vancouver",
+        "attendance":367479
+    },
+    {
+        "venue":"BMO Field, Toronto",
+        "attendance":258088
+    },
+    {
+        "venue":"Estadio Akron, Zapopan",
+        "attendance":180930
+    },
+    {
+        "venue":"Estadio BBVA, Guadalupe",
+        "attendance":153729
+    },
+    {
+        "venue":"Estadio BBVA Bancomer, Guadalupe",
+        "attendance":50987
+    }
+]

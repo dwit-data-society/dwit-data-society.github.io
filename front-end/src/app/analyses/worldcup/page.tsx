@@ -1,8 +1,9 @@
+import WorldCupAnalytics from "@/components/WorldCupAnalytics"
 
-const page = () => {
+const WorldCupPage = () => {
   return (
-    <></>
+    <><WorldCupAnalytics/></>
   )
 }
 
-export default page
+export default WorldCupPage

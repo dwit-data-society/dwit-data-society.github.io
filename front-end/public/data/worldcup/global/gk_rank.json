@@ -1,0 +1,727 @@
+[
+    {
+        "player":"Orlando Gill",
+        "team":"Paraguay",
+        "gk_saves":23.0
+    },
+    {
+        "player":"Emiliano Martínez",
+        "team":"Argentina",
+        "gk_saves":20.0
+    },
+    {
+        "player":"Gregor Kobel",
+        "team":"Switzerland",
+        "gk_saves":20.0
+    },
+    {
+        "player":"Eloy Room",
+        "team":"Curaçao",
+        "gk_saves":20.0
+    },
+    {
+        "player":"Diogo Costa",
+        "team":"Portugal",
+        "gk_saves":19.0
+    },
+    {
+        "player":"Vozinha",
+        "team":"Cabo Verde",
+        "gk_saves":18.0
+    },
+    {
+        "player":"Bart Verbruggen",
+        "team":"Netherlands",
+        "gk_saves":16.0
+    },
+    {
+        "player":"Mohammed Al-Owais",
+        "team":"Saudi Arabia",
+        "gk_saves":16.0
+    },
+    {
+        "player":"Ørjan Nyland",
+        "team":"Norway",
+        "gk_saves":15.0
+    },
+    {
+        "player":"Jordan Pickford",
+        "team":"England",
+        "gk_saves":15.0
+    },
+    {
+        "player":"Alireza Beiranvand",
+        "team":"IR Iran",
+        "gk_saves":15.0
+    },
+    {
+        "player":"Lionel Mpasi",
+        "team":"Congo DR",
+        "gk_saves":14.0
+    },
+    {
+        "player":"Thibaut Courtois",
+        "team":"Belgium",
+        "gk_saves":14.0
+    },
+    {
+        "player":"Alisson",
+        "team":"Brazil",
+        "gk_saves":14.0
+    },
+    {
+        "player":"Patrick Beach",
+        "team":"Australia",
+        "gk_saves":14.0
+    },
+    {
+        "player":"Yassine Bounou",
+        "team":"Morocco",
+        "gk_saves":14.0
+    },
+    {
+        "player":"Alexander Schlager",
+        "team":"Austria",
+        "gk_saves":13.0
+    },
+    {
+        "player":"Zion Suzuki",
+        "team":"Japan",
+        "gk_saves":12.0
+    },
+    {
+        "player":"Mostafa Shobeir",
+        "team":"Egypt",
+        "gk_saves":12.0
+    },
+    {
+        "player":"Mike Maignan",
+        "team":"France",
+        "gk_saves":12.0
+    },
+    {
+        "player":"Mahmoud Abunada",
+        "team":"Qatar",
+        "gk_saves":12.0
+    },
+    {
+        "player":"Max Crocombe",
+        "team":"New Zealand",
+        "gk_saves":11.0
+    },
+    {
+        "player":"Jacob Widell Zetterström",
+        "team":"Sweden",
+        "gk_saves":11.0
+    },
+    {
+        "player":"Ronwen Williams",
+        "team":"South Africa",
+        "gk_saves":11.0
+    },
+    {
+        "player":"Johny Placide",
+        "team":"Haiti",
+        "gk_saves":11.0
+    },
+    {
+        "player":"Dominik Livaković",
+        "team":"Croatia",
+        "gk_saves":10.0
+    },
+    {
+        "player":"Matej Kovar",
+        "team":"Czechia",
+        "gk_saves":9.0
+    },
+    {
+        "player":"Hernán Galíndez",
+        "team":"Ecuador",
+        "gk_saves":9.0
+    },
+    {
+        "player":"Yahia Fofana",
+        "team":"Côte d'Ivoire",
+        "gk_saves":9.0
+    },
+    {
+        "player":"Unai Simón",
+        "team":"Spain",
+        "gk_saves":9.0
+    },
+    {
+        "player":"Kim Seung-gyu",
+        "team":"Korea Republic",
+        "gk_saves":9.0
+    },
+    {
+        "player":"Édouard Mendy",
+        "team":"Senegal",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Matt Freese",
+        "team":"United States",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Angus Gunn",
+        "team":"Scotland",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Jalal Hassan",
+        "team":"Iraq",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Uğurcan Çakır",
+        "team":"Türkiye",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Yazeed Abulaila",
+        "team":"Jordan",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Raúl Rangel",
+        "team":"Mexico",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Benjamin Asare",
+        "team":"Ghana",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Luca Zidane",
+        "team":"Algeria",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Lawrence Ati-Zigi",
+        "team":"Ghana",
+        "gk_saves":8.0
+    },
+    {
+        "player":"Orlando Mosquera",
+        "team":"Panama",
+        "gk_saves":7.0
+    },
+    {
+        "player":"Maxime Crépeau",
+        "team":"Canada",
+        "gk_saves":6.0
+    },
+    {
+        "player":"Nikola Vasilj",
+        "team":"Bosnia–Herz",
+        "gk_saves":6.0
+    },
+    {
+        "player":"Camilo Vargas",
+        "team":"Colombia",
+        "gk_saves":6.0
+    },
+    {
+        "player":"Manuel Neuer",
+        "team":"Germany",
+        "gk_saves":5.0
+    },
+    {
+        "player":"Dean Henderson",
+        "team":"England",
+        "gk_saves":5.0
+    },
+    {
+        "player":"Egil Selvik",
+        "team":"Norway",
+        "gk_saves":5.0
+    },
+    {
+        "player":"Abduvohid Nematov",
+        "team":"Uzbekistan",
+        "gk_saves":5.0
+    },
+    {
+        "player":"Aymen Dahmen",
+        "team":"Tunisia",
+        "gk_saves":5.0
+    },
+    {
+        "player":"Fernando Muslera",
+        "team":"Uruguay",
+        "gk_saves":4.0
+    },
+    {
+        "player":"Mory Diaw",
+        "team":"Senegal",
+        "gk_saves":4.0
+    },
+    {
+        "player":"Kristoffer Nordfeldt",
+        "team":"Sweden",
+        "gk_saves":3.0
+    },
+    {
+        "player":"Ahmed Basil",
+        "team":"Iraq",
+        "gk_saves":3.0
+    },
+    {
+        "player":"Senne Lammens",
+        "team":"Belgium",
+        "gk_saves":2.0
+    },
+    {
+        "player":"Utkir Yusupov",
+        "team":"Uzbekistan",
+        "gk_saves":1.0
+    },
+    {
+        "player":"Mouhib Chamakh",
+        "team":"Tunisia",
+        "gk_saves":1.0
+    },
+    {
+        "player":"Oussama Benbot",
+        "team":"Algeria",
+        "gk_saves":0.0
+    },
+    {
+        "player":"Mathew Ryan",
+        "team":"Australia",
+        "gk_saves":0.0
+    },
+    {
+        "player":"Guillermo Ochoa",
+        "team":"Mexico",
+        "gk_saves":0.0
+    },
+    {
+        "player":"Matt Turner",
+        "team":"United States",
+        "gk_saves":0.0
+    },
+    {
+        "player":"Sergio Rochet",
+        "team":"Uruguay",
+        "gk_saves":0.0
+    },
+    {
+        "player":"Melvin Mastil",
+        "team":"Algeria",
+        "gk_saves":null
+    },
+    {
+        "player":"Gerónimo Rulli",
+        "team":"Argentina",
+        "gk_saves":null
+    },
+    {
+        "player":"Juan Musso",
+        "team":"Argentina",
+        "gk_saves":null
+    },
+    {
+        "player":"Paul Izzo",
+        "team":"Australia",
+        "gk_saves":null
+    },
+    {
+        "player":"Florian Wiegele",
+        "team":"Austria",
+        "gk_saves":null
+    },
+    {
+        "player":"Patrick Pentz",
+        "team":"Austria",
+        "gk_saves":null
+    },
+    {
+        "player":"Mike Penders",
+        "team":"Belgium",
+        "gk_saves":null
+    },
+    {
+        "player":"Martin Zlomislić",
+        "team":"Bosnia–Herz",
+        "gk_saves":null
+    },
+    {
+        "player":"Mladen Jurkas",
+        "team":"Bosnia–Herz",
+        "gk_saves":null
+    },
+    {
+        "player":"Ederson Moraes",
+        "team":"Brazil",
+        "gk_saves":null
+    },
+    {
+        "player":"Wéverton",
+        "team":"Brazil",
+        "gk_saves":null
+    },
+    {
+        "player":"C.J. dos Santos",
+        "team":"Cabo Verde",
+        "gk_saves":null
+    },
+    {
+        "player":"Márcio Rosa",
+        "team":"Cabo Verde",
+        "gk_saves":null
+    },
+    {
+        "player":"Dayne St. Clair",
+        "team":"Canada",
+        "gk_saves":null
+    },
+    {
+        "player":"Owen Goodman",
+        "team":"Canada",
+        "gk_saves":null
+    },
+    {
+        "player":"David Ospina",
+        "team":"Colombia",
+        "gk_saves":null
+    },
+    {
+        "player":"Álvaro David Montero",
+        "team":"Colombia",
+        "gk_saves":null
+    },
+    {
+        "player":"Matthieu Epolo",
+        "team":"Congo DR",
+        "gk_saves":null
+    },
+    {
+        "player":"Timothy Fayulu",
+        "team":"Congo DR",
+        "gk_saves":null
+    },
+    {
+        "player":"Dominik Kotarski",
+        "team":"Croatia",
+        "gk_saves":null
+    },
+    {
+        "player":"Ivor Pandur",
+        "team":"Croatia",
+        "gk_saves":null
+    },
+    {
+        "player":"Trevor Doornbusch",
+        "team":"Curaçao",
+        "gk_saves":null
+    },
+    {
+        "player":"Tyrick Bodak",
+        "team":"Curaçao",
+        "gk_saves":null
+    },
+    {
+        "player":"Jindřich Staněk",
+        "team":"Czechia",
+        "gk_saves":null
+    },
+    {
+        "player":"Lukáš Horníček",
+        "team":"Czechia",
+        "gk_saves":null
+    },
+    {
+        "player":"Alban Lafont",
+        "team":"Côte d'Ivoire",
+        "gk_saves":null
+    },
+    {
+        "player":"Mohamed Koné",
+        "team":"Côte d'Ivoire",
+        "gk_saves":null
+    },
+    {
+        "player":"Gonzalo Valle",
+        "team":"Ecuador",
+        "gk_saves":null
+    },
+    {
+        "player":"Moisés Ramírez",
+        "team":"Ecuador",
+        "gk_saves":null
+    },
+    {
+        "player":"El Mahdy Soliman",
+        "team":"Egypt",
+        "gk_saves":null
+    },
+    {
+        "player":"Mohamed Alaa",
+        "team":"Egypt",
+        "gk_saves":null
+    },
+    {
+        "player":"Mohamed El-Shenawy",
+        "team":"Egypt",
+        "gk_saves":null
+    },
+    {
+        "player":"James Trafford",
+        "team":"England",
+        "gk_saves":null
+    },
+    {
+        "player":"Brice Samba",
+        "team":"France",
+        "gk_saves":null
+    },
+    {
+        "player":"Robin Risser",
+        "team":"France",
+        "gk_saves":null
+    },
+    {
+        "player":"Alexander Nübel",
+        "team":"Germany",
+        "gk_saves":null
+    },
+    {
+        "player":"Oliver Baumann",
+        "team":"Germany",
+        "gk_saves":null
+    },
+    {
+        "player":"Joseph Anang",
+        "team":"Ghana",
+        "gk_saves":null
+    },
+    {
+        "player":"Alexandre Pierre",
+        "team":"Haiti",
+        "gk_saves":null
+    },
+    {
+        "player":"Josué Duverger",
+        "team":"Haiti",
+        "gk_saves":null
+    },
+    {
+        "player":"Hossein Hosseini",
+        "team":"IR Iran",
+        "gk_saves":null
+    },
+    {
+        "player":"Payam Niazmand",
+        "team":"IR Iran",
+        "gk_saves":null
+    },
+    {
+        "player":"Fahad Talib",
+        "team":"Iraq",
+        "gk_saves":null
+    },
+    {
+        "player":"Keisuke Ōsako",
+        "team":"Japan",
+        "gk_saves":null
+    },
+    {
+        "player":"Tomoki Hayakawa",
+        "team":"Japan",
+        "gk_saves":null
+    },
+    {
+        "player":"Abdallah Al-Fakhouri",
+        "team":"Jordan",
+        "gk_saves":null
+    },
+    {
+        "player":"Nour Bani Attiah",
+        "team":"Jordan",
+        "gk_saves":null
+    },
+    {
+        "player":"Jo Hyeon-woo",
+        "team":"Korea Republic",
+        "gk_saves":null
+    },
+    {
+        "player":"Song Bum-keun",
+        "team":"Korea Republic",
+        "gk_saves":null
+    },
+    {
+        "player":"Carlos Acevedo",
+        "team":"Mexico",
+        "gk_saves":null
+    },
+    {
+        "player":"Ahmed Reda Tagnaouti",
+        "team":"Morocco",
+        "gk_saves":null
+    },
+    {
+        "player":"Munir",
+        "team":"Morocco",
+        "gk_saves":null
+    },
+    {
+        "player":"Mark Flekken",
+        "team":"Netherlands",
+        "gk_saves":null
+    },
+    {
+        "player":"Robin Roefs",
+        "team":"Netherlands",
+        "gk_saves":null
+    },
+    {
+        "player":"Alex Paulsen",
+        "team":"New Zealand",
+        "gk_saves":null
+    },
+    {
+        "player":"Michael Woud",
+        "team":"New Zealand",
+        "gk_saves":null
+    },
+    {
+        "player":"Sander Tangvik",
+        "team":"Norway",
+        "gk_saves":null
+    },
+    {
+        "player":"César Samudio",
+        "team":"Panama",
+        "gk_saves":null
+    },
+    {
+        "player":"Luis Mejía",
+        "team":"Panama",
+        "gk_saves":null
+    },
+    {
+        "player":"Gastón Olveira",
+        "team":"Paraguay",
+        "gk_saves":null
+    },
+    {
+        "player":"Gatito Fernández",
+        "team":"Paraguay",
+        "gk_saves":null
+    },
+    {
+        "player":"José Sá",
+        "team":"Portugal",
+        "gk_saves":null
+    },
+    {
+        "player":"Rui Silva",
+        "team":"Portugal",
+        "gk_saves":null
+    },
+    {
+        "player":"Meshaal Barsham",
+        "team":"Qatar",
+        "gk_saves":null
+    },
+    {
+        "player":"Salah Zakaria",
+        "team":"Qatar",
+        "gk_saves":null
+    },
+    {
+        "player":"Ahmed Al-Kassar",
+        "team":"Saudi Arabia",
+        "gk_saves":null
+    },
+    {
+        "player":"Nawaf Al Aqidi",
+        "team":"Saudi Arabia",
+        "gk_saves":null
+    },
+    {
+        "player":"Craig Gordon",
+        "team":"Scotland",
+        "gk_saves":null
+    },
+    {
+        "player":"Liam Kelly",
+        "team":"Scotland",
+        "gk_saves":null
+    },
+    {
+        "player":"Yehvann Diouf",
+        "team":"Senegal",
+        "gk_saves":null
+    },
+    {
+        "player":"Ricardo Goss",
+        "team":"South Africa",
+        "gk_saves":null
+    },
+    {
+        "player":"Sipho Chaine",
+        "team":"South Africa",
+        "gk_saves":null
+    },
+    {
+        "player":"David Raya",
+        "team":"Spain",
+        "gk_saves":null
+    },
+    {
+        "player":"Joan García",
+        "team":"Spain",
+        "gk_saves":null
+    },
+    {
+        "player":"Viktor Johansson",
+        "team":"Sweden",
+        "gk_saves":null
+    },
+    {
+        "player":"Marvin Keller",
+        "team":"Switzerland",
+        "gk_saves":null
+    },
+    {
+        "player":"Yvon Mvogo",
+        "team":"Switzerland",
+        "gk_saves":null
+    },
+    {
+        "player":"Sabri Ben Hassen",
+        "team":"Tunisia",
+        "gk_saves":null
+    },
+    {
+        "player":"Altay Bayındır",
+        "team":"Türkiye",
+        "gk_saves":null
+    },
+    {
+        "player":"Mert Günok",
+        "team":"Türkiye",
+        "gk_saves":null
+    },
+    {
+        "player":"Chris Brady",
+        "team":"United States",
+        "gk_saves":null
+    },
+    {
+        "player":"Santiago Mele",
+        "team":"Uruguay",
+        "gk_saves":null
+    },
+    {
+        "player":"Botirali Ergashev",
+        "team":"Uzbekistan",
+        "gk_saves":null
+    }
+]

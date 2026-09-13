@@ -16,8 +16,7 @@ export default function ProjectsSection() {
           title="World Cup Prediction"
           subtitle="Turning predictions into insights."
           description="An analysis of FIFA World Cup 2026 prediction here at DWIT, exploring champion picks, match predictions, scoring patterns, and leaderboard performance."
-          href="/releases/meridian"
-            target="_blank"/>
+          href="/analyses/worldcup"/>
 
 
 
