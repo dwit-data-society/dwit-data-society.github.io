@@ -14,8 +14,7 @@ export function Navbar() {
 
   return (
     <header
-      className="sticky top-0 z-50 px-4 pt-4 sm:px-6 lg:px-8"
-      style={{ fontFamily: "Montserrat, sans-serif" }}
+    className="fixed top-0 left-0 z-50 w-full px-4 pt-4 sm:px-6 lg:px-8"
     >
       <div
         className="mx-auto flex h-[84px] max-w-[1400px] items-center justify-between rounded-2xl border border-white/35 bg-transparent px-5 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.38)] backdrop-blur-[2px] sm:px-7 lg:px-10"
