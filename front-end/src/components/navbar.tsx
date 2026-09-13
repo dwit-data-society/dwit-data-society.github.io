@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import logo from "@/assets/nobg.svg";
 
 const projectLinks = [
   { label: "Current projects", detail: "Explore what we are building", href: "#projects" },
@@ -23,25 +22,7 @@ export function Navbar() {
         style={{ background: "rgba(11, 17, 23, 0.5)" }}
       >
         <Link href="/" className="flex items-center gap-1 text-white">
-          <img src={logo.src} alt="Deerwalk Data Society" className="h-16 w-16 object-contain md:h-18 md:w-18" />
-          <div className="hidden translate-y-1 flex-col items-center leading-none md:flex">
-            <span
-              className="bg-clip-text text-[1.5rem] font-bold tracking-[-0.03em] text-transparent"
-              style={{
-                background: "linear-gradient(49.68deg, #1B6196 -13.15%, #06989C 72.95%)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Deerwalk
-            </span>
-            <span
-              className="mt-[2px] ml-[9px] h-[14.68px] w-[85.4px] whitespace-nowrap text-left text-[0.75rem] font-normal leading-[14.68px] tracking-normal text-white"
-              style={{ fontFamily: "Montserrat, sans-serif" }}
-            >
-              Data Society
-            </span>
-          </div>
+          <img src="\assets\horizontal_Logo.svg" alt="Deerwalk Data Society" className="h-24 w-24 object-contain md:h-32 md:w-32" />
         </Link>
 
         <div className="ml-auto hidden items-center gap-3 md:flex">
