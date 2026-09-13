@@ -2,10 +2,14 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { ChevronDown, Menu } from "lucide-react";
 
 const projectLinks = [
-  { label: "Current projects", detail: "Explore what we are building", href: "#projects" },
-  { label: "Past projects", detail: "See what we have created", href: "#past-projects" },
+  {
+    label: "World Cup Prediction",
+    detail: "Explore insights gained from World Cup 2026 Prediction",
+    href: "#projects",
+  },
 ];
 
 export function Navbar() {
@@ -17,110 +21,151 @@ export function Navbar() {
     className="fixed top-0 left-0 z-50 w-full px-4 pt-4 sm:px-6 lg:px-8"
     >
       <div
-        className="mx-auto flex h-[84px] max-w-[1400px] items-center justify-between rounded-2xl border border-white/35 bg-transparent px-5 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.38)] backdrop-blur-[2px] sm:px-7 lg:px-10"
+        className="mx-auto flex h-[84px] max-w-[1400px] items-center justify-between rounded-2xl border border-white/35 px-4 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.38)] backdrop-blur-[2px] sm:px-6 lg:px-8 xl:px-10"
         style={{ background: "rgba(11, 17, 23, 0.5)" }}
       >
-        <Link href="/" className="flex items-center gap-1 text-white">
-          <img src="\assets\horizontal_Logo.svg" alt="Deerwalk Data Society" className="h-24 w-24 object-contain md:h-32 md:w-32" />
+        <Link
+          href="/"
+          onClick={(e) => {
+            e.preventDefault();
+
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth",
+            });
+
+            setOpen(false);
+            setProjectsOpen(false);
+          }}
+          className="flex shrink-0 items-center text-white"
+        >
+          <img
+            src="/assets/horizontal_Logo.svg"
+            alt="Deerwalk Data Society"
+            className="h-20 w-20 object-contain md:h-24 md:w-24 lg:h-28 lg:w-28 xl:h-32 xl:w-32"
+          />
         </Link>
 
-        <div className="ml-auto hidden items-center gap-3 md:flex">
-          <nav className="flex items-center gap-3">
-          <a href="#about" className="flex h-11 items-center px-2 text-[1.02rem] font-semibold text-white/90 transition-colors hover:text-[#75f1e3]">
-            About Us
-          </a>
-          <div className="relative">
-            <button
-              type="button"
-              aria-expanded={projectsOpen}
-              aria-haspopup="menu"
-              onClick={() => setProjectsOpen((value) => !value)}
-              className="flex h-11 items-center gap-2 px-2 text-[1.02rem] font-semibold text-white/90 transition-colors hover:text-[#75f1e3]"
+        <div className="ml-auto hidden items-center gap-2 md:flex lg:gap-3">
+          <nav className="flex items-center gap-1 md:gap-2 lg:gap-3">
+            <a
+              href="#about"
+              className="flex h-11 items-center px-1.5 text-sm font-semibold text-white/90 transition-colors hover:text-primary md:px-2 lg:text-base xl:text-[1.02rem]"
             >
-              Our Projects
-              <svg
-                aria-hidden="true"
-                viewBox="0 0 12 8"
-                className={`h-2.5 w-2.5 shrink-0 transition-transform duration-200 ${
-                  projectsOpen ? "rotate-180" : ""
-                }`}
+              About Us
+            </a>
+
+            <div className="group relative">
+              <a
+                href="#projects"
+                className="flex h-11 items-center gap-1.5 px-1.5 text-sm font-semibold text-white/90 transition-colors hover:text-primary md:px-2 lg:gap-2 lg:text-base xl:text-[1.02rem]"
               >
-                <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
-              </svg>
-            </button>
-            {projectsOpen ? (
-              <div className="absolute left-0 top-full z-10 mt-7 w-80 rounded-2xl border border-white/35 bg-[#09283a] p-3 shadow-[0_18px_40px_rgba(0,0,0,0.3),inset_0_1px_0_rgba(255,255,255,0.24)] backdrop-blur-md" role="menu">
+                Our Projects
+
+                <ChevronDown className="h-3.5 w-3.5 shrink-0 transition-transform duration-200 group-hover:rotate-180 lg:h-4 lg:w-4" />
+              </a>
+
+              <div
+                className="invisible absolute left-0 top-full mt-3 w-72 translate-y-2 rounded-xl border border-primary/30 bg-background p-3 opacity-0 shadow-[0_18px_40px_rgba(0,0,0,0.3)] backdrop-blur-md transition-all duration-200 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              >
                 {projectLinks.map((project) => (
                   <a
                     key={project.label}
                     href={project.href}
-                    role="menuitem"
-                    onClick={() => setProjectsOpen(false)}
-                    className="block rounded-xl border border-white/10 px-4 py-4 transition-all hover:border-[#4de5d2]/35 hover:bg-white/[0.12]"
+                    className="block rounded-lg px-3 py-3 transition-colors hover:bg-primary/10"
                   >
-                    <span className="block text-base font-semibold text-white">{project.label}</span>
-                    <span className="mt-1 block text-sm text-[#b9dce8]/75">{project.detail}</span>
+                    <span className="block text-base font-semibold text-white transition-colors hover:text-primary">
+                      {project.label}
+                    </span>
+
+                    <span className="mt-1 block text-sm text-white/60">
+                      {project.detail}
+                    </span>
                   </a>
                 ))}
               </div>
-            ) : null}
-          </div>
+            </div>
           </nav>
 
           <a
             href="#contact"
-            className="hidden h-11 items-center rounded-xl border border-[#4de5d2]/80 bg-transparent px-5 text-base font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_16px_rgba(0,0,0,0.12)] transition-all hover:border-[#4de5d2] hover:bg-transparent hover:text-[#c8fff9] focus:outline-none focus:ring-2 focus:ring-[#4de5d2]/60 sm:flex"
+            className="hidden h-10 items-center rounded-xl border border-primary/80 bg-transparent px-3 text-sm font-semibold text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.2),0_4px_16px_rgba(0,0,0,0.12)] transition-all hover:border-primary hover:bg-primary/10 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/60 sm:flex md:px-4 lg:h-11 lg:px-5 lg:text-base"
           >
             Contact us
           </a>
         </div>
 
-        <div className="flex items-center gap-4">
-          <button
-            type="button"
-            aria-label="Toggle menu"
-            onClick={() => setOpen((value) => !value)}
-            className="flex flex-col gap-1.5 rounded-full border border-white/15 bg-white/[0.05] p-3 transition-colors hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#4de5d2]/50 md:hidden"
-          >
-            <span className="block h-0.5 w-6 rounded-full bg-[#4de5d2]" />
-            <span className="block h-0.5 w-6 rounded-full bg-[#4de5d2]" />
-            <span className="block h-0.5 w-5 rounded-full bg-[#4de5d2]" />
-          </button>
-        </div>
+        <button
+          type="button"
+          aria-label="Toggle menu"
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+          className="rounded-full p-3 text-primary transition-colors hover:bg-primary/10 focus:outline-none focus:ring-2 focus:ring-primary/50 md:hidden"
+        >
+          <Menu className="h-7 w-7" />
+        </button>
       </div>
 
       {open ? (
-        <nav className="mx-auto mt-2 max-w-[1400px] rounded-2xl border border-white/30 bg-transparent px-5 pb-4 shadow-[0_14px_34px_rgba(0,0,0,0.16),inset_0_1px_0_rgba(255,255,255,0.3)] backdrop-blur-[2px] sm:px-6 md:hidden" style={{ background: "rgba(11, 17, 23, 0.5)" }}>
-          <a href="#about" className="flex h-11 items-center border-b border-white/15 px-1 text-sm font-semibold text-white/90 transition-colors hover:text-[#75f1e3]">
+        <nav
+          className="mx-auto mt-2 max-w-[1400px] px-5 pb-4 sm:px-6 md:hidden"
+          style={{ background: "rgba(11, 17, 23, 0.95)" }}
+        >
+          <a
+            href="#about"
+            onClick={() => setOpen(false)}
+            className="flex h-11 items-center border-b border-white/10 px-1 text-sm font-semibold text-white/90 transition-colors hover:text-primary"
+          >
             About Us
           </a>
+
           <button
             type="button"
             aria-expanded={projectsOpen}
             onClick={() => setProjectsOpen((value) => !value)}
-            className="flex h-11 w-full items-center justify-between border-b border-white/15 px-1 text-left text-sm font-semibold text-white/90 transition-colors hover:text-[#75f1e3]"
+            className="flex h-11 w-full items-center justify-between border-b border-white/10 px-1 text-left text-sm font-semibold text-white/90 transition-colors hover:text-primary"
           >
             Our Projects
-            <svg aria-hidden="true" viewBox="0 0 12 8" className={`h-2.5 w-2.5 transition-transform duration-200 ${projectsOpen ? "rotate-180" : ""}`}>
-              <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.8" />
-            </svg>
+
+            <ChevronDown
+              className={`h-4 w-4 transition-transform duration-200 ${
+                projectsOpen ? "rotate-180" : ""
+              }`}
+            />
           </button>
+
           {projectsOpen ? (
-            <div className="my-2 rounded-xl border border-white/30 bg-[#09283a] p-3 shadow-[0_12px_26px_rgba(0,0,0,0.24)] backdrop-blur-md">
+            <div className="my-2 bg-background px-2 py-1">
               {projectLinks.map((project) => (
-                <a key={project.label} href={project.href} className="block rounded-lg border border-white/10 px-4 py-3 transition-colors hover:border-[#4de5d2]/30 hover:bg-white/[0.1]" onClick={() => setOpen(false)}>
-                  <span className="block text-base font-semibold text-white">{project.label}</span>
-                  <span className="mt-0.5 block text-sm text-white/60">{project.detail}</span>
+                <a
+                  key={project.label}
+                  href={project.href}
+                  onClick={() => {
+                    setOpen(false);
+                    setProjectsOpen(false);
+                  }}
+                  className="block px-2 py-3 transition-colors hover:text-primary"
+                >
+                  <span className="block text-base font-semibold text-white">
+                    {project.label}
+                  </span>
+
+                  <span className="mt-0.5 block text-sm text-white/60">
+                    {project.detail}
+                  </span>
                 </a>
               ))}
             </div>
           ) : null}
-          <a href="#contact" className="mt-2 flex h-11 items-center rounded-xl border border-[#4de5d2]/75 bg-transparent px-4 text-base font-semibold text-white transition-colors hover:border-[#4de5d2] hover:bg-transparent">
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="mt-2 flex h-11 items-center px-1 text-sm font-semibold text-white/90 transition-colors hover:text-primary"
+          >
             Contact us
           </a>
         </nav>
       ) : null}
-
     </header>
   );
 }
