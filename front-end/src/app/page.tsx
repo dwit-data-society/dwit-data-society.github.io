@@ -1,15 +1,19 @@
+import { Navbar } from "@/components/Navbar";
 import Starfield from "@/components/Starfield";
-import HeroCanvas from "@/components/HeroCanvas";
 import Footer from "@/components/Footer";
-// import InfiniteCarousel from "@/components/InfiniteCarousel";
+import AboutUs from "@/components/AboutUs";
+import ProjectsSection from "@/components/ProjectSection";
 
 export default function Page() {
   return (
-    <>
-    {/* <HeroCanvas /> */}
-     {/* <InfiniteCarousel/> */}
-    <Starfield/>
-    <Footer/>
-    </>
-  )
+    <div className="min-h-screen bg-background">
+      <section className="relative">
+        <Starfield />
+        <Navbar />
+      </section>
+      <AboutUs />
+      <ProjectsSection />
+      <Footer />
+    </div>
+  );
 }

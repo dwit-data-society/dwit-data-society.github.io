@@ -203,7 +203,7 @@ export default function HeroCanvas() {
       <div style={{ position: "absolute", top: "50%", left: "50%", transform: "translate(-50%, -50%)", width: "75%" }}>
         <img
           ref={imgRef}
-          src="/logo.png"
+          src="/motto.svg"
           alt="DataSociety"
           style={{ width: "100%", height: "100%", objectFit: "contain", display: "block", visibility: "hidden" }}
         />
