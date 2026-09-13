@@ -2,7 +2,7 @@ import { Navbar } from "@/components/navbar";
 import Starfield from "@/components/Starfield";
 import Footer from "@/components/Footer";
 import AboutUs from "@/components/AboutUs";
-import OurProjects from "@/components/OurProjects";
+import ProjectsSection from "@/components/ProjectSection";
 
 export default function Page() {
   return (
@@ -12,7 +12,7 @@ export default function Page() {
         <Navbar />
       </section>
       <AboutUs />
-      <OurProjects />
+      <ProjectsSection />
       <Footer />
     </div>
   );

@@ -3,6 +3,7 @@ import {FaInstagram,FaLinkedin,FaGithub, FaMedium} from "react-icons/fa";
 import { MdOutlineMailOutline} from "react-icons/md";
 import { SiGooglemaps } from "react-icons/si";
 
+
 const Footer = () => {
   return (
     <>
