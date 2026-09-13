@@ -124,6 +124,27 @@ function getNumber(item: DataRecord, keys: string[]): number | null {
   return null;
 }
 
+/** Some scoreline datasets store the result as a single "score" string
+ *  ("2-1"), others store it as two separate goal fields (goal1/goal2).
+ *  This tries the string form first, then falls back to building one
+ *  from the numeric fields, so both shapes render correctly. */
+function getScoreLabel(item: DataRecord): string {
+  const direct = getText(item, ["score", "scoreline", "result"], "");
+
+  if (direct) {
+    return direct;
+  }
+
+  const goal1 = getNumber(item, ["goal1", "home_goals", "team1_goals"]);
+  const goal2 = getNumber(item, ["goal2", "away_goals", "team2_goals"]);
+
+  if (goal1 !== null && goal2 !== null) {
+    return `${goal1}-${goal2}`;
+  }
+
+  return "Unknown";
+}
+
 /*
  * ---------------------------------------------------------------------
  * GUESSING-GAME HELPERS
@@ -448,6 +469,8 @@ export default function WorldCupAnalytics() {
             "/data/worldcup/prediction/confidence_vs_accuracy.json",
           tournamentWinnerPredictions:
             "/data/worldcup/prediction/tournament_winner_predictions.json",
+          biasedFan: "/data/worldcup/prediction/biased_fan.json",
+          scorePsychology: "/data/worldcup/prediction/score_psychology.json",
         };
 
         const loadedEntries = await Promise.all(
@@ -484,6 +507,8 @@ export default function WorldCupAnalytics() {
           predictionHeatmap: loaded.predictionHeatmap,
           confidenceVsAccuracy: loaded.confidenceVsAccuracy,
           tournamentWinnerPredictions: loaded.tournamentWinnerPredictions,
+          biasedFan: loaded.biasedFan,
+          scorePsychology: loaded.scorePsychology,
         });
       } catch (err) {
         console.error(err);
@@ -609,6 +634,7 @@ export default function WorldCupAnalytics() {
     .map((item) => {
       const yellow =
         getNumber(item, [
+          "total_yellow",
           "yellow_cards",
           "yellow_card",
           "yellow",
@@ -617,17 +643,25 @@ export default function WorldCupAnalytics() {
 
       const red =
         getNumber(item, [
+          "total_red",
           "red_cards",
           "red_card",
           "red",
           "total_red_cards",
         ]) ?? 0;
 
+      const matches = getNumber(item, [
+        "matches_officiated",
+        "matches",
+        "games",
+      ]);
+
       return {
         name: getText(item, ["referee", "referee_name", "official", "name"]),
         yellow,
         red,
         total: yellow + red,
+        matches,
       };
     })
     .filter((item) => item.name !== "Unknown" && item.total > 0)
@@ -717,17 +751,16 @@ export default function WorldCupAnalytics() {
   /*
    * ACTUAL SCORELINE DATA
 
-   {
-     "score": "2-1",
-     "timesOccurred": 9
-   }
+   Supports either a single "score" string, e.g. { "score": "2-1", "timesOccurred": 9 },
+   or the goal1/goal2/count shape actually used by actual_heatmap.json:
+   { "goal1": 2, "goal2": 1, "count": 9 }
    */
 
   const actualHeatmapData = useMemo(
     () =>
       (predictionData.actualHeatmap || [])
         .map((item) => ({
-          score: getText(item, ["score", "scoreline", "result"]),
+          score: getScoreLabel(item),
           occurrences: getNumber(item, [
             "timesOccurred",
             "times_occurred",
@@ -749,16 +782,14 @@ export default function WorldCupAnalytics() {
   /*
    * PREDICTED SCORELINE DATA
 
-   {
-     "score": "2-1",
-     "timesPredicted": 403,
-     "timesOccurred": 9
-   }
+   Supports either a "score" string, e.g. { "score": "2-1", "timesPredicted": 403 },
+   or the goal1/goal2/count shape actually used by prediction_heatmap.json:
+   { "goal1": 2, "goal2": 1, "count": 403 }
    */
 
   const predictionHeatmapData = (predictionData.predictionHeatmap || [])
     .map((item) => ({
-      score: getText(item, ["score", "scoreline", "result"]),
+      score: getScoreLabel(item),
       predictions: getNumber(item, [
         "timesPredicted",
         "times_predicted",
@@ -803,6 +834,66 @@ export default function WorldCupAnalytics() {
         item.predictions > 0,
     )
     .sort((a, b) => (b.predictions ?? 0) - (a.predictions ?? 0));
+
+  /*
+   * PREDICTED VS ACTUAL GOALS (per team)
+
+   {
+     "team_name": "South Korea",
+     "predictedGoals": 1.717,
+     "actualGoals": 0.217,
+     "bias": 1.5
+   }
+   */
+
+  const predictedVsActualGoalsData = (predictionData.biasedFan || [])
+    .map((item) => ({
+      name: getText(item, ["team_name", "team", "name"]),
+      predicted: getNumber(item, [
+        "predictedGoals",
+        "predicted_goals",
+        "predicted",
+      ]),
+      actual: getNumber(item, ["actualGoals", "actual_goals", "actual"]),
+    }))
+    .filter(
+      (item) =>
+        item.name !== "Unknown" &&
+        item.predicted !== null &&
+        item.actual !== null,
+    );
+
+  /*
+   * PREDICTED SCORELINES VS ACTUAL OCCURRENCES
+
+   {
+     "score": "2-1",
+     "timesPredicted": 403,
+     "timesOccurred": 9
+   }
+   */
+
+  const scorePsychologyData = (predictionData.scorePsychology || [])
+    .map((item) => ({
+      score: getScoreLabel(item),
+      predicted: getNumber(item, [
+        "timesPredicted",
+        "times_predicted",
+        "predictions",
+      ]),
+      actual: getNumber(item, [
+        "timesOccurred",
+        "times_occurred",
+        "occurrences",
+      ]),
+    }))
+    .filter(
+      (item) =>
+        item.score !== "Unknown" &&
+        item.predicted !== null &&
+        item.actual !== null,
+    )
+    .sort((a, b) => (b.predicted ?? 0) - (a.predicted ?? 0));
 
   /*
    * ---------------------------------------------------------------------
@@ -1382,9 +1473,33 @@ export default function WorldCupAnalytics() {
 
           <ChartCard
             title="Predicted goals vs actual goals"
-            description="A comparison of predicted and actual team goals."
+            description="Each point is a team: how many goals per match fans expected, versus how many they actually scored. Points near the diagonal were well-predicted."
           >
-            <EmptyChartMessage message="This graph cannot be plotted from the currently selected files because a matching predicted-goals and actual-goals value for each team is required." />
+            {predictedVsActualGoalsData.length === 0 ? (
+              <EmptyChartMessage message="No valid predicted-vs-actual goals data was found." />
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <ScatterChart
+                  margin={{ top: 20, right: 20, bottom: 20, left: 10 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#12577A" />
+                  <XAxis
+                    type="number"
+                    dataKey="predicted"
+                    name="Predicted goals"
+                    stroke="#CBD5E1"
+                  />
+                  <YAxis
+                    type="number"
+                    dataKey="actual"
+                    name="Actual goals"
+                    stroke="#CBD5E1"
+                  />
+                  <Tooltip cursor={{ strokeDasharray: "3 3" }} />
+                  <Scatter data={predictedVsActualGoalsData} fill="#08AAA5" />
+                </ScatterChart>
+              </ResponsiveContainer>
+            )}
           </ChartCard>
 
           <ChartCard
@@ -1422,12 +1537,39 @@ export default function WorldCupAnalytics() {
 
           <ChartCard
             title="Predicted scorelines vs actual occurrences"
-            description="A comparison between predicted scoreline frequency and actual scoreline frequency."
+            description="How often each scoreline was predicted, next to how often it actually happened."
           >
-            <EmptyChartMessage message="This graph requires matching predicted and actual scoreline records. The current files should be combined by score before plotting." />
+            {scorePsychologyData.length === 0 ? (
+              <EmptyChartMessage message="No valid combined scoreline data was found." />
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <BarChart
+                  data={scorePsychologyData}
+                  margin={{ top: 10, right: 20, left: 10, bottom: 40 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" stroke="#12577A" />
+                  <XAxis
+                    dataKey="score"
+                    stroke="#CBD5E1"
+                    angle={-45}
+                    textAnchor="end"
+                    interval={0}
+                  />
+                  <YAxis stroke="#CBD5E1" />
+                  <Tooltip />
+                  <Legend />
+                  <Bar
+                    dataKey="predicted"
+                    fill="#1479A8"
+                    name="Times predicted"
+                  />
+                  <Bar dataKey="actual" fill="#08AAA5" name="Times occurred" />
+                </BarChart>
+              </ResponsiveContainer>
+            )}
           </ChartCard>
         </div>
       </section>
     </main>
   );
-} 
+}
