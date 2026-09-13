@@ -1,4 +1,4 @@
-import  Navbar  from "@/components/Navbar";
+import { Navbar } from "@/components/navbar";
 import Starfield from "@/components/Starfield";
 import Footer from "@/components/Footer";
 import AboutUs from "@/components/AboutUs";
