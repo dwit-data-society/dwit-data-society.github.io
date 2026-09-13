@@ -7,7 +7,7 @@ import { SiGooglemaps } from "react-icons/si";
 const Footer = () => {
   return (
     <>
-      <footer className="relative flex h-auto w-full flex-col gap-8 overflow-x-hidden px-4 pb-20 pt-10 sm:px-6 md:flex-row md:items-start md:gap-10 xl:h-124 xl:px-0 xl:pb-20">
+      <footer className="relative flex h-auto w-full flex-col gap-8 overflow-x-hidden px-4 pb-20 pt-10 sm:px-6 md:flex-row md:items-start md:gap-10 xl:h-124 xl:px-0 xl:pb-20 bg-[#070A0E]">
         <div className="flex w-full max-w-2xl flex-col gap-5 sm:gap-6 items-start text-left pl-0 md:pl-8 xl:pl-15 pt-8">
           <div className="w-44 sm:w-52 md:w-48 lg:w-52 xl:w-60 shrink-0"><img src="/assets/horizontal_Logo.svg" alt="Deerwalk Data Society logo" /></div>
           <div className="leading-6 w-full max-w-full sm:w-[80%] md:w-[72%] xl:w-[85%]" ><p className="text-xs sm:text-sm md:text-[0.8rem] lg:text-[0.85rem] xl:text-sm wrap-break-word text-justify">Deerwalk Data Society is a community based in Deerwalk Institute of Technology and aims to literate people through data by collecting data through surveys, college infrastructure and provide a report to the students and faculties whilst revealing interesting stories and patterns lying underneath the raw data.</p>
