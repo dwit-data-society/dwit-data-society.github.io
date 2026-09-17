@@ -1,0 +1,72 @@
+[
+    {
+        "player":"Kylian Mbappé",
+        "team":"France",
+        "position":"FW",
+        "goals":10.0,
+        "goals_per90":1.29
+    },
+    {
+        "player":"Lionel Messi",
+        "team":"Argentina",
+        "position":"FW",
+        "goals":8.0,
+        "goals_per90":0.97
+    },
+    {
+        "player":"Jude Bellingham",
+        "team":"England",
+        "position":"MF",
+        "goals":7.0,
+        "goals_per90":1.03
+    },
+    {
+        "player":"Erling Haaland",
+        "team":"Norway",
+        "position":"FW",
+        "goals":7.0,
+        "goals_per90":1.35
+    },
+    {
+        "player":"Harry Kane",
+        "team":"England",
+        "position":"FW",
+        "goals":6.0,
+        "goals_per90":0.83
+    },
+    {
+        "player":"Ousmane Dembélé",
+        "team":"France",
+        "position":"MF",
+        "goals":6.0,
+        "goals_per90":0.91
+    },
+    {
+        "player":"Mikel Oyarzabal",
+        "team":"Spain",
+        "position":"FW",
+        "goals":5.0,
+        "goals_per90":0.75
+    },
+    {
+        "player":"Vinicius Júnior",
+        "team":"Brazil",
+        "position":"FW",
+        "goals":4.0,
+        "goals_per90":0.82
+    },
+    {
+        "player":"Julián Quiñones",
+        "team":"Mexico",
+        "position":"FW,MF",
+        "goals":4.0,
+        "goals_per90":0.88
+    },
+    {
+        "player":"Ismaila Sarr",
+        "team":"Senegal",
+        "position":"MF,FW",
+        "goals":4.0,
+        "goals_per90":0.99
+    }
+]
