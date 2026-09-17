@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import {useRouter} from 'next/navigation';
+import { ArrowLeft } from "lucide-react";
 import {
   ResponsiveContainer,
   BarChart,
@@ -430,6 +432,7 @@ function AverageComparisonBar({
 }
 
 export default function WorldCupAnalytics() {
+  const router = useRouter();
   const [globalData, setGlobalData] = useState<Record<string, DataRecord[]>>(
     {},
   );
@@ -441,7 +444,7 @@ export default function WorldCupAnalytics() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
 
-  // Score tracking for the guessing game — purely additive, never blocks
+  // Score tracking for the guessing game 
   // or gates the underlying data.
   const [answers, setAnswers] = useState<Record<string, boolean>>({});
 
@@ -526,20 +529,7 @@ export default function WorldCupAnalytics() {
     loadData();
   }, []);
 
-  /*
-   * GLOBAL DATA
-   *
-   * attendeesData / topScorerData / topScoringTeamsData are memoized on
-   * `globalData` (which is only set once, after the fetch resolves) so
-   * that the guessing-game option order stays stable across re-renders
-   * triggered by answering a guess elsewhere on the page.
-   *
-   * NOTE: every hook below (useMemo included) must run on every render,
-   * loading/error states included — that's why the loading/error early
-   * returns happen further down, after all hooks have been called, and
-   * not up here. Bailing out early before a hook runs is what causes
-   * React's "change in the order of Hooks" error.
-   */
+
 
   const attendeesData = useMemo(
     () =>
@@ -1012,6 +1002,13 @@ export default function WorldCupAnalytics() {
 
   return (
     <main className="mx-auto w-full max-w-7xl px-4 py-10 sm:px-6 lg:px-8">
+       <button
+      type="button"
+      onClick={() => router.push("/")}
+      className="mb-6 flex items-center gap-2 rounded-lg border border-[#12577A] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-[#08AAA5] hover:text-white"
+    >
+      <ArrowLeft/> Back 
+    </button>
       <div className="mb-6">
         <h1 className="text-4xl font-bold text-white">
           World Cup Analytics

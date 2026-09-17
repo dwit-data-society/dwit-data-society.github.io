@@ -8,7 +8,7 @@ const projectLinks = [
   {
     label: "World Cup Prediction",
     detail: "Explore insights gained from World Cup 2026 Prediction",
-    href: "#projects",
+    href: "/analyses/worldcup",
   },
 ];
 
