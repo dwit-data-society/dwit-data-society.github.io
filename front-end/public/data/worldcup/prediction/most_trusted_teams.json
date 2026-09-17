@@ -1,0 +1,232 @@
+[
+  {
+    "name": "France",
+    "predictedWins": 117,
+    "predictionPercent": 6.96
+  },
+  {
+    "name": "Argentina",
+    "predictedWins": 111,
+    "predictionPercent": 6.61
+  },
+  {
+    "name": "Spain",
+    "predictedWins": 108,
+    "predictionPercent": 6.43
+  },
+  {
+    "name": "England",
+    "predictedWins": 102,
+    "predictionPercent": 6.07
+  },
+  {
+    "name": "Brazil",
+    "predictedWins": 80,
+    "predictionPercent": 4.76
+  },
+  {
+    "name": "Portugal",
+    "predictedWins": 77,
+    "predictionPercent": 4.58
+  },
+  {
+    "name": "Belgium",
+    "predictedWins": 77,
+    "predictionPercent": 4.58
+  },
+  {
+    "name": "Germany",
+    "predictedWins": 72,
+    "predictionPercent": 4.29
+  },
+  {
+    "name": "United States",
+    "predictedWins": 72,
+    "predictionPercent": 4.29
+  },
+  {
+    "name": "Colombia",
+    "predictedWins": 65,
+    "predictionPercent": 3.87
+  },
+  {
+    "name": "Norway",
+    "predictedWins": 56,
+    "predictionPercent": 3.33
+  },
+  {
+    "name": "Switzerland",
+    "predictedWins": 55,
+    "predictionPercent": 3.27
+  },
+  {
+    "name": "Netherlands",
+    "predictedWins": 53,
+    "predictionPercent": 3.15
+  },
+  {
+    "name": "Egypt",
+    "predictedWins": 51,
+    "predictionPercent": 3.04
+  },
+  {
+    "name": "Morocco",
+    "predictedWins": 49,
+    "predictionPercent": 2.92
+  },
+  {
+    "name": "Canada",
+    "predictedWins": 48,
+    "predictionPercent": 2.86
+  },
+  {
+    "name": "Mexico",
+    "predictedWins": 40,
+    "predictionPercent": 2.38
+  },
+  {
+    "name": "Croatia",
+    "predictedWins": 40,
+    "predictionPercent": 2.38
+  },
+  {
+    "name": "Japan",
+    "predictedWins": 38,
+    "predictionPercent": 2.26
+  },
+  {
+    "name": "Uruguay",
+    "predictedWins": 32,
+    "predictionPercent": 1.9
+  },
+  {
+    "name": "South Korea",
+    "predictedWins": 30,
+    "predictionPercent": 1.79
+  },
+  {
+    "name": "Senegal",
+    "predictedWins": 29,
+    "predictionPercent": 1.73
+  },
+  {
+    "name": "Turkey",
+    "predictedWins": 25,
+    "predictionPercent": 1.49
+  },
+  {
+    "name": "Austria",
+    "predictedWins": 23,
+    "predictionPercent": 1.37
+  },
+  {
+    "name": "Ecuador",
+    "predictedWins": 23,
+    "predictionPercent": 1.37
+  },
+  {
+    "name": "Algeria",
+    "predictedWins": 21,
+    "predictionPercent": 1.25
+  },
+  {
+    "name": "Ivory Coast",
+    "predictedWins": 20,
+    "predictionPercent": 1.19
+  },
+  {
+    "name": "Ghana",
+    "predictedWins": 20,
+    "predictionPercent": 1.19
+  },
+  {
+    "name": "Czech Republic",
+    "predictedWins": 20,
+    "predictionPercent": 1.19
+  },
+  {
+    "name": "Bosnia and Herzegovina",
+    "predictedWins": 17,
+    "predictionPercent": 1.01
+  },
+  {
+    "name": "Sweden",
+    "predictedWins": 16,
+    "predictionPercent": 0.95
+  },
+  {
+    "name": "Cape Verde",
+    "predictedWins": 16,
+    "predictionPercent": 0.95
+  },
+  {
+    "name": "DR Congo",
+    "predictedWins": 14,
+    "predictionPercent": 0.83
+  },
+  {
+    "name": "Australia",
+    "predictedWins": 13,
+    "predictionPercent": 0.77
+  },
+  {
+    "name": "Scotland",
+    "predictedWins": 12,
+    "predictionPercent": 0.71
+  },
+  {
+    "name": "Iran",
+    "predictedWins": 11,
+    "predictionPercent": 0.65
+  },
+  {
+    "name": "Paraguay",
+    "predictedWins": 7,
+    "predictionPercent": 0.42
+  },
+  {
+    "name": "Saudi Arabia",
+    "predictedWins": 5,
+    "predictionPercent": 0.3
+  },
+  {
+    "name": "South Africa",
+    "predictedWins": 4,
+    "predictionPercent": 0.24
+  },
+  {
+    "name": "Qatar",
+    "predictedWins": 3,
+    "predictionPercent": 0.18
+  },
+  {
+    "name": "Uzbekistan",
+    "predictedWins": 3,
+    "predictionPercent": 0.18
+  },
+  {
+    "name": "Curacao",
+    "predictedWins": 1,
+    "predictionPercent": 0.06
+  },
+  {
+    "name": "New Zealand",
+    "predictedWins": 1,
+    "predictionPercent": 0.06
+  },
+  {
+    "name": "Iraq",
+    "predictedWins": 1,
+    "predictionPercent": 0.06
+  },
+  {
+    "name": "Jordan",
+    "predictedWins": 1,
+    "predictionPercent": 0.06
+  },
+  {
+    "name": "Panama",
+    "predictedWins": 1,
+    "predictionPercent": 0.06
+  }
+]

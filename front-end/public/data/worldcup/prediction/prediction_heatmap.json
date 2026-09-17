@@ -1,0 +1,162 @@
+[
+  {
+    "goal1": 0,
+    "goal2": 0,
+    "count": 10
+  },
+  {
+    "goal1": 0,
+    "goal2": 1,
+    "count": 47
+  },
+  {
+    "goal1": 0,
+    "goal2": 2,
+    "count": 112
+  },
+  {
+    "goal1": 0,
+    "goal2": 3,
+    "count": 56
+  },
+  {
+    "goal1": 0,
+    "goal2": 4,
+    "count": 15
+  },
+  {
+    "goal1": 0,
+    "goal2": 5,
+    "count": 5
+  },
+  {
+    "goal1": 0,
+    "goal2": 6,
+    "count": 1
+  },
+  {
+    "goal1": 1,
+    "goal2": 0,
+    "count": 80
+  },
+  {
+    "goal1": 1,
+    "goal2": 1,
+    "count": 116
+  },
+  {
+    "goal1": 1,
+    "goal2": 2,
+    "count": 261
+  },
+  {
+    "goal1": 1,
+    "goal2": 3,
+    "count": 97
+  },
+  {
+    "goal1": 1,
+    "goal2": 4,
+    "count": 11
+  },
+  {
+    "goal1": 1,
+    "goal2": 5,
+    "count": 3
+  },
+  {
+    "goal1": 1,
+    "goal2": 6,
+    "count": 1
+  },
+  {
+    "goal1": 2,
+    "goal2": 0,
+    "count": 185
+  },
+  {
+    "goal1": 2,
+    "goal2": 1,
+    "count": 403
+  },
+  {
+    "goal1": 2,
+    "goal2": 2,
+    "count": 47
+  },
+  {
+    "goal1": 2,
+    "goal2": 3,
+    "count": 43
+  },
+  {
+    "goal1": 2,
+    "goal2": 4,
+    "count": 1
+  },
+  {
+    "goal1": 3,
+    "goal2": 0,
+    "count": 104
+  },
+  {
+    "goal1": 3,
+    "goal2": 1,
+    "count": 160
+  },
+  {
+    "goal1": 3,
+    "goal2": 2,
+    "count": 32
+  },
+  {
+    "goal1": 3,
+    "goal2": 3,
+    "count": 2
+  },
+  {
+    "goal1": 4,
+    "goal2": 0,
+    "count": 39
+  },
+  {
+    "goal1": 4,
+    "goal2": 1,
+    "count": 23
+  },
+  {
+    "goal1": 4,
+    "goal2": 2,
+    "count": 4
+  },
+  {
+    "goal1": 4,
+    "goal2": 3,
+    "count": 3
+  },
+  {
+    "goal1": 5,
+    "goal2": 0,
+    "count": 7
+  },
+  {
+    "goal1": 5,
+    "goal2": 1,
+    "count": 1
+  },
+  {
+    "goal1": 5,
+    "goal2": 2,
+    "count": 2
+  },
+  {
+    "goal1": 6,
+    "goal2": 2,
+    "count": 1
+  },
+  {
+    "goal1": 9,
+    "goal2": 0,
+    "count": 1
+  }
+]

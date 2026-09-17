@@ -1,0 +1,62 @@
+[
+    {
+        "club":"Manchester City",
+        "player_count":18
+    },
+    {
+        "club":"Bayern Munich",
+        "player_count":17
+    },
+    {
+        "club":"Arsenal",
+        "player_count":14
+    },
+    {
+        "club":"PSG",
+        "player_count":14
+    },
+    {
+        "club":"Barcelona",
+        "player_count":13
+    },
+    {
+        "club":"Crystal Palace",
+        "player_count":12
+    },
+    {
+        "club":"Galatasaray",
+        "player_count":12
+    },
+    {
+        "club":"Al-Hilal",
+        "player_count":12
+    },
+    {
+        "club":"Dortmund",
+        "player_count":11
+    },
+    {
+        "club":"Liverpool",
+        "player_count":10
+    },
+    {
+        "club":"Atlético Madrid",
+        "player_count":10
+    },
+    {
+        "club":"Real Madrid",
+        "player_count":10
+    },
+    {
+        "club":"PSV",
+        "player_count":10
+    },
+    {
+        "club":"Aston Villa",
+        "player_count":9
+    },
+    {
+        "club":"Manchester Utd",
+        "player_count":9
+    }
+]

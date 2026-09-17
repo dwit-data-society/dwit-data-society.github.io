@@ -1,0 +1,386 @@
+[
+  {
+    "team_id": 3,
+    "team": "South Korea",
+    "predictedGoals": 1.7173913043478262,
+    "actualGoals": 0.21739130434782608,
+    "matches": 46,
+    "misjudgment": 1.5
+  },
+  {
+    "team_id": 12,
+    "team": "Scotland",
+    "predictedGoals": 1.2264150943396226,
+    "actualGoals": 0.22641509433962265,
+    "matches": 53,
+    "misjudgment": 1.0
+  },
+  {
+    "team_id": 44,
+    "team": "Colombia",
+    "predictedGoals": 1.8736842105263158,
+    "actualGoals": 1.063157894736842,
+    "matches": 95,
+    "misjudgment": 0.8105263157894738
+  },
+  {
+    "team_id": 4,
+    "team": "Czech Republic",
+    "predictedGoals": 1.2916666666666667,
+    "actualGoals": 0.5833333333333334,
+    "matches": 48,
+    "misjudgment": 0.7083333333333334
+  },
+  {
+    "team_id": 17,
+    "team": "Germany",
+    "predictedGoals": 3.0,
+    "actualGoals": 2.375,
+    "matches": 72,
+    "misjudgment": 0.625
+  },
+  {
+    "team_id": 48,
+    "team": "Panama",
+    "predictedGoals": 0.625,
+    "actualGoals": 0.0,
+    "matches": 64,
+    "misjudgment": 0.625
+  },
+  {
+    "team_id": 41,
+    "team": "Portugal",
+    "predictedGoals": 2.313131313131313,
+    "actualGoals": 1.707070707070707,
+    "matches": 99,
+    "misjudgment": 0.6060606060606062
+  },
+  {
+    "team_id": 47,
+    "team": "Ghana",
+    "predictedGoals": 1.0731707317073171,
+    "actualGoals": 0.5,
+    "matches": 82,
+    "misjudgment": 0.5731707317073171
+  },
+  {
+    "team_id": 29,
+    "team": "Spain",
+    "predictedGoals": 2.4921875,
+    "actualGoals": 1.9296875,
+    "matches": 128,
+    "misjudgment": 0.5625
+  },
+  {
+    "team_id": 20,
+    "team": "Ecuador",
+    "predictedGoals": 1.1,
+    "actualGoals": 0.5714285714285714,
+    "matches": 70,
+    "misjudgment": 0.5285714285714287
+  },
+  {
+    "team_id": 15,
+    "team": "Australia",
+    "predictedGoals": 1.0857142857142856,
+    "actualGoals": 0.5714285714285714,
+    "matches": 70,
+    "misjudgment": 0.5142857142857142
+  },
+  {
+    "team_id": 31,
+    "team": "Saudi Arabia",
+    "predictedGoals": 0.7666666666666667,
+    "actualGoals": 0.26666666666666666,
+    "matches": 60,
+    "misjudgment": 0.5
+  },
+  {
+    "team_id": 32,
+    "team": "Uruguay",
+    "predictedGoals": 1.4310344827586208,
+    "actualGoals": 0.9655172413793104,
+    "matches": 58,
+    "misjudgment": 0.4655172413793104
+  },
+  {
+    "team_id": 9,
+    "team": "Brazil",
+    "predictedGoals": 2.595505617977528,
+    "actualGoals": 2.134831460674157,
+    "matches": 89,
+    "misjudgment": 0.4606741573033708
+  },
+  {
+    "team_id": 16,
+    "team": "Turkey",
+    "predictedGoals": 1.58,
+    "actualGoals": 1.2,
+    "matches": 50,
+    "misjudgment": 0.3800000000000001
+  },
+  {
+    "team_id": 33,
+    "team": "France",
+    "predictedGoals": 2.80327868852459,
+    "actualGoals": 2.4918032786885247,
+    "matches": 122,
+    "misjudgment": 0.31147540983606525
+  },
+  {
+    "team_id": 45,
+    "team": "England",
+    "predictedGoals": 2.230769230769231,
+    "actualGoals": 2.0,
+    "matches": 130,
+    "misjudgment": 0.23076923076923084
+  },
+  {
+    "team_id": 14,
+    "team": "Paraguay",
+    "predictedGoals": 0.7926829268292683,
+    "actualGoals": 0.6097560975609756,
+    "matches": 82,
+    "misjudgment": 0.18292682926829273
+  },
+  {
+    "team_id": 35,
+    "team": "Iraq",
+    "predictedGoals": 0.46774193548387094,
+    "actualGoals": 0.3064516129032258,
+    "matches": 62,
+    "misjudgment": 0.16129032258064513
+  },
+  {
+    "team_id": 18,
+    "team": "Curacao",
+    "predictedGoals": 0.34615384615384615,
+    "actualGoals": 0.25,
+    "matches": 52,
+    "misjudgment": 0.09615384615384615
+  },
+  {
+    "team_id": 46,
+    "team": "Croatia",
+    "predictedGoals": 1.5783132530120483,
+    "actualGoals": 1.5060240963855422,
+    "matches": 83,
+    "misjudgment": 0.07228915662650603
+  },
+  {
+    "team_id": 27,
+    "team": "Iran",
+    "predictedGoals": 0.9298245614035088,
+    "actualGoals": 0.8771929824561403,
+    "matches": 57,
+    "misjudgment": 0.052631578947368474
+  },
+  {
+    "team_id": 10,
+    "team": "Morocco",
+    "predictedGoals": 1.797752808988764,
+    "actualGoals": 1.797752808988764,
+    "matches": 89,
+    "misjudgment": 0.0
+  },
+  {
+    "team_id": 7,
+    "team": "Qatar",
+    "predictedGoals": 0.5862068965517241,
+    "actualGoals": 0.6206896551724138,
+    "matches": 58,
+    "misjudgment": -0.034482758620689724
+  },
+  {
+    "team_id": 2,
+    "team": "South Africa",
+    "predictedGoals": 0.7142857142857143,
+    "actualGoals": 0.7678571428571429,
+    "matches": 56,
+    "misjudgment": -0.0535714285714286
+  },
+  {
+    "team_id": 26,
+    "team": "Egypt",
+    "predictedGoals": 1.5,
+    "actualGoals": 1.5888888888888888,
+    "matches": 90,
+    "misjudgment": -0.0888888888888888
+  },
+  {
+    "team_id": 13,
+    "team": "United States",
+    "predictedGoals": 1.989010989010989,
+    "actualGoals": 2.098901098901099,
+    "matches": 91,
+    "misjudgment": -0.10989010989010994
+  },
+  {
+    "team_id": 23,
+    "team": "Sweden",
+    "predictedGoals": 1.2465753424657535,
+    "actualGoals": 1.4383561643835616,
+    "matches": 73,
+    "misjudgment": -0.1917808219178081
+  },
+  {
+    "team_id": 38,
+    "team": "Algeria",
+    "predictedGoals": 1.0886075949367089,
+    "actualGoals": 1.2911392405063291,
+    "matches": 79,
+    "misjudgment": -0.20253164556962022
+  },
+  {
+    "team_id": 19,
+    "team": "Ivory Coast",
+    "predictedGoals": 1.0675675675675675,
+    "actualGoals": 1.2702702702702702,
+    "matches": 74,
+    "misjudgment": -0.20270270270270263
+  },
+  {
+    "team_id": 43,
+    "team": "Uzbekistan",
+    "predictedGoals": 0.41935483870967744,
+    "actualGoals": 0.6451612903225806,
+    "matches": 62,
+    "misjudgment": -0.2258064516129032
+  },
+  {
+    "team_id": 37,
+    "team": "Argentina",
+    "predictedGoals": 2.4836065573770494,
+    "actualGoals": 2.7131147540983607,
+    "matches": 122,
+    "misjudgment": -0.2295081967213113
+  },
+  {
+    "team_id": 22,
+    "team": "Japan",
+    "predictedGoals": 1.732394366197183,
+    "actualGoals": 1.9859154929577465,
+    "matches": 71,
+    "misjudgment": -0.2535211267605635
+  },
+  {
+    "team_id": 24,
+    "team": "Tunisia",
+    "predictedGoals": 0.34615384615384615,
+    "actualGoals": 0.6346153846153846,
+    "matches": 52,
+    "misjudgment": -0.28846153846153844
+  },
+  {
+    "team_id": 36,
+    "team": "Norway",
+    "predictedGoals": 1.9017857142857142,
+    "actualGoals": 2.1964285714285716,
+    "matches": 112,
+    "misjudgment": -0.29464285714285743
+  },
+  {
+    "team_id": 8,
+    "team": "Switzerland",
+    "predictedGoals": 1.5523809523809524,
+    "actualGoals": 1.8761904761904762,
+    "matches": 105,
+    "misjudgment": -0.32380952380952377
+  },
+  {
+    "team_id": 39,
+    "team": "Austria",
+    "predictedGoals": 1.103896103896104,
+    "actualGoals": 1.4415584415584415,
+    "matches": 77,
+    "misjudgment": -0.33766233766233755
+  },
+  {
+    "team_id": 40,
+    "team": "Jordan",
+    "predictedGoals": 0.603448275862069,
+    "actualGoals": 1.0,
+    "matches": 58,
+    "misjudgment": -0.39655172413793105
+  },
+  {
+    "team_id": 30,
+    "team": "Cape Verde",
+    "predictedGoals": 0.6025641025641025,
+    "actualGoals": 1.0,
+    "matches": 78,
+    "misjudgment": -0.39743589743589747
+  },
+  {
+    "team_id": 6,
+    "team": "Bosnia and Herzegovina",
+    "predictedGoals": 0.868421052631579,
+    "actualGoals": 1.2894736842105263,
+    "matches": 76,
+    "misjudgment": -0.42105263157894735
+  },
+  {
+    "team_id": 1,
+    "team": "Mexico",
+    "predictedGoals": 1.527027027027027,
+    "actualGoals": 1.9864864864864864,
+    "matches": 74,
+    "misjudgment": -0.45945945945945943
+  },
+  {
+    "team_id": 42,
+    "team": "DR Congo",
+    "predictedGoals": 0.7349397590361446,
+    "actualGoals": 1.216867469879518,
+    "matches": 83,
+    "misjudgment": -0.4819277108433735
+  },
+  {
+    "team_id": 11,
+    "team": "Haiti",
+    "predictedGoals": 0.18518518518518517,
+    "actualGoals": 0.7777777777777778,
+    "matches": 54,
+    "misjudgment": -0.5925925925925926
+  },
+  {
+    "team_id": 25,
+    "team": "Belgium",
+    "predictedGoals": 1.8363636363636364,
+    "actualGoals": 2.4363636363636365,
+    "matches": 110,
+    "misjudgment": -0.6000000000000001
+  },
+  {
+    "team_id": 21,
+    "team": "Netherlands",
+    "predictedGoals": 2.46875,
+    "actualGoals": 3.078125,
+    "matches": 64,
+    "misjudgment": -0.609375
+  },
+  {
+    "team_id": 5,
+    "team": "Canada",
+    "predictedGoals": 1.6329113924050633,
+    "actualGoals": 2.2658227848101267,
+    "matches": 79,
+    "misjudgment": -0.6329113924050633
+  },
+  {
+    "team_id": 28,
+    "team": "New Zealand",
+    "predictedGoals": 0.6181818181818182,
+    "actualGoals": 1.2545454545454546,
+    "matches": 55,
+    "misjudgment": -0.6363636363636365
+  },
+  {
+    "team_id": 34,
+    "team": "Senegal",
+    "predictedGoals": 1.4878048780487805,
+    "actualGoals": 2.573170731707317,
+    "matches": 82,
+    "misjudgment": -1.0853658536585367
+  }
+]
