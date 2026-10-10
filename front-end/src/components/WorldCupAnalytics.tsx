@@ -1,5 +1,7 @@
 "use client";
 
+import { useRouter } from "next/navigation";
+import { ArrowLeft } from "lucide-react";
 import {
   createContext,
   memo,
@@ -3016,7 +3018,7 @@ function AnalyticsHero({ stats }: { stats: HeroStat[] }) {
       </h1>
 
       <p className="wc-fade-up mt-10 max-w-3xl text-xl leading-9 text-slate-300 sm:text-2xl sm:leading-10">
-        Guess first, then see what the numbers say — from packed stadiums and
+        Guess first, then see what the numbers say from packed stadiums and
         top scorers to how the college predicted every match.
       </p>
 
@@ -3068,7 +3070,7 @@ function KeyInsights({ items }: { items: InsightStat[] }) {
   return (
     <Reveal className="border-y border-white/10 py-14 sm:py-20">
       <p className="mb-10 text-sm font-semibold text-[#08AAA5] sm:text-base">
-        Before you guess — a few things worth knowing
+        Before you guess, a few things worth knowing
       </p>
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
         {items.map((item) => (
@@ -3125,7 +3127,7 @@ function AnalyticsContent({
   predictionData: Record<string, DataRecord[]>;
 }) {
   /* ---------- GLOBAL DATA ---------- */
-
+  const router = useRouter()
   const attendeesAll = useMemo(() => {
     let total = 0;
     let count = 0;
@@ -3820,9 +3822,9 @@ function AnalyticsContent({
     const [first, second] = sortedTeamsByGoals;
 
     if (first.goals === second.goals) {
-      return `${first.name} and ${second.name} finished level on ${first.goals} goals${
+      return `${first.name} and ${second.name} finished level on ${first.goals} goals, ${
         first.goalsPer90 !== null && second.goalsPer90 !== null
-          ? ` — but their scoring rates differed: ${nf(first.goalsPer90, 2)} vs ${nf(second.goalsPer90, 2)} goals per 90 minutes`
+          ? `but their scoring rates differed: ${nf(first.goalsPer90, 2)} vs ${nf(second.goalsPer90, 2)} goals per 90 minutes`
           : ""
       }.`;
     }
@@ -3902,6 +3904,17 @@ function AnalyticsContent({
         <ScoreBadge />
 
         <div className="mx-auto w-full max-w-[1680px] px-5 sm:px-8 lg:px-14 xl:px-20">
+           <div className="pt-6">
+    <button
+      type="button"
+      onClick={() => router.push("/")}
+      className="inline-flex items-center gap-2 rounded-lg border border-[#12577A] bg-[#0F1A23] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-[#08AAA5] hover:bg-[#12577A]/30"
+    >
+      <span aria-hidden="true">←</span>
+      Back to Home
+    </button>
+  </div>
+
           <AnalyticsHero stats={heroStats} />
           <KeyInsights items={keyInsights} />
 
@@ -4078,7 +4091,7 @@ function AnalyticsContent({
             <SectionHeading
               eyebrow="Part 2"
               title="The global football picture"
-              description="Squads, clubs, referees and minutes — click any bar to focus on it."
+              description="Squads, clubs, referees and minutes. Click any bar to focus on it."
             />
 
             <div className="grid grid-cols-1 gap-8 xl:grid-cols-2 xl:gap-10">
@@ -4165,17 +4178,17 @@ function AnalyticsContent({
           {/* ---------------- INSIDE THE PREDICTION MIND ---------------- */}
           <section id="fans" className="scroll-mt-6 py-24 sm:py-32 lg:py-40">
             <SectionHeading
-              eyebrow="Part 3 · The college prediction survey"
-              title="Inside the prediction mind"
-              description="In the college prediction survey, people called match after match. Explore how accurate they were, how sure they sounded, and who they backed to win."
-            />
+  eyebrow="Part 3 · The sports club prediction tournament"
+  title="Inside the Prediction Game"
+  description="At the DWIT sports club's prediction tournament, participants predicted match outcomes, backed their picks, and tested their instincts. Explore how accurate their predictions were, how confident they felt, and which teams they expected to win."
+/>
 
             <Reveal className="mb-12 grid grid-cols-2 gap-x-6 gap-y-10 border-y border-white/10 py-10 sm:mb-20 xl:grid-cols-4">
               {predictedScores.total > 0 && (
                 <StatHighlight
                   value={predictedScores.total}
                   label="scoreline predictions"
-                  sub="Submitted in the college survey"
+                  sub="Submitted in the tournament"
                 />
               )}
               {confidenceData.length > 0 && (
@@ -4201,7 +4214,7 @@ function AnalyticsContent({
                 />
               )}
             </Reveal>
-
+{/* 
             <div className="space-y-12 sm:space-y-20">
               {accuracyByStageData.length > 0 && (
                 <Reveal>
@@ -4241,7 +4254,7 @@ function AnalyticsContent({
                   </Panel>
                 </Reveal>
               )}
-            </div>
+            </div> */}
           </section>
 
           {/* ---------------- PREDICTION LAB ---------------- */}
@@ -4342,7 +4355,7 @@ function AnalyticsContent({
               <div className="mt-8 xl:mt-10">
                 <ChartPanel
                   title="Predicted scorelines vs actual occurrences"
-                  description="The ten scorelines fans predicted most — set against how often they really happened."
+                  description="The ten scorelines fans predicted most, set against how often they really happened."
                 >
                   <ScorePsychologyPanel
                     data={scorePsychologyData}
