@@ -1,7 +1,8 @@
 "use client";
 
 import { useRouter } from "next/navigation";
-import { ArrowLeft } from "lucide-react";
+import BackButton from "@/components/shared/BackButton";
+import DropDown from "@/components/shared/DropDown";
 import {
   createContext,
   memo,
@@ -117,13 +118,13 @@ function getScoreLabel(item: DataRecord): string {
  * ===================================================================== */
 
 const COLORS = {
-  teal: "#08AAA5",
-  blue: "#1479A8",
-  sky: "#38BDF8",
-  amber: "#F5B544",
-  red: "#F87171",
-  yellowCard: "#FACC15",
-  redCard: "#EF4444",
+  teal: "var(--primary)",
+  blue: "var(--secondary)",
+  sky: "var(--secondary)",
+  amber: "var(--tertiary)",
+  red: "var(--foreground)",
+  yellowCard: "var(--foreground)",
+  redCard: "var(--foreground)",
 };
 
 const compactFormat = new Intl.NumberFormat("en-US", {
@@ -320,11 +321,11 @@ const GLOBAL_CSS = `
 .wc-range{-webkit-appearance:none;appearance:none;width:100%;height:48px;background:transparent;cursor:pointer;touch-action:pan-y}
 .wc-range:disabled{cursor:default}
 .wc-range:focus{outline:none}
-.wc-range::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(to right,var(--wc-fill,#08AAA5) var(--wc-pct,50%),rgba(255,255,255,.12) var(--wc-pct,50%))}
+.wc-range::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(to right,var(--wc-fill,var(--primary)) var(--wc-pct,50%),rgba(255,255,255,.12) var(--wc-pct,50%))}
 .wc-range::-moz-range-track{height:10px;border-radius:999px;background:rgba(255,255,255,.12)}
-.wc-range::-moz-range-progress{height:10px;border-radius:999px;background:var(--wc-fill,#08AAA5)}
-.wc-range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-11px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,#08AAA5);box-shadow:0 4px 18px rgba(0,0,0,.55);transition:transform .15s ease}
-.wc-range::-moz-range-thumb{width:22px;height:22px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,#08AAA5);box-shadow:0 4px 18px rgba(0,0,0,.55)}
+.wc-range::-moz-range-progress{height:10px;border-radius:999px;background:var(--wc-fill,var(--primary))}
+.wc-range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-11px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,var(--primary));box-shadow:0 4px 18px rgba(0,0,0,.55);transition:transform .15s ease}
+.wc-range::-moz-range-thumb{width:22px;height:22px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,var(--primary));box-shadow:0 4px 18px rgba(0,0,0,.55)}
 .wc-range:active::-webkit-slider-thumb{transform:scale(1.15)}
 .wc-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(8,170,165,.4)}
 .wc-range:focus-visible::-moz-range-thumb{box-shadow:0 0 0 5px rgba(8,170,165,.4)}
@@ -500,27 +501,6 @@ function GuessScoreProvider({
   );
 }
 
-function ScoreBadge() {
-  const { answers, order } = useContext(GuessScoreContext);
-  const answered = Object.keys(answers).length;
-  const correct = Object.values(answers).filter(Boolean).length;
-
-  if (answered === 0) {
-    return null;
-  }
-
-  return (
-    <div
-      className="wc-fade-up fixed bottom-4 right-4 z-30 rounded-full border border-white/15 bg-[#07101A]/90 px-5 py-3 text-sm font-semibold text-white shadow-2xl sm:bottom-6 sm:right-6 sm:text-base"
-      role="status"
-      aria-live="polite"
-    >
-      <span className="text-[#08AAA5]">{correct}</span>
-      <span className="text-slate-400"> / {order.length} correct</span>
-    </div>
-  );
-}
-
 /* =====================================================================
  * PRESENTATION PRIMITIVES
  * ===================================================================== */
@@ -621,7 +601,7 @@ function Panel({
 }) {
   return (
     <div
-      className={`rounded-3xl border border-white/10 bg-gradient-to-br from-[#0F1A23]/90 via-[#0B141C]/90 to-[#08121A]/90 p-6 shadow-2xl shadow-black/30 sm:p-10 lg:p-12 ${className}`}
+      className={`rounded-lg border border-white/10 bg-gradient-to-br from-[var(--background)]/90 via-[var(--background)]/90 to-[var(--background)]/90 p-6 shadow-2xl shadow-black/30 sm:p-10 lg:p-12 ${className}`}
     >
       {children}
     </div>
@@ -640,11 +620,11 @@ function SectionHeading({
   return (
     <Reveal className="mb-12 sm:mb-16">
       {eyebrow && (
-        <p className="text-sm font-semibold text-[#08AAA5] sm:text-base">
+        <p className="text-sm font-medium text-[var(--primary)] sm:text-base">
           {eyebrow}
         </p>
       )}
-      <h2 className="mt-3 max-w-5xl text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
+      <h2 className="mt-3 max-w-5xl text-4xl font-semibold leading-[1.05] tracking-tight text-white sm:text-6xl lg:text-7xl">
         {title}
       </h2>
       <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl sm:leading-9">
@@ -656,7 +636,7 @@ function SectionHeading({
 
 function EmptyChartMessage({ message }: { message: string }) {
   return (
-    <div className="flex min-h-[220px] items-center justify-center rounded-2xl border border-dashed border-[#12577A] p-6 text-center text-sm leading-6 text-slate-300">
+    <div className="flex min-h-[220px] items-center justify-center rounded-lg border border-dashed border-[var(--tertiary)] p-6 text-center text-sm leading-6 text-slate-300">
       {message}
     </div>
   );
@@ -670,8 +650,8 @@ function InsightBlock({
   children: ReactNode;
 }) {
   return (
-    <div className="wc-fade-up rounded-2xl border-l-4 border-[#08AAA5] bg-[#08AAA5]/[0.07] px-5 py-5 sm:px-7 sm:py-6">
-      <p className="text-sm font-semibold text-[#08AAA5]">{label}</p>
+    <div className="wc-fade-up rounded-lg border-l-4 border-[var(--primary)] bg-[var(--primary)]/[0.07] px-5 py-5 sm:px-7 sm:py-6">
+      <p className="text-sm font-semibold text-[var(--primary)]">{label}</p>
       <p className="mt-2 text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
         {children}
       </p>
@@ -691,7 +671,7 @@ function ChartPanel({
   return (
     <Reveal>
       <Panel className="h-full">
-        <h3 className="text-2xl font-bold text-white sm:text-3xl">{title}</h3>
+        <h3 className="text-2xl font-semibold text-white sm:text-3xl">{title}</h3>
         <p className="mt-3 max-w-2xl text-base leading-7 text-slate-400">
           {description}
         </p>
@@ -723,10 +703,10 @@ function Segmented<T extends string | number>({
             type="button"
             aria-pressed={selected}
             onClick={() => onChange(option.value)}
-            className={`min-h-[48px] rounded-full border px-5 text-base font-semibold transition-colors duration-200 ${
+            className={`min-h-[48px] rounded-lg border px-5 text-base font-semibold transition-colors duration-200 ${
               selected
-                ? "border-[#08AAA5] bg-[#08AAA5] text-[#04201F]"
-                : "border-white/15 bg-white/[0.03] text-slate-200 hover:border-[#08AAA5]/70 hover:text-white"
+                ? "border-[var(--primary)] bg-[var(--primary)] text-[var(--background)]"
+                : "border-white/15 bg-white/[0.03] text-slate-200 hover:border-[var(--primary)]/70 hover:text-white"
             }`}
           >
             {option.label}
@@ -872,7 +852,7 @@ function NextButton({
     <button
       type="button"
       onClick={() => scrollToId(targetId, !reduced)}
-      className="mt-8 inline-flex min-h-[52px] items-center gap-3 rounded-full border border-[#08AAA5]/60 px-6 text-base font-semibold text-[#08AAA5] transition-colors hover:bg-[#08AAA5] hover:text-[#04201F]"
+      className="mt-8 inline-flex min-h-[52px] items-center gap-3 rounded-lg border border-[var(--primary)]/60 px-6 text-base font-semibold text-[var(--primary)] transition-colors hover:bg-[var(--primary)] hover:text-[var(--background)]"
     >
       {label}
       <span aria-hidden>↓</span>
@@ -907,7 +887,7 @@ function ChartTooltip({
   const heading = title ? title(row) : String(label ?? row.name ?? "");
 
   return (
-    <div className="max-w-[260px] rounded-xl border border-white/15 bg-[#07101A]/95 px-4 py-3 text-sm shadow-2xl">
+    <div className="max-w-[260px] rounded-lg border border-white/15 bg-[#07101A]/95 px-4 py-3 text-sm shadow-2xl">
       <p className="font-semibold text-white">{heading}</p>
       {payload.map((entry, index) => {
         const value = Number(entry.value);
@@ -1279,8 +1259,6 @@ function TeamGoalsScatter({
  * GUESS EXPERIENCES
  * ===================================================================== */
 
-const SKIP_ID = "__skip__";
-
 type GuessResultCtx = {
   selectedLabel: string;
   correctNames: string[];
@@ -1322,16 +1300,9 @@ function GuessShell({
     <div id={id} className="scroll-mt-6">
       <Reveal>
         <Panel className="relative overflow-hidden">
-          <span
-            aria-hidden
-            className="pointer-events-none absolute -right-2 -top-8 select-none text-[11rem] font-black leading-none text-white/[0.035] sm:text-[18rem]"
-          >
-            {String(index).padStart(2, "0")}
-          </span>
-
           <div className="relative">
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-              <p className="text-sm font-semibold text-[#08AAA5] sm:text-base">
+              <p className="text-sm font-medium text-[var(--primary)] sm:text-base">
                 Prediction {index} of {total}
               </p>
               <div className="flex gap-1.5" aria-hidden>
@@ -1340,7 +1311,7 @@ function GuessShell({
                     key={key}
                     className={`h-1.5 w-8 rounded-full transition-colors duration-500 ${
                       answers[key] === true
-                        ? "bg-[#08AAA5]"
+                        ? "bg-[var(--primary)]"
                         : answers[key] === false
                           ? "bg-red-400"
                           : i + 1 === index
@@ -1352,7 +1323,7 @@ function GuessShell({
               </div>
             </div>
 
-            <h3 className="mt-6 max-w-4xl text-3xl font-black leading-tight text-white sm:text-5xl">
+            <h3 className="mt-6 max-w-4xl text-3xl font-semibold leading-tight text-white sm:text-5xl">
               {question}
             </h3>
 
@@ -1429,8 +1400,7 @@ function GuessMoment({
   }, [selectedId, reduced]);
 
   const answered = selectedId !== null;
-  const skipped = selectedId === SKIP_ID;
-  const isCorrect = answered && !skipped && correctIds.includes(selectedId);
+  const isCorrect = answered && correctIds.includes(selectedId!);
   const selectedLabel =
     options.find((option) => option.id === selectedId)?.label ?? "";
 
@@ -1441,9 +1411,7 @@ function GuessMoment({
 
     setSelectedId(optionId);
 
-    if (optionId !== SKIP_ID) {
-      record(guessKey, correctIds.includes(optionId));
-    }
+    record(guessKey, correctIds.includes(optionId));
   }
 
   const ctx: GuessResultCtx = { selectedLabel, correctNames, isCorrect };
@@ -1464,13 +1432,13 @@ function GuessMoment({
           const letter = String.fromCharCode(65 + i);
 
           let tone =
-            "border-white/10 bg-white/[0.03] text-slate-100 hover:border-[#08AAA5]/70 hover:bg-[#08AAA5]/10";
+            "border-white/10 bg-white/[0.03] text-slate-100 hover:border-[var(--primary)]/70 hover:bg-[var(--primary)]/10";
           let badge = "border-white/20 text-slate-300";
 
           if (answered) {
             if (isAnswer) {
-              tone = "border-[#08AAA5] bg-[#08AAA5]/15 text-white";
-              badge = "border-[#08AAA5] bg-[#08AAA5] text-[#04201F]";
+              tone = "border-[var(--primary)] bg-[var(--primary)]/15 text-white";
+              badge = "border-[var(--primary)] bg-[var(--primary)] text-[var(--background)]";
             } else if (isPick) {
               tone = "border-red-400/70 bg-red-500/10 text-red-100";
               badge = "border-red-400 bg-red-400 text-[#2A0B0B]";
@@ -1490,7 +1458,7 @@ function GuessMoment({
               disabled={answered}
               aria-pressed={isPick}
               onClick={() => select(option.id)}
-              className={`flex min-h-[76px] items-center gap-4 rounded-2xl border px-5 py-4 text-left text-lg font-semibold transition-colors duration-300 sm:min-h-[92px] sm:text-xl ${tone} ${animation} ${
+              className={`flex min-h-[76px] items-center gap-4 rounded-lg border px-5 py-4 text-left text-lg font-semibold transition-colors duration-300 sm:min-h-[92px] sm:text-xl ${tone} ${animation} ${
                 answered ? "cursor-default" : "cursor-pointer active:scale-[0.98]"
               }`}
             >
@@ -1505,38 +1473,24 @@ function GuessMoment({
         })}
       </div>
 
-      {!answered && (
-        <button
-          type="button"
-          onClick={() => select(SKIP_ID)}
-          className="mt-6 text-sm text-slate-400 underline-offset-4 hover:text-white hover:underline"
-        >
-          Skip and show me the data
-        </button>
-      )}
-
       {answered && (
         <div className="wc-fade-up mt-12 border-t border-white/10 pt-12">
           <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
             <div className="min-w-0">
               <p
-                className={`text-xl font-bold sm:text-2xl ${
+                className={`text-base font-bold sm:text-lg ${
                   isCorrect
-                    ? "text-[#08AAA5]"
-                    : skipped
-                      ? "text-slate-300"
-                      : "text-red-300"
+                    ? "text-[var(--primary)]"
+                    : "text-red-300"
                 }`}
               >
                 {isCorrect
                   ? "✓ You got it"
-                  : skipped
-                    ? "Here is the data"
-                    : "✕ Not quite"}
+                  : "✕ Not quite"}
               </p>
 
-              <p className="mt-6 text-sm text-slate-400">The answer</p>
-              <p className="mt-1 break-words text-4xl font-black leading-tight text-white sm:text-6xl">
+              <p className="mt-6 text-xs text-slate-400">The answer</p>
+              <p className="mt-1 break-words text-2xl font-black leading-tight text-white sm:text-4xl">
                 {resultTitle}
               </p>
 
@@ -1544,14 +1498,14 @@ function GuessMoment({
                 <AnimatedNumber
                   value={resultValue}
                   active
-                  className="text-6xl font-black text-[#08AAA5] sm:text-8xl"
+                  className="text-4xl font-black text-[var(--primary)] sm:text-6xl"
                 />
                 <span className="text-lg text-slate-300 sm:text-xl">
                   {resultValueLabel}
                 </span>
               </p>
 
-              {!isCorrect && !skipped && pickValue !== undefined && (
+              {!isCorrect && pickValue !== undefined && (
                 <div className="mt-10">
                   <p className="mb-4 text-sm font-semibold text-slate-400">
                     Your pick vs the answer
@@ -1582,7 +1536,7 @@ function GuessMoment({
                 </div>
               )}
 
-              {nextId && showData && (
+              {nextId && showData && nextLabel !== "Next prediction" && (
                 <NextButton
                   targetId={nextId}
                   label={nextLabel ?? "Next prediction"}
@@ -1626,7 +1580,7 @@ function ErrorScale({
       <div className="absolute left-0 right-0 top-8 h-2 rounded-full bg-white/10" />
 
       <div
-        className="absolute top-8 h-2 rounded-full bg-gradient-to-r from-[#F5B544] to-[#08AAA5] transition-[width] duration-1000 ease-out motion-reduce:transition-none"
+        className="absolute top-8 h-2 rounded-full bg-gradient-to-r from-[var(--tertiary)] to-[var(--primary)] transition-[width] duration-1000 ease-out motion-reduce:transition-none"
         style={{
           left: pos(low),
           width: entered ? `${((high - low) / span) * 100}%` : "0%",
@@ -1637,19 +1591,19 @@ function ErrorScale({
         className="absolute top-0 -translate-x-1/2 text-center"
         style={{ left: pos(guess) }}
       >
-        <p className="text-sm font-semibold text-[#F5B544]">You</p>
+        <p className="text-sm font-semibold text-[var(--tertiary)]">You</p>
       </div>
       <span
-        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[#F5B544]"
+        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[var(--tertiary)]"
         style={{ left: pos(guess) }}
       />
 
       <span
-        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[#08AAA5] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
+        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[var(--primary)] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
         style={{ left: entered ? pos(actual) : pos(guess) }}
       />
       <p
-        className="absolute top-[56px] -translate-x-1/2 text-sm font-semibold text-[#08AAA5] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
+        className="absolute top-[56px] -translate-x-1/2 text-sm font-semibold text-[var(--primary)] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
         style={{ left: entered ? pos(actual) : pos(guess) }}
       >
         Actual
@@ -1764,7 +1718,7 @@ function SliderGuessMoment({
             <button
               type="button"
               onClick={reveal}
-              className="mt-6 min-h-[56px] rounded-full bg-[#08AAA5] px-8 text-lg font-bold text-[#04201F] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              className="mt-6 min-h-[56px] rounded-lg bg-[var(--primary)] px-8 text-lg font-bold text-[var(--background)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
             >
               Lock in my guess
             </button>
@@ -1780,8 +1734,8 @@ function SliderGuessMoment({
           <div className="grid gap-12 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-16">
             <div className="min-w-0">
               <p
-                className={`text-xl font-bold sm:text-2xl ${
-                  withinTolerance ? "text-[#08AAA5]" : "text-red-300"
+                className={`text-base font-bold sm:text-lg ${
+                  withinTolerance ? "text-[var(--primary)]" : "text-red-300"
                 }`}
               >
                 {withinTolerance ? "✓" : "✕"} {verdict}
@@ -1790,7 +1744,7 @@ function SliderGuessMoment({
               <div className="mt-6 grid grid-cols-2 gap-6">
                 <div>
                   <p className="text-sm text-slate-400">Your guess</p>
-                  <p className="mt-1 text-5xl font-black tabular-nums text-[#F5B544] sm:text-7xl">
+                  <p className="mt-1 text-5xl font-black tabular-nums text-[var(--tertiary)] sm:text-7xl">
                     {nf(guess, 1)}
                   </p>
                 </div>
@@ -1800,7 +1754,7 @@ function SliderGuessMoment({
                     value={actual}
                     decimals={2}
                     active
-                    className="mt-1 block text-5xl font-black text-[#08AAA5] sm:text-7xl"
+                    className="mt-1 block text-5xl font-black text-[var(--primary)] sm:text-7xl"
                   />
                 </div>
               </div>
@@ -1822,13 +1776,6 @@ function SliderGuessMoment({
                 <div className="mt-8">
                   <InsightBlock>{insight}</InsightBlock>
                 </div>
-              )}
-
-              {nextId && showData && (
-                <NextButton
-                  targetId={nextId}
-                  label={nextLabel ?? "Next prediction"}
-                />
               )}
             </div>
 
@@ -1876,8 +1823,8 @@ function ExplorerTitle({
 }) {
   return (
     <div className="mb-10 max-w-3xl">
-      <p className="text-sm font-semibold text-[#08AAA5]">{eyebrow}</p>
-      <h3 className="mt-2 text-3xl font-black text-white sm:text-5xl">
+      <p className="text-sm font-semibold text-[var(--primary)]">{eyebrow}</p>
+      <h3 className="mt-2 text-3xl font-semibold text-white sm:text-5xl">
         {title}
       </h3>
       <p className="mt-4 text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
@@ -1942,7 +1889,7 @@ function AccuracyExplorer({ data }: { data: StageAccuracy[] }) {
               decimals={1}
               suffix="%"
               active
-              className="block text-6xl font-black leading-none text-[#08AAA5] sm:text-7xl xl:text-8xl"
+              className="block text-6xl font-black leading-none text-[var(--primary)] sm:text-7xl xl:text-8xl"
             />
             <p className="mt-3 text-lg text-slate-300">
               prediction accuracy for {current.stage}
@@ -2080,7 +2027,7 @@ function ConfidenceExplorer({ data }: { data: ConfidencePoint[] }) {
               decimals={1}
               suffix="%"
               active
-              className="block text-6xl font-black leading-none text-[#08AAA5] sm:text-7xl xl:text-8xl"
+              className="block text-6xl font-black leading-none text-[var(--primary)] sm:text-7xl xl:text-8xl"
             />
             <p className="mt-3 text-lg text-slate-300">
               average accuracy across {points.length}{" "}
@@ -2273,7 +2220,7 @@ function WinnerExplorer({ data }: { data: WinnerRow[] }) {
                 decimals={1}
                 suffix="%"
                 active
-                className="block text-5xl font-black leading-none text-[#08AAA5] sm:text-6xl xl:text-7xl"
+                className="block text-5xl font-black leading-none text-[var(--primary)] sm:text-6xl xl:text-7xl"
               />
               <p className="mt-3 text-base text-slate-300">of fans picked them</p>
             </div>
@@ -2409,18 +2356,19 @@ function GoalsLab({ data }: { data: TeamGoals[] }) {
             >
               Choose a team
             </label>
-            <select
+            <DropDown
               id="goals-team"
+              aria-label="Choose a team"
+              options={alphabetical.map((t) => ({
+                label: t.name,
+                value: t.name,
+              }))}
               value={team.name}
-              onChange={(event) => selectTeam(event.target.value)}
-              className="min-h-[56px] w-full rounded-2xl border border-white/15 bg-[#0B141C] px-5 text-lg font-semibold text-white outline-none focus:border-[#08AAA5]"
-            >
-              {alphabetical.map((t) => (
-                <option key={t.name} value={t.name}>
-                  {t.name}
-                </option>
-              ))}
-            </select>
+              onChange={selectTeam}
+              placeholder="Choose a team"
+              className="max-w-full"
+              panelClassName="rounded-lg"
+            />
 
             <div className="mt-5 space-y-3">
               <div>
@@ -2475,7 +2423,7 @@ function GoalsLab({ data }: { data: TeamGoals[] }) {
               <button
                 type="button"
                 onClick={() => setRevealed(true)}
-                className="mt-4 min-h-[56px] rounded-full bg-[#08AAA5] px-8 text-lg font-bold text-[#04201F] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="mt-4 min-h-[56px] rounded-lg bg-[var(--primary)] px-8 text-lg font-bold text-[var(--background)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 Reveal the actual value
               </button>
@@ -2629,88 +2577,6 @@ function GoalsLab({ data }: { data: TeamGoals[] }) {
   );
 }
 
-const ScoreGrid = memo(function ScoreGrid({
-  title,
-  table,
-  max,
-  home,
-  away,
-  onPick,
-  rgb,
-}: {
-  title: string;
-  table: ScoreTable;
-  max: number;
-  home: number;
-  away: number;
-  onPick: (home: number, away: number) => void;
-  rgb: string;
-}) {
-  const sizes = useMemo(
-    () => Array.from({ length: max + 1 }, (_, i) => i),
-    [max],
-  );
-  const maxCount = useMemo(
-    () => Math.max(1, ...Array.from(table.map.values())),
-    [table],
-  );
-
-  return (
-    <div className="min-w-0">
-      <p className="text-lg font-bold text-white">{title}</p>
-      <div
-        className="mt-3 grid gap-1"
-        style={{
-          gridTemplateColumns: `1.25rem repeat(${max + 1}, minmax(0, 1fr))`,
-        }}
-      >
-        <span />
-        {sizes.map((a) => (
-          <span key={`c${a}`} className="text-center text-xs text-slate-500">
-            {a}
-          </span>
-        ))}
-        {sizes.flatMap((h) => [
-          <span
-            key={`r${h}`}
-            className="flex items-center text-xs text-slate-500"
-          >
-            {h}
-          </span>,
-          ...sizes.map((a) => {
-            const count = table.map.get(`${h}-${a}`) ?? 0;
-            const selected = h === home && a === away;
-
-            return (
-              <button
-                key={`${h}-${a}`}
-                type="button"
-                onClick={() => onPick(h, a)}
-                aria-label={`Home ${h}, away ${a}: ${count}`}
-                aria-pressed={selected}
-                className={`aspect-square rounded-md text-[10px] font-semibold text-white transition-shadow sm:text-xs ${
-                  selected ? "ring-2 ring-white" : "hover:ring-1 hover:ring-white/50"
-                }`}
-                style={{
-                  backgroundColor:
-                    count > 0
-                      ? `rgba(${rgb}, ${0.1 + 0.85 * Math.sqrt(count / maxCount)})`
-                      : "rgba(255,255,255,0.04)",
-                }}
-              >
-                {count > 0 ? count : ""}
-              </button>
-            );
-          }),
-        ])}
-      </div>
-      <p className="mt-2 text-xs text-slate-500">
-        Rows: home goals · Columns: away goals
-      </p>
-    </div>
-  );
-});
-
 function ScorelineLab({
   predicted,
   actual,
@@ -2739,11 +2605,6 @@ function ScorelineLab({
   const [home, setHome] = useState(Math.min(favourite[0], gridMax));
   const [away, setAway] = useState(Math.min(favourite[1], gridMax));
 
-  const pick = useCallback((h: number, a: number) => {
-    setHome(h);
-    setAway(a);
-  }, []);
-
   const shareScale = useMemo(() => {
     let best = 1;
 
@@ -2765,30 +2626,12 @@ function ScorelineLab({
   const actualShare =
     actual.total > 0 ? (actualCount / actual.total) * 100 : 0;
 
-  let verdict: string;
-
-  if (predictedCount === 0 && actualCount === 0) {
-    verdict = `${key} was never predicted and never played.`;
-  } else if (predictedCount === 0) {
-    verdict = `Nobody predicted ${key}, yet it happened ${actualCount} ${actualCount === 1 ? "time" : "times"}.`;
-  } else if (actualCount === 0) {
-    verdict = `Fans predicted ${key} ${nf(predictedCount)} ${predictedCount === 1 ? "time" : "times"}, but it never happened.`;
-  } else {
-    const ratio = predictedShare / actualShare;
-
-    verdict =
-      Math.abs(ratio - 1) < 0.1
-        ? `${key} was predicted about as often as it really happened.`
-        : ratio > 1
-          ? `Fans predicted ${key} ${nf(ratio, 1)}× more often than it actually happened.`
-          : `${key} happened ${nf(1 / ratio, 1)}× more often than fans predicted it.`;
-  }
 
   return (
     <ExplorerLayout
       controls={
         <>
-          <div className="flex items-center justify-center gap-4 rounded-3xl border border-white/10 bg-black/20 py-8 text-8xl font-black tabular-nums text-white sm:text-[9rem] sm:leading-none">
+          <div className="flex items-center justify-center gap-4 py-2 text-7xl font-black tabular-nums text-white sm:text-8xl sm:leading-none lg:text-[7rem]">
             <span>{home}</span>
             <span className="text-slate-600">–</span>
             <span>{away}</span>
@@ -2828,7 +2671,7 @@ function ScorelineLab({
                 decimals={1}
                 suffix="%"
                 active
-                className="block text-5xl font-black leading-none text-[#38BDF8] sm:text-6xl xl:text-7xl"
+                className="block text-5xl font-black leading-none text-[var(--secondary)] sm:text-6xl xl:text-7xl"
               />
               <p className="mt-3 text-sm text-slate-400">
                 {nf(predictedCount)} of {nf(predicted.total)} predictions
@@ -2841,7 +2684,7 @@ function ScorelineLab({
                 decimals={1}
                 suffix="%"
                 active
-                className="block text-5xl font-black leading-none text-[#08AAA5] sm:text-6xl xl:text-7xl"
+                className="block text-5xl font-black leading-none text-[var(--primary)] sm:text-6xl xl:text-7xl"
               />
               <p className="mt-3 text-sm text-slate-400">
                 {nf(actualCount)} of {nf(actual.total)} matches
@@ -2867,30 +2710,6 @@ function ScorelineLab({
             ]}
           />
 
-          <InsightBlock key={key} label="Predicted vs actual">
-            {verdict}
-          </InsightBlock>
-
-          <div className="grid gap-8 sm:grid-cols-2">
-            <ScoreGrid
-              title="Predicted"
-              table={predicted}
-              max={gridMax}
-              home={home}
-              away={away}
-              onPick={pick}
-              rgb="56,189,248"
-            />
-            <ScoreGrid
-              title="Actual"
-              table={actual}
-              max={gridMax}
-              home={home}
-              away={away}
-              onPick={pick}
-              rgb="8,170,165"
-            />
-          </div>
         </div>
       }
     />
@@ -2933,8 +2752,6 @@ function ScorePsychologyPanel({
     [],
   );
 
-  const row = data.find((d) => d.score === selected);
-
   return (
     <div>
       <div className="mb-8 flex flex-wrap items-center gap-4">
@@ -2948,7 +2765,7 @@ function ScorePsychologyPanel({
           ]}
         />
         <span className="text-sm text-slate-500">
-          Click a scoreline to compare it
+          Click a scoreline to highlight it
         </span>
       </div>
 
@@ -2969,22 +2786,6 @@ function ScorePsychologyPanel({
         }
       />
 
-      <div className="mt-8 min-h-[96px]">
-        {row ? (
-          <InsightBlock key={row.score} label={`Scoreline ${row.score}`}>
-            Fans predicted {row.score} {nf(row.predicted)} times; it occurred{" "}
-            {nf(row.actual)} {row.actual === 1 ? "time" : "times"}
-            {row.actual > 0
-              ? ` — about ${nf(row.predicted / row.actual, 1)} predictions for every real occurrence.`
-              : "."}
-          </InsightBlock>
-        ) : (
-          <p className="text-slate-500">
-            Select a scoreline above to see how far prediction and reality
-            drifted apart.
-          </p>
-        )}
-      </div>
     </div>
   );
 }
@@ -2993,31 +2794,26 @@ function ScorePsychologyPanel({
  * HERO, KEY INSIGHTS, FINAL INSIGHTS
  * ===================================================================== */
 
-type HeroStat = {
-  value: number;
-  decimals?: number;
-  suffix?: string;
-  label: string;
-};
-
-function AnalyticsHero({ stats }: { stats: HeroStat[] }) {
+function AnalyticsHero() {
   const reduced = usePrefersReducedMotion();
 
   return (
-    <header className="relative pb-20 pt-20 sm:pb-28 sm:pt-32 lg:pt-44">
-      <p className="wc-fade-up text-base font-semibold text-[#08AAA5] sm:text-lg">
-        An interactive World Cup data story
-      </p>
+    <header className="relative pb-20 pt-8 sm:pb-28 sm:pt-12 lg:pt-16">
+      <div className="wc-fade-up">
+        <BackButton href="/" />
+      </div>
 
-      <h1 className="wc-fade-up mt-6 text-6xl font-black leading-[0.9] tracking-tight text-white sm:text-8xl lg:text-[9.5rem] xl:text-[11.5rem]">
-        World Cup
-        <br />
-        <span className="bg-gradient-to-r from-[#08AAA5] to-[#38BDF8] bg-clip-text text-transparent">
-          Analytics
-        </span>
-      </h1>
+      <div className="wc-fade-up mt-3 flex items-start gap-3 sm:mt-4 sm:gap-5">
+        <h1 className="text-5xl font-semibold leading-[0.96] tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-[9rem]">
+          World Cup
+          <br />
+          <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
+            Analytics
+          </span>
+        </h1>
+      </div>
 
-      <p className="wc-fade-up mt-10 max-w-3xl text-xl leading-9 text-slate-300 sm:text-2xl sm:leading-10">
+      <p className="wc-fade-up mt-5 max-w-3xl text-lg leading-8 text-slate-300 sm:mt-6 sm:text-xl sm:leading-9">
         Guess first, then see what the numbers say from packed stadiums and
         top scorers to how the college predicted every match.
       </p>
@@ -3025,32 +2821,17 @@ function AnalyticsHero({ stats }: { stats: HeroStat[] }) {
       <button
         type="button"
         onClick={() => scrollToId("guess", !reduced)}
-        className="mt-10 inline-flex min-h-[56px] items-center gap-3 rounded-full bg-[#08AAA5] px-8 text-lg font-bold text-[#04201F] transition-transform hover:scale-[1.03] active:scale-[0.98]"
+        className="mt-8 inline-flex min-h-[52px] items-center gap-3 rounded-lg bg-[var(--primary)] px-7 text-base font-bold text-[var(--background)] transition-colors hover:bg-[var(--primary)]"
       >
         Start guessing <span aria-hidden>↓</span>
       </button>
       <button
         type="button"
         onClick={() => scrollToId("fans", !reduced)}
-        className="mt-4 inline-flex min-h-[56px] items-center gap-3 rounded-full border border-white/20 px-8 text-lg font-semibold text-white transition-colors hover:border-[#08AAA5] hover:text-[#08AAA5] sm:ml-4 sm:mt-10"
+        className="mt-4 inline-flex min-h-[52px] items-center gap-3 rounded-lg border border-white/20 px-7 text-base font-semibold text-white transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)] sm:ml-4 sm:mt-8"
       >
         Jump to the college predictions <span aria-hidden>↓</span>
       </button>
-
-      {stats.length > 0 && (
-        <div className="mt-20 grid grid-cols-2 gap-x-6 gap-y-12 border-t border-white/10 pt-12 lg:grid-cols-3 xl:grid-cols-6">
-          {stats.map((stat, i) => (
-            <StatHighlight
-              key={stat.label}
-              value={stat.value}
-              decimals={stat.decimals}
-              suffix={stat.suffix}
-              label={stat.label}
-              color={i % 2 === 0 ? COLORS.teal : COLORS.sky}
-            />
-          ))}
-        </div>
-      )}
     </header>
   );
 }
@@ -3069,7 +2850,7 @@ function KeyInsights({ items }: { items: InsightStat[] }) {
 
   return (
     <Reveal className="border-y border-white/10 py-14 sm:py-20">
-      <p className="mb-10 text-sm font-semibold text-[#08AAA5] sm:text-base">
+      <p className="mb-10 text-sm font-medium text-[var(--primary)] sm:text-base">
         Before you guess, a few things worth knowing
       </p>
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
@@ -3099,10 +2880,10 @@ function FinalInsights({ items }: { items: FinalInsight[] }) {
     <div className="grid gap-x-16 gap-y-14 lg:grid-cols-2">
       {items.map((item, i) => (
         <Reveal key={item.title} delay={i * 80}>
-          <p className="text-6xl font-black leading-none text-[#08AAA5] sm:text-8xl">
+          <p className="text-6xl font-black leading-none text-[var(--primary)] sm:text-8xl">
             {item.big}
           </p>
-          <h3 className="mt-5 text-2xl font-bold text-white sm:text-3xl">
+          <h3 className="mt-5 text-2xl font-semibold text-white sm:text-3xl">
             {item.title}
           </h3>
           <p className="mt-3 max-w-xl text-base leading-7 text-slate-400 sm:text-lg sm:leading-8">
@@ -3605,64 +3386,6 @@ function AnalyticsContent({
     return best as { key: string; count: number } | null;
   }, [actualScores]);
 
-  const heroStats = useMemo((): HeroStat[] => {
-    const stats: HeroStat[] = [];
-    const teams =
-      clubDiversityAll.length > 0
-        ? clubDiversityAll.length
-        : predictedVsActualGoalsData.length;
-
-    if (actualScores.total > 0) {
-      stats.push({ value: actualScores.total, label: "matches played" });
-    }
-
-    if (teams > 0) {
-      stats.push({ value: teams, label: "national teams" });
-    }
-
-    if (attendeesAll.total > 0) {
-      stats.push(
-        attendeesAll.total >= 1_000_000
-          ? {
-              value: attendeesAll.total / 1_000_000,
-              decimals: 1,
-              suffix: "M",
-              label: `fans across ${attendeesAll.count} venues`,
-            }
-          : {
-              value: attendeesAll.total,
-              label: `fans across ${attendeesAll.count} venues`,
-            },
-      );
-    }
-
-    if (predictedScores.total > 0) {
-      stats.push({ value: predictedScores.total, label: "college scoreline predictions" });
-    }
-
-    if (outcomeAccuracy !== null) {
-      stats.push({
-        value: outcomeAccuracy,
-        decimals: 1,
-        suffix: "%",
-        label: "predictions called the right outcome",
-      });
-    }
-
-    if (actualScores.map.size > 0) {
-      stats.push({ value: actualScores.map.size, label: "different scorelines" });
-    }
-
-    return stats;
-  }, [
-    actualScores,
-    predictedScores,
-    attendeesAll,
-    clubDiversityAll,
-    predictedVsActualGoalsData,
-    outcomeAccuracy,
-  ]);
-
   const keyInsights = useMemo((): InsightStat[] => {
     const items: InsightStat[] = [];
 
@@ -3851,7 +3574,7 @@ function AnalyticsContent({
     if (over && over.predicted > over.actual) {
       items.push({
         big: `+${nf(over.predicted - over.actual, 1)}`,
-        title: `${over.name} — the most overestimated team`,
+        title: `${over.name}, the most overestimated team`,
         body: `Fans predicted ${nf(over.predicted, 2)} goals, but the team delivered ${nf(over.actual, 2)}.`,
       });
     }
@@ -3863,7 +3586,7 @@ function AnalyticsContent({
     if (under && under.actual > under.predicted) {
       items.push({
         big: `+${nf(under.actual - under.predicted, 1)}`,
-        title: `${under.name} — the most underestimated team`,
+        title: `${under.name}, the most underestimated team`,
         body: `Fans predicted ${nf(under.predicted, 2)} goals, but the team delivered ${nf(under.actual, 2)}.`,
       });
     }
@@ -3901,21 +3624,9 @@ function AnalyticsContent({
           className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(8,170,165,0.20),transparent_55%),radial-gradient(ellipse_at_80%_30%,rgba(20,121,168,0.12),transparent_50%),radial-gradient(ellipse_at_10%_75%,rgba(8,170,165,0.08),transparent_50%)]"
         />
 
-        <ScoreBadge />
 
         <div className="mx-auto w-full max-w-[1680px] px-5 sm:px-8 lg:px-14 xl:px-20">
-           <div className="pt-6">
-    <button
-      type="button"
-      onClick={() => router.push("/")}
-      className="inline-flex items-center gap-2 rounded-lg border border-[#12577A] bg-[#0F1A23] px-4 py-2 text-sm font-medium text-slate-200 transition hover:border-[#08AAA5] hover:bg-[#12577A]/30"
-    >
-      <span aria-hidden="true">←</span>
-      Back to Home
-    </button>
-  </div>
-
-          <AnalyticsHero stats={heroStats} />
+          <AnalyticsHero />
           <KeyInsights items={keyInsights} />
 
           {/* ---------------- CAN YOU GUESS? ---------------- */}
@@ -4262,7 +3973,7 @@ function AnalyticsContent({
             <SectionHeading
               eyebrow="Part 4"
               title="The prediction lab"
-              description="Now it's your turn. Build a scoreline, then predict a team's goals — and see how you compare with the college crowd and with reality."
+              description="Now it's your turn. Build a scoreline, then predict a team's goals, and see how you compare with the college crowd and with reality."
             />
 
             <div className="space-y-12 sm:space-y-20">
@@ -4272,7 +3983,7 @@ function AnalyticsContent({
                     <ExplorerTitle
                       eyebrow="Predict the score"
                       title="How likely was your scoreline?"
-                      description="Move the sliders, or click any cell in the grids. Compare how often fans predicted a scoreline with how often it really happened."
+                      description="Move the sliders to compare how often fans predicted a scoreline with how often it really happened."
                     />
                     <ScorelineLab
                       predicted={predictedScores}
@@ -4494,7 +4205,7 @@ export default function WorldCupAnalytics() {
 
   if (loading) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center rounded-3xl border border-[#12577A] bg-[#0F1A23] p-10 text-lg text-slate-300">
+      <div className="flex min-h-[60vh] items-center justify-center rounded-lg border border-[var(--tertiary)] bg-[var(--background)] p-10 text-lg text-slate-300">
         Loading World Cup analytics...
       </div>
     );
@@ -4502,7 +4213,7 @@ export default function WorldCupAnalytics() {
 
   if (error) {
     return (
-      <div className="rounded-3xl border border-red-500/40 bg-red-950/30 p-10 text-lg text-red-200">
+      <div className="rounded-lg border border-red-500/40 bg-red-950/30 p-10 text-lg text-red-200">
         {error}
       </div>
     );
