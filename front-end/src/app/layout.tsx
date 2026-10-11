@@ -10,7 +10,7 @@ const montserrat = Montserrat({
 export const metadata: Metadata = {
   title: "Deerwalk Data Society",
   description: "Making data transparent and accessible",
-  icons: "assets/transparent_Logo.svg",
+  icons: "/assets/transparent_Logo.svg",
 };
 
 export default function RootLayout({
