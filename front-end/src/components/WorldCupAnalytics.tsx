@@ -118,13 +118,13 @@ function getScoreLabel(item: DataRecord): string {
  * ===================================================================== */
 
 const COLORS = {
-  teal: "#08AAA5",
-  blue: "#1479A8",
-  sky: "#38BDF8",
-  amber: "#F5B544",
-  red: "#F87171",
-  yellowCard: "#FACC15",
-  redCard: "#EF4444",
+  teal: "var(--primary)",
+  blue: "var(--secondary)",
+  sky: "var(--secondary)",
+  amber: "var(--tertiary)",
+  red: "var(--foreground)",
+  yellowCard: "var(--foreground)",
+  redCard: "var(--foreground)",
 };
 
 const compactFormat = new Intl.NumberFormat("en-US", {
@@ -321,11 +321,11 @@ const GLOBAL_CSS = `
 .wc-range{-webkit-appearance:none;appearance:none;width:100%;height:48px;background:transparent;cursor:pointer;touch-action:pan-y}
 .wc-range:disabled{cursor:default}
 .wc-range:focus{outline:none}
-.wc-range::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(to right,var(--wc-fill,#08AAA5) var(--wc-pct,50%),rgba(255,255,255,.12) var(--wc-pct,50%))}
+.wc-range::-webkit-slider-runnable-track{height:10px;border-radius:999px;background:linear-gradient(to right,var(--wc-fill,var(--primary)) var(--wc-pct,50%),rgba(255,255,255,.12) var(--wc-pct,50%))}
 .wc-range::-moz-range-track{height:10px;border-radius:999px;background:rgba(255,255,255,.12)}
-.wc-range::-moz-range-progress{height:10px;border-radius:999px;background:var(--wc-fill,#08AAA5)}
-.wc-range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-11px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,#08AAA5);box-shadow:0 4px 18px rgba(0,0,0,.55);transition:transform .15s ease}
-.wc-range::-moz-range-thumb{width:22px;height:22px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,#08AAA5);box-shadow:0 4px 18px rgba(0,0,0,.55)}
+.wc-range::-moz-range-progress{height:10px;border-radius:999px;background:var(--wc-fill,var(--primary))}
+.wc-range::-webkit-slider-thumb{-webkit-appearance:none;width:32px;height:32px;margin-top:-11px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,var(--primary));box-shadow:0 4px 18px rgba(0,0,0,.55);transition:transform .15s ease}
+.wc-range::-moz-range-thumb{width:22px;height:22px;border-radius:999px;background:#fff;border:5px solid var(--wc-fill,var(--primary));box-shadow:0 4px 18px rgba(0,0,0,.55)}
 .wc-range:active::-webkit-slider-thumb{transform:scale(1.15)}
 .wc-range:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 5px rgba(8,170,165,.4)}
 .wc-range:focus-visible::-moz-range-thumb{box-shadow:0 0 0 5px rgba(8,170,165,.4)}
@@ -601,7 +601,7 @@ function Panel({
 }) {
   return (
     <div
-      className={`rounded-lg border border-white/10 bg-gradient-to-br from-[#0F1A23]/90 via-[#0B141C]/90 to-[#08121A]/90 p-6 shadow-2xl shadow-black/30 sm:p-10 lg:p-12 ${className}`}
+      className={`rounded-lg border border-white/10 bg-gradient-to-br from-[var(--background)]/90 via-[var(--background)]/90 to-[var(--background)]/90 p-6 shadow-2xl shadow-black/30 sm:p-10 lg:p-12 ${className}`}
     >
       {children}
     </div>
@@ -620,7 +620,7 @@ function SectionHeading({
   return (
     <Reveal className="mb-12 sm:mb-16">
       {eyebrow && (
-        <p className="text-sm font-medium text-[#08AAA5] sm:text-base">
+        <p className="text-sm font-medium text-[var(--primary)] sm:text-base">
           {eyebrow}
         </p>
       )}
@@ -636,7 +636,7 @@ function SectionHeading({
 
 function EmptyChartMessage({ message }: { message: string }) {
   return (
-    <div className="flex min-h-[220px] items-center justify-center rounded-lg border border-dashed border-[#12577A] p-6 text-center text-sm leading-6 text-slate-300">
+    <div className="flex min-h-[220px] items-center justify-center rounded-lg border border-dashed border-[var(--tertiary)] p-6 text-center text-sm leading-6 text-slate-300">
       {message}
     </div>
   );
@@ -650,8 +650,8 @@ function InsightBlock({
   children: ReactNode;
 }) {
   return (
-    <div className="wc-fade-up rounded-lg border-l-4 border-[#08AAA5] bg-[#08AAA5]/[0.07] px-5 py-5 sm:px-7 sm:py-6">
-      <p className="text-sm font-semibold text-[#08AAA5]">{label}</p>
+    <div className="wc-fade-up rounded-lg border-l-4 border-[var(--primary)] bg-[var(--primary)]/[0.07] px-5 py-5 sm:px-7 sm:py-6">
+      <p className="text-sm font-semibold text-[var(--primary)]">{label}</p>
       <p className="mt-2 text-base leading-7 text-slate-200 sm:text-lg sm:leading-8">
         {children}
       </p>
@@ -705,8 +705,8 @@ function Segmented<T extends string | number>({
             onClick={() => onChange(option.value)}
             className={`min-h-[48px] rounded-lg border px-5 text-base font-semibold transition-colors duration-200 ${
               selected
-                ? "border-[#08AAA5] bg-[#08AAA5] text-[#04201F]"
-                : "border-white/15 bg-white/[0.03] text-slate-200 hover:border-[#08AAA5]/70 hover:text-white"
+                ? "border-[var(--primary)] bg-[var(--primary)] text-[var(--background)]"
+                : "border-white/15 bg-white/[0.03] text-slate-200 hover:border-[var(--primary)]/70 hover:text-white"
             }`}
           >
             {option.label}
@@ -852,7 +852,7 @@ function NextButton({
     <button
       type="button"
       onClick={() => scrollToId(targetId, !reduced)}
-      className="mt-8 inline-flex min-h-[52px] items-center gap-3 rounded-lg border border-[#08AAA5]/60 px-6 text-base font-semibold text-[#08AAA5] transition-colors hover:bg-[#08AAA5] hover:text-[#04201F]"
+      className="mt-8 inline-flex min-h-[52px] items-center gap-3 rounded-lg border border-[var(--primary)]/60 px-6 text-base font-semibold text-[var(--primary)] transition-colors hover:bg-[var(--primary)] hover:text-[var(--background)]"
     >
       {label}
       <span aria-hidden>↓</span>
@@ -1302,7 +1302,7 @@ function GuessShell({
         <Panel className="relative overflow-hidden">
           <div className="relative">
             <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
-              <p className="text-sm font-medium text-[#08AAA5] sm:text-base">
+              <p className="text-sm font-medium text-[var(--primary)] sm:text-base">
                 Prediction {index} of {total}
               </p>
               <div className="flex gap-1.5" aria-hidden>
@@ -1311,7 +1311,7 @@ function GuessShell({
                     key={key}
                     className={`h-1.5 w-8 rounded-full transition-colors duration-500 ${
                       answers[key] === true
-                        ? "bg-[#08AAA5]"
+                        ? "bg-[var(--primary)]"
                         : answers[key] === false
                           ? "bg-red-400"
                           : i + 1 === index
@@ -1432,13 +1432,13 @@ function GuessMoment({
           const letter = String.fromCharCode(65 + i);
 
           let tone =
-            "border-white/10 bg-white/[0.03] text-slate-100 hover:border-[#08AAA5]/70 hover:bg-[#08AAA5]/10";
+            "border-white/10 bg-white/[0.03] text-slate-100 hover:border-[var(--primary)]/70 hover:bg-[var(--primary)]/10";
           let badge = "border-white/20 text-slate-300";
 
           if (answered) {
             if (isAnswer) {
-              tone = "border-[#08AAA5] bg-[#08AAA5]/15 text-white";
-              badge = "border-[#08AAA5] bg-[#08AAA5] text-[#04201F]";
+              tone = "border-[var(--primary)] bg-[var(--primary)]/15 text-white";
+              badge = "border-[var(--primary)] bg-[var(--primary)] text-[var(--background)]";
             } else if (isPick) {
               tone = "border-red-400/70 bg-red-500/10 text-red-100";
               badge = "border-red-400 bg-red-400 text-[#2A0B0B]";
@@ -1480,7 +1480,7 @@ function GuessMoment({
               <p
                 className={`text-base font-bold sm:text-lg ${
                   isCorrect
-                    ? "text-[#08AAA5]"
+                    ? "text-[var(--primary)]"
                     : "text-red-300"
                 }`}
               >
@@ -1498,7 +1498,7 @@ function GuessMoment({
                 <AnimatedNumber
                   value={resultValue}
                   active
-                  className="text-4xl font-black text-[#08AAA5] sm:text-6xl"
+                  className="text-4xl font-black text-[var(--primary)] sm:text-6xl"
                 />
                 <span className="text-lg text-slate-300 sm:text-xl">
                   {resultValueLabel}
@@ -1580,7 +1580,7 @@ function ErrorScale({
       <div className="absolute left-0 right-0 top-8 h-2 rounded-full bg-white/10" />
 
       <div
-        className="absolute top-8 h-2 rounded-full bg-gradient-to-r from-[#F5B544] to-[#08AAA5] transition-[width] duration-1000 ease-out motion-reduce:transition-none"
+        className="absolute top-8 h-2 rounded-full bg-gradient-to-r from-[var(--tertiary)] to-[var(--primary)] transition-[width] duration-1000 ease-out motion-reduce:transition-none"
         style={{
           left: pos(low),
           width: entered ? `${((high - low) / span) * 100}%` : "0%",
@@ -1591,19 +1591,19 @@ function ErrorScale({
         className="absolute top-0 -translate-x-1/2 text-center"
         style={{ left: pos(guess) }}
       >
-        <p className="text-sm font-semibold text-[#F5B544]">You</p>
+        <p className="text-sm font-semibold text-[var(--tertiary)]">You</p>
       </div>
       <span
-        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[#F5B544]"
+        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[var(--tertiary)]"
         style={{ left: pos(guess) }}
       />
 
       <span
-        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[#08AAA5] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
+        className="absolute top-[26px] h-5 w-5 -translate-x-1/2 rounded-full border-2 border-white bg-[var(--primary)] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
         style={{ left: entered ? pos(actual) : pos(guess) }}
       />
       <p
-        className="absolute top-[56px] -translate-x-1/2 text-sm font-semibold text-[#08AAA5] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
+        className="absolute top-[56px] -translate-x-1/2 text-sm font-semibold text-[var(--primary)] transition-[left] duration-1000 ease-out motion-reduce:transition-none"
         style={{ left: entered ? pos(actual) : pos(guess) }}
       >
         Actual
@@ -1718,7 +1718,7 @@ function SliderGuessMoment({
             <button
               type="button"
               onClick={reveal}
-              className="mt-6 min-h-[56px] rounded-lg bg-[#08AAA5] px-8 text-lg font-bold text-[#04201F] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+              className="mt-6 min-h-[56px] rounded-lg bg-[var(--primary)] px-8 text-lg font-bold text-[var(--background)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
             >
               Lock in my guess
             </button>
@@ -1735,7 +1735,7 @@ function SliderGuessMoment({
             <div className="min-w-0">
               <p
                 className={`text-base font-bold sm:text-lg ${
-                  withinTolerance ? "text-[#08AAA5]" : "text-red-300"
+                  withinTolerance ? "text-[var(--primary)]" : "text-red-300"
                 }`}
               >
                 {withinTolerance ? "✓" : "✕"} {verdict}
@@ -1744,7 +1744,7 @@ function SliderGuessMoment({
               <div className="mt-6 grid grid-cols-2 gap-6">
                 <div>
                   <p className="text-sm text-slate-400">Your guess</p>
-                  <p className="mt-1 text-5xl font-black tabular-nums text-[#F5B544] sm:text-7xl">
+                  <p className="mt-1 text-5xl font-black tabular-nums text-[var(--tertiary)] sm:text-7xl">
                     {nf(guess, 1)}
                   </p>
                 </div>
@@ -1754,7 +1754,7 @@ function SliderGuessMoment({
                     value={actual}
                     decimals={2}
                     active
-                    className="mt-1 block text-5xl font-black text-[#08AAA5] sm:text-7xl"
+                    className="mt-1 block text-5xl font-black text-[var(--primary)] sm:text-7xl"
                   />
                 </div>
               </div>
@@ -1823,7 +1823,7 @@ function ExplorerTitle({
 }) {
   return (
     <div className="mb-10 max-w-3xl">
-      <p className="text-sm font-semibold text-[#08AAA5]">{eyebrow}</p>
+      <p className="text-sm font-semibold text-[var(--primary)]">{eyebrow}</p>
       <h3 className="mt-2 text-3xl font-semibold text-white sm:text-5xl">
         {title}
       </h3>
@@ -1889,7 +1889,7 @@ function AccuracyExplorer({ data }: { data: StageAccuracy[] }) {
               decimals={1}
               suffix="%"
               active
-              className="block text-6xl font-black leading-none text-[#08AAA5] sm:text-7xl xl:text-8xl"
+              className="block text-6xl font-black leading-none text-[var(--primary)] sm:text-7xl xl:text-8xl"
             />
             <p className="mt-3 text-lg text-slate-300">
               prediction accuracy for {current.stage}
@@ -2027,7 +2027,7 @@ function ConfidenceExplorer({ data }: { data: ConfidencePoint[] }) {
               decimals={1}
               suffix="%"
               active
-              className="block text-6xl font-black leading-none text-[#08AAA5] sm:text-7xl xl:text-8xl"
+              className="block text-6xl font-black leading-none text-[var(--primary)] sm:text-7xl xl:text-8xl"
             />
             <p className="mt-3 text-lg text-slate-300">
               average accuracy across {points.length}{" "}
@@ -2220,7 +2220,7 @@ function WinnerExplorer({ data }: { data: WinnerRow[] }) {
                 decimals={1}
                 suffix="%"
                 active
-                className="block text-5xl font-black leading-none text-[#08AAA5] sm:text-6xl xl:text-7xl"
+                className="block text-5xl font-black leading-none text-[var(--primary)] sm:text-6xl xl:text-7xl"
               />
               <p className="mt-3 text-base text-slate-300">of fans picked them</p>
             </div>
@@ -2423,7 +2423,7 @@ function GoalsLab({ data }: { data: TeamGoals[] }) {
               <button
                 type="button"
                 onClick={() => setRevealed(true)}
-                className="mt-4 min-h-[56px] rounded-lg bg-[#08AAA5] px-8 text-lg font-bold text-[#04201F] transition-transform hover:scale-[1.02] active:scale-[0.98]"
+                className="mt-4 min-h-[56px] rounded-lg bg-[var(--primary)] px-8 text-lg font-bold text-[var(--background)] transition-transform hover:scale-[1.02] active:scale-[0.98]"
               >
                 Reveal the actual value
               </button>
@@ -2671,7 +2671,7 @@ function ScorelineLab({
                 decimals={1}
                 suffix="%"
                 active
-                className="block text-5xl font-black leading-none text-[#38BDF8] sm:text-6xl xl:text-7xl"
+                className="block text-5xl font-black leading-none text-[var(--secondary)] sm:text-6xl xl:text-7xl"
               />
               <p className="mt-3 text-sm text-slate-400">
                 {nf(predictedCount)} of {nf(predicted.total)} predictions
@@ -2684,7 +2684,7 @@ function ScorelineLab({
                 decimals={1}
                 suffix="%"
                 active
-                className="block text-5xl font-black leading-none text-[#08AAA5] sm:text-6xl xl:text-7xl"
+                className="block text-5xl font-black leading-none text-[var(--primary)] sm:text-6xl xl:text-7xl"
               />
               <p className="mt-3 text-sm text-slate-400">
                 {nf(actualCount)} of {nf(actual.total)} matches
@@ -2807,7 +2807,7 @@ function AnalyticsHero() {
         <h1 className="text-5xl font-semibold leading-[0.96] tracking-tight text-white sm:text-7xl lg:text-8xl xl:text-[9rem]">
           World Cup
           <br />
-          <span className="bg-gradient-to-r from-[#08AAA5] to-[#38BDF8] bg-clip-text text-transparent">
+          <span className="bg-gradient-to-r from-[var(--primary)] to-[var(--secondary)] bg-clip-text text-transparent">
             Analytics
           </span>
         </h1>
@@ -2821,14 +2821,14 @@ function AnalyticsHero() {
       <button
         type="button"
         onClick={() => scrollToId("guess", !reduced)}
-        className="mt-8 inline-flex min-h-[52px] items-center gap-3 rounded-lg bg-[#08AAA5] px-7 text-base font-bold text-[#04201F] transition-colors hover:bg-[#25c4bd]"
+        className="mt-8 inline-flex min-h-[52px] items-center gap-3 rounded-lg bg-[var(--primary)] px-7 text-base font-bold text-[var(--background)] transition-colors hover:bg-[var(--primary)]"
       >
         Start guessing <span aria-hidden>↓</span>
       </button>
       <button
         type="button"
         onClick={() => scrollToId("fans", !reduced)}
-        className="mt-4 inline-flex min-h-[52px] items-center gap-3 rounded-lg border border-white/20 px-7 text-base font-semibold text-white transition-colors hover:border-[#08AAA5] hover:text-[#08AAA5] sm:ml-4 sm:mt-8"
+        className="mt-4 inline-flex min-h-[52px] items-center gap-3 rounded-lg border border-white/20 px-7 text-base font-semibold text-white transition-colors hover:border-[var(--primary)] hover:text-[var(--primary)] sm:ml-4 sm:mt-8"
       >
         Jump to the college predictions <span aria-hidden>↓</span>
       </button>
@@ -2850,7 +2850,7 @@ function KeyInsights({ items }: { items: InsightStat[] }) {
 
   return (
     <Reveal className="border-y border-white/10 py-14 sm:py-20">
-      <p className="mb-10 text-sm font-medium text-[#08AAA5] sm:text-base">
+      <p className="mb-10 text-sm font-medium text-[var(--primary)] sm:text-base">
         Before you guess, a few things worth knowing
       </p>
       <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 xl:grid-cols-4">
@@ -2880,7 +2880,7 @@ function FinalInsights({ items }: { items: FinalInsight[] }) {
     <div className="grid gap-x-16 gap-y-14 lg:grid-cols-2">
       {items.map((item, i) => (
         <Reveal key={item.title} delay={i * 80}>
-          <p className="text-6xl font-black leading-none text-[#08AAA5] sm:text-8xl">
+          <p className="text-6xl font-black leading-none text-[var(--primary)] sm:text-8xl">
             {item.big}
           </p>
           <h3 className="mt-5 text-2xl font-semibold text-white sm:text-3xl">
@@ -4205,7 +4205,7 @@ export default function WorldCupAnalytics() {
 
   if (loading) {
     return (
-      <div className="flex min-h-[60vh] items-center justify-center rounded-lg border border-[#12577A] bg-[#0F1A23] p-10 text-lg text-slate-300">
+      <div className="flex min-h-[60vh] items-center justify-center rounded-lg border border-[var(--tertiary)] bg-[var(--background)] p-10 text-lg text-slate-300">
         Loading World Cup analytics...
       </div>
     );
