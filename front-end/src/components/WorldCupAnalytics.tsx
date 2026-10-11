@@ -121,10 +121,10 @@ const COLORS = {
   teal: "var(--primary)",
   blue: "var(--secondary)",
   sky: "var(--secondary)",
-  amber: "var(--tertiary)",
-  red: "var(--foreground)",
-  yellowCard: "var(--foreground)",
-  redCard: "var(--foreground)",
+  amber: "#F5B544",
+  red: "#F87171",
+  yellowCard: "#FACC15",
+  redCard: "#EF4444",
 };
 
 const compactFormat = new Intl.NumberFormat("en-US", {
